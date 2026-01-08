@@ -1,0 +1,316 @@
+.fondo-aros-offf{
+    visibility: hidden;
+}
+.fondo-aros-on{
+    visibility: visible;
+}
+.fondo-aros-on #aro1,
+.fondo-aros-on #aro2{
+    animation: animacion-aro-on 1s 1 forwards;
+}
+@keyframes animacion-aro-on{
+    0%{
+        transform: translate(-50%,-50%) scale(0);
+        animation-timing-function: ease-in;
+    }
+    50%{
+        transform: translate(-50%,-50%) scale(1.2);
+        animation-timing-function: ease-out;
+    }
+    80%{
+        transform: translate(-50%,-50%) scale(0.9);
+        animation-timing-function: ease-in;
+    }
+    95%{
+        transform: translate(-50%,-50%) scale(1.05);
+        animation-timing-function: ease-out;
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+}
+
+.fondo-aros-off #aro1,
+.fondo-aros-off #aro2{
+    animation: animacion-aro-off 0.5s 1 forwards;
+}
+@keyframes animacion-aro-off{
+    0%{
+        transform: translate(-50%,-50%) scale(1);
+        animation-timing-function: ease-out;
+    }
+    50%{
+        transform: translate(-50%,-50%) scale(1.2);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(0);
+    }
+}
+
+@keyframes animacion-fondo0-aro1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animacion-fondo0-aro2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.w-fotografia-off{
+    /**/
+}
+.w-fotografia-off .w-fotografia-centro{
+    visibility: hidden;
+}
+.w-fotografia-on{
+    animation: animacion-fotografia-on 0.5s 1 forwards;
+}
+@keyframes animacion-fotografia-on{
+    0%{
+        transform: scale(0.5);
+        opacity: 0;
+        animation-timing-function: ease-out;
+    }
+    70%{
+        transform: scale(1.05);
+        opacity: 1;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.w-fotografia-on .w-fotografia-centro{
+    visibility: visible;
+    opacity: 0;
+    animation: animacion-fotografia-centro-on 0.5s 0.25s 1 forwards;
+}
+@keyframes animacion-fotografia-centro-on{
+    0%{
+        transform: translate(-50%,-50%) scale(0.5);
+        opacity: 0;
+        animation-timing-function: ease-out;
+    }
+    70%{
+        transform: translate(-50%,-50%) scale(1.1);
+        opacity: 1;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/*****/
+
+.titulo-off{
+    visibility: hidden;
+}
+
+.animacion-caida-1 h1,
+.animacion-caida-1 h2,
+.animacion-caida-1 p{
+    animation: animacion-caida-1 1s 1 forwards;
+}
+.animacion-caida-1 div{
+    animation: animacion-caida-1-sombra 1s 1 forwards;
+}
+@keyframes animacion-caida-1{
+    0%{
+        opacity: 0;
+        top: -400px;
+        transform: rotate(0deg);
+        animation-timing-function: ease-in;
+    }
+    40%{
+        opacity: 1;
+        top: 0px;
+        transform: rotate(5deg);
+        animation-timing-function: ease-out;
+    }
+    70%{
+        opacity: 1;
+        top: -150%;
+        transform: rotate(-3deg);
+        animation-timing-function: ease-in;
+    }
+    90%{
+        opacity: 1;
+        top: 0px;
+        transform: rotate(1deg);
+        animation-timing-function: ease-out;
+    }
+    95%{
+        opacity: 1;
+        top: -10px;
+        transform: rotate(0deg);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        opacity: 1;
+        top: 0px;
+        transform: rotate(0deg);
+    }
+
+}
+@keyframes animacion-caida-1-sombra{
+    0%{
+        opacity: 0;
+        width: 0%;
+        animation-timing-function: ease-in;
+    }
+    40%{
+        opacity: 1;
+        width: 100%;
+        animation-timing-function: ease-out;
+    }
+    70%{
+        opacity: 1;
+        width: 80%;
+        animation-timing-function: ease-in;
+    }
+    90%{
+        opacity: 1;
+        width: 100%;
+        animation-timing-function: ease-out;
+    }
+    95%{
+        opacity: 1;
+        width: 95%;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        opacity: 0;
+        width: 100%;
+    }
+
+}
+
+/*****/
+
+.animacion-caida-2 h1,
+.animacion-caida-2 h2,
+.animacion-caida-2 p{
+    animation: animacion-caida-2 1.2s 1 forwards;
+}
+.animacion-caida-2 div{
+    animation: animacion-caida-2-sombra 1.2s 1 forwards;
+}
+@keyframes animacion-caida-2{
+    0%{
+        opacity: 0;
+        top: -300px;
+        transform: rotate(0deg);
+        animation-timing-function: ease-in;
+    }
+    40%{
+        opacity: 1;
+        top: 0px;
+        transform: rotate(-5deg);
+        animation-timing-function: ease-out;
+    }
+    70%{
+        opacity: 1;
+        top: -50%;
+        transform: rotate(3deg);
+        animation-timing-function: ease-in;
+    }
+    90%{
+        opacity: 1;
+        top: 0px;
+        transform: rotate(-1deg);
+        animation-timing-function: ease-out;
+    }
+    95%{
+        opacity: 1;
+        top: -10px;
+        transform: rotate(0deg);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        opacity: 1;
+        top: 0px;
+        transform: rotate(0deg);
+    }
+
+}
+@keyframes animacion-caida-2-sombra{
+    0%{
+        opacity: 0;
+        width: 0%;
+        animation-timing-function: ease-in;
+    }
+    40%{
+        opacity: 1;
+        width: 50%;
+        animation-timing-function: ease-out;
+    }
+    70%{
+        opacity: 1;
+        width: 45%;
+        animation-timing-function: ease-in;
+    }
+    90%{
+        opacity: 1;
+        width: 50%;
+        animation-timing-function: ease-out;
+    }
+    95%{
+        opacity: 1;
+        width: 48%;
+        animation-timing-function: ease-in;
+    }
+    100%{
+        opacity: 0;
+        width: 50%;
+    }
+
+}
+
+.animacion-entrada-1 p{
+    animation: animacion-entrada-1 1s 1 forwards;
+}
+@keyframes animacion-entrada-1{
+    0%{
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+/**************/
+
+.content-wrap-0-1{
+    animation: animacion-wrap-0-1 2s 1 forwards;
+}
+@keyframes animacion-wrap-0-1{
+    0%{
+        left: 0px;
+        animation-timing-function: ease-out;
+    }
+    20%{
+        left: 10%;
+        animation-timing-function: ease-in;
+    }
+    80%{
+        left: -110%;
+        animation-timing-function: ease-out;
+    }
+    100%{
+        left: -100%;
+    }
+}

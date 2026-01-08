@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/fonts.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/main.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/welcomepage.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/menu1.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/animations.css" type="text/css" rel="stylesheet" />
+    <title>Manual</title>
+
+    <script>
+        function getE(idname){
+            return document.getElementById(idname)
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="fondo">
+            <div id="fondo-img" style="background-image: url(./assets/images/fondo.jpg);"></div>
+        </div>
+        <div id="fondo-aros" class="fondo-aros-offf">
+            <div id="aro1">
+                <img src="assets/images/aro.png" />
+            </div>
+            <div id="aro2">
+                <img src="assets/images/aro.png" />
+            </div>
+        </div>
+        <div id="fondo-cortina"></div>
+        <div id="container-wraper">
+            <div id="container-wrap" class="container-wrap-initial">
+                <div id="welcome" class="container-content">
+                    <div class="w-col">
+                        <div class="w-row1">
+                            <div id="w-fotografia" class="w-fotografia-off">
+                                <div class="w-fotografia-img"></div>
+                                <div class="w-fotografia-decoracion"></div>
+                                <div class="w-fotografia-centro"></div>
+                            </div>
+                        </div>
+                        <div class="w-row2">
+                            <div id="w-titulo" class="titulo-off">
+                                <h1>Manual de proveedores</h1>
+                                <div></div>
+                            </div>
+                            <div id="w-subtitulo" class="titulo-off">
+                                <h2>Cámara de comercio<br>Medellín</h2>
+                                <div></div>
+                            </div>
+                            <div id="w-boton">
+                                <button class="w-button" type="button" onclick="clickComenzar()">
+                                    <span>Comenzamos</span>
+                                    <div><img src="assets/images/icon-mano-instruccion.svg" /></div>
+                                </button>
+                            </div>
+                            <div id="w-texto" class="titulo-off">
+                                <p>Haz clic en este botón para iniciar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="w-logo">
+                        <img src="assets/images/logo.svg" />
+                    </div>
+                </div>
+                <div id="menu1" class="container-content">
+                    <div class="m-col">
+                        <div class="m-row1">
+                            <div id="m-titulo" class="titulo-off">
+                                <h1>Manual de proveedores</h1>
+                                <div></div>
+                            </div>
+                            <div id="m-subtitulo" class="titulo-off">
+                                <h2>Cámara de comercio Medellín</h2>
+                                <div></div>
+                            </div>
+                            <div id="m-texto" class="titulo-off">
+                                <p>Haz clic en las imágenes de abajo para ver el contenido</p>
+                            </div>
+                        </div>
+                        <div class="m-row2">
+                            <div class="m-unity">
+                                <div class="m-unity-onda"></div>
+                                <div class="m-unity-img">
+                                    <img src="content/unidad1/foto.png" />
+                                </div>
+                                <div class="m-unity-icon">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/scripts/main.js"></script>
+    <script>
+
+        init()
+        window.onload = function(){
+            loadImg({src:'assets/images/fondo-rojo.jpg', callBack: function(){
+                setAnimations()
+            }})
+        }
+    </script>
+</body>
+</html>
