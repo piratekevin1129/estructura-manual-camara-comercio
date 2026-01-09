@@ -1,14 +1,16 @@
-.fondo1 #aro1{
-    width: 300px;
-    height: 300px;
+.fondo2 #aro1{
+    width: 200px;
+    height: 200px;
     top: 0%;
     left: 100%;
+    left: calc(100% - 120px);
+    left: -moz-calc(100% - 120px);
 }
-.fondo1 #aro2{
-    width: 120px;
-    height: 120px;
-    top: 95%;
-    left: 80px;
+.fondo2 #aro2{
+    width: 150px;
+    height: 150px;
+    top: 100%;
+    left: 100px;
 }
 
 .m-col{

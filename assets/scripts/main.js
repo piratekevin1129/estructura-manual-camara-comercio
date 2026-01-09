@@ -30,6 +30,8 @@ function init(){
 
     getE('fondo').style.width = ancho+'px'
     getE('fondo').style.height = alto+'px'
+
+    getE('container-wrap').className = 'container-wrap-initial'
 }
 
 var animacion_titulos = null
@@ -68,19 +70,41 @@ function clickComenzar(){
             animacion_container_wrap = null
 
             getE('fondo-aros').className = 'fondo-aros-on fondo1'
+            
+            animacion_titulos_count = 0
+            animacion_titulos = setInterval(function(){
+                if(animacion_titulos_count==3){
+                    clearInterval(animacion_titulos_count)
+                    animacion_titulos_count = null
+
+                    
+                }else if(animacion_titulos_count==0){
+                    getE('m-titulo').className = 'animacion-caida-1'
+                }else if(animacion_titulos_count==1){
+                    getE('m-subtitulo').className = 'animacion-caida-2'
+                }else if(animacion_titulos_count==2){
+                    getE('m-texto').className = 'animacion-entrada-1'
+                }
+                animacion_titulos_count++
+            },500)
         },2000)
     },500)   
 }
 
-function overUnityBtn(btn){
-    var clases = String(btn.className).split(" ")
-    console.log(clases)
+function overUnityBtn(zona){
+    var btn = zona.parentNode
+    var unity = btn.getElementsByClassName('m-unity')[0]
+
+    var clases = String(unity.className).split(" ")
     clases[clases.length-1] = 'm-unity-over'
-    btn.className = clases.join(" ")
+    unity.className = clases.join(" ")
 }
 
-function outUnityBtn(btn){
-    var clases = String(btn.className).split(" ")
+function outUnityBtn(zona){
+    var btn = zona.parentNode
+    var unity = btn.getElementsByClassName('m-unity')[0]
+
+    var clases = String(unity.className).split(" ")
     clases[clases.length-1] = 'm-unity-out'
-    btn.className = clases.join(" ")
+    unity.className = clases.join(" ")
 }
