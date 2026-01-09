@@ -109,7 +109,7 @@
 #w-titulo div,
 #m-titulo div,
 #w-subtitulo div,
-#m-subtitulo div,{
+#m-subtitulo div{
     position: absolute;
     height: 3px;
     top: 100%;

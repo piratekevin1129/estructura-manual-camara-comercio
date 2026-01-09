@@ -36,7 +36,7 @@ var animacion_titulos = null
 var animacion_titulos_count = 0
 function setAnimations(){
     getE('w-fotografia').className = 'w-fotografia-on'
-    getE('fondo-aros').className = 'fondo-aros-on fondo0'
+    getE('fondo-aros').className = 'fondo-aros-on fondo1'
     
     animacion_titulos = setInterval(function(){
         if(animacion_titulos_count==3){
@@ -69,6 +69,18 @@ function clickComenzar(){
 
             getE('fondo-aros').className = 'fondo-aros-on fondo1'
         },2000)
-    },500)
-    
+    },500)   
+}
+
+function overUnityBtn(btn){
+    var clases = String(btn.className).split(" ")
+    console.log(clases)
+    clases[clases.length-1] = 'm-unity-over'
+    btn.className = clases.join(" ")
+}
+
+function outUnityBtn(btn){
+    var clases = String(btn.className).split(" ")
+    clases[clases.length-1] = 'm-unity-out'
+    btn.className = clases.join(" ")
 }

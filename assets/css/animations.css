@@ -302,12 +302,12 @@
         left: 0px;
         animation-timing-function: ease-out;
     }
-    20%{
+    30%{
         left: 10%;
-        animation-timing-function: ease-in;
+        animation-timing-function: ease-in-out;
     }
-    80%{
-        left: -110%;
+    70%{
+        left: -105%;
         animation-timing-function: ease-out;
     }
     100%{

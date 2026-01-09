@@ -69,18 +69,19 @@
     position: relative;
     width: 380px;
     height: 248px;
-    overflow: hidden;
-    border-radius: 20px;
+
+    transition: filter 0.25s;
 }
 
 .m-unity-onda{
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     border: 2px solid #E21F26;
     border-radius: 20px;
     top: 50%;
     left: 50%;
+    opacity: 1;
     transform: translate(-50%,-50%);
 }
 .m-unity-img{
@@ -88,6 +89,10 @@
     width: 100%;
     height: 100%;
     margin: 0px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+    transition: box-shadow 0.5s;
 }
 .m-unity-img img{
     display: block;
@@ -98,21 +103,23 @@
 }
 .m-unity-icon{
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     right: 10px;
     bottom: 10px;
-    background-color: ;
+    background-color: rgba(255,255,255,0.3);
 }
 .m-unity-icon::before{
     content: "";
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    top: 2.5px;
-    left: 2.5px;
+    top: 5px;
+    left: 5px;
+
+    transition: background-color 0.25s;
 }
 .m-unity-icon::after{
     content: "";
@@ -126,10 +133,62 @@
     left: 12.5px;
 }
 
-.m-unity-unlocked .
-                                    <div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>*/
+.m-unity-unlocked{
+    filter: grayscale(0%);
+}
+.m-unity-unlocked .m-unity-icon::before{
+    background-color: #E21F26;
+}
+.m-unity-unlocked .m-unity-icon::after{
+    background-image: url(../images/icon-unity-unlocked.svg);
+}
+
+/****************/
+
+.m-unity-over{
+    cursor: pointer;
+    animation: animacion-unity-over 0.5s 1 forwards;
+}
+@keyframes animacion-unity-over{
+    0%{
+        transform: scale(1);
+        animation-timing-function: ease-out;
+    }
+    30%{
+        transform: scale(0.9);
+        animation-timing-function: ease-in;
+    }
+    70%{
+        transform: scale(1.1);
+        animation-timing-function: ease-out;
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+.m-unity-over .m-unity-onda{
+    width: 120%;
+    height: 120%;
+    opacity: 0;
+    transition: width 1.5s, height 1.5s, opacity 1.5s ease-out;
+}
+.m-unity-over .m-unity-img{
+    box-shadow: 0px 15px 10px -8px rgba(0,0,0,0.8);
+}
+
+.m-unity-out{
+    animation: animacion-unity-out 0.2s 1 forwards;
+}
+@keyframes animacion-unity-out{
+    0%{
+        transform: scale(1.05);
+        animation-timing-function: ease-out;
+    }
+    30%{
+        transform: scale(1.1);
+        animation-timing-function: ease-in;
+    }
+    100%{
+        transform: scale(1);
+    }
+}
