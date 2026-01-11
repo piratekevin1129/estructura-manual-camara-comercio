@@ -13,7 +13,7 @@
     left: 100px;
 }
 
-.m-col{
+.m2-col{
     position: relative;
     width: 100%;
     height: 100%;
@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.m-row1{
+.m2-row1{
     position: relative;
     width: 100%;
     height: auto;
@@ -35,29 +35,52 @@
     align-items: center;
 }
 
-#m-titulo{
-    margin-bottom: 10px;
+#m2-titulo{
+    margin-bottom: 8px;
 }
-#m-titulo h1{
+#m2-titulo h1{
     font-family: 'Montserrat-ExtraBold';
-    font-size: 31px;
+    font-size: 25px;
     color: #58595B;
 }
-#m-subtitulo{
-    margin-bottom: 10px;
+#m2-subtitulo{
+    margin-bottom: 8px;
 }
-#m-subtitulo h2{
+#m2-subtitulo h2{
     font-family: 'Montserrat-ExtraBold';
-    font-size: 31px;
+    font-size: 25px;
     color: #D61921;
 }
-#m-texto p{
+#m2-texto{
+    margin-bottom: 15px;
+}
+#m2-texto p{
     font-family: 'Montserrat-Medium';
     font-size: 18px;
     color: #58595B;
 }
+#m2-unidad{
+    position: relative;
+    display: flex;
+    margin: 0px;
+    width: auto;
+    height: auto;
+    flex-wrap: nowrap;
+}
+#m2-unidad > img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    margin-right: 10px;
+}
+#m2-unidad > p{
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 25px;
+    color: #ffffff;
+}
 
-.m-row2{
+.m2-row2{
     position: relative;
     width: 100%;
     display: flex;
@@ -66,179 +89,113 @@
     flex-wrap: wrap;
     margin-top: 100px;
 }
-.m-unity-btn{
+
+/*************/
+.m2-module-btn{
     position: relative;
-    width: 380px;
-    height: 248px;
-    margin: 0px 20px;
+    width: 290px;
+    height: 250px;
+    margin: 15px 10px;
 }
-.m-unity{
+.m2-module{
     position: relative;
     width: 100%;
     height: 100%;
-    margin: 0px;
-}
-.m-unity-zona{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    opacity: 0;
-    cursor: pointer;
 }
 
-.m-unity-onda{
-    position: absolute;
-    width: 80%;
-    height: 80%;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 20px;
-    top: 50%;
-    left: 50%;
-    opacity: 1;
-    transform: translate(-50%,-50%);
-}
-.m-unity-img{
+.m2-module-img{
     position: relative;
     width: 100%;
-    height: 100%;
-    margin: 0px;
-    border-radius: 20px;
+    height: 135px;
     overflow: hidden;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-    transition: box-shadow 0.5s;
+    box-sizing: border-box;
+    border: #FF7E60 solid 2px;
+    border-bottom: none;
 }
-.m-unity-img img{
+.m2-module-img img{
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    transition: filter 0.5s;
+    object-position: center bottom;
 }
-.m-unity-icon{
-    position: absolute;
+
+.m2-module-info{
+    position: relative;
+    width: 100%;
+    height: 115px;
+    box-sizing: border-box;
+    border: #FF7E60 solid 2px;
+    border-top: 0px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.m2-module-info div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    right: 10px;
-    bottom: 10px;
-    background-color: rgba(255,255,255,0.3);
-    transition: width 0.5s, height 0.5s;
+    background-color: #EF2E3C;
+    margin-right: 10px;
 }
-.m-unity-icon::before{
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 40px;
+.m2-module-info div span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
     border-radius: 50%;
-    top: 5px;
-    left: 5px;
 
-    transition: background-color 0.5s, width 0.5s, height 0.5s, left 0.5s, top 0.5s;
-}
-.m-unity-icon::after{
-    content: "";
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 12.5px;
-    left: 12.5px;
-    transition: left 0.5s, top 0.5s;
-}
+    font-family: 'Montserrat-SemiBold';
+    font-size: 35px;
+    color: #58595B;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
 
-.m-unity-unlocked .m-unity-img img{
-    filter: grayscale(0%);
+    box-shadow: -5px 15px 15px -5px rgba(0,0,0,0.8);
 }
-.m-unity-unlocked .m-unity-onda{
-    border-color: #E21F26;
-}
-.m-unity-unlocked .m-unity-icon::before{
-    background-color: #E21F26;
-}
-.m-unity-unlocked .m-unity-icon::after{
-    background-image: url(../images/icon-unity-unlocked.svg);
-}
+/*
+                                        <h3><span>1</span></h3>
+                                        <p>Contratación suministros</p>
+                                    </div>
+                                    <div class="m2-module-menu">
+                                        <ul class="m2-module-menu-content">
+                                            <li>
+                                                <img src="assets/images/icon-module-video.svg" />
+                                                <span>Inducción / Reinducción</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-interactiva.svg" />
+                                                <span>Seguridad Social</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-video.svg" />
+                                                <span>Estándares mínimos del SG-SST</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-video.svg" />
+                                                <span>Concepto médico ocupacional</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-document.svg" />
+                                                <span>Documentación</span>
+                                                <div></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="m2-module-zona" onmouseenter="overModuleBtn(this)" onmouseout="outModuleBtn(this)" onclick="clickModuleBtn(1)"></div>
+                            </div>
 
-.m-unity-locked .m-unity-img img{
-    filter: grayscale(100%);
-}
-.m-unity-locked .m-unity-onda{
-    border-color: #64748B;
-}
-.m-unity-locked .m-unity-icon::before{
-    background-color: #64748B;
-}
-.m-unity-locked .m-unity-icon::after{
-    background-image: url(../images/icon-unity-locked.svg);
-}
-
-/****************/
-
-.m-unity-over{
-    animation: animacion-unity-over 0.5s 1 forwards;
-}
-@keyframes animacion-unity-over{
-    0%{
-        transform: scale(1);
-        animation-timing-function: ease-out;
-    }
-    30%{
-        transform: scale(0.95);
-        animation-timing-function: ease-in;
-    }
-    70%{
-        transform: scale(1.1);
-        animation-timing-function: ease-out;
-    }
-    100%{
-        transform: scale(1.05);
-    }
-}
-.m-unity-over .m-unity-onda{
-    width: 120%;
-    height: 120%;
-    opacity: 0;
-    transition: width 1.5s, height 1.5s, opacity 1.5s ease-out;
-}
-.m-unity-over .m-unity-img{
-    box-shadow: 0px 15px 10px -8px rgba(0,0,0,0.8);
-}
-.m-unity-over .m-unity-icon{
-    width: 60px;
-    height: 60px;
-    right: 5px;
-    bottom: 5px;
-}
-.m-unity-over .m-unity-icon::before{
-    width: 55px;
-    height: 55px;
-    top: 2.5px;
-    left: 2.5px;
-}
-.m-unity-over .m-unity-icon::after{
-    top: 17.5px;
-    left: 17.5px;
-}
-
-.m-unity-out{
-    animation: animacion-unity-out 0.2s 1 forwards;
-}
-@keyframes animacion-unity-out{
-    0%{
-        transform: scale(1.05);
-        animation-timing-function: ease-out;
-    }
-    30%{
-        transform: scale(1.1);
-        animation-timing-function: ease-in;
-    }
-    100%{
-        transform: scale(1);
-    }
-}
+                            .m2-module-out{
+    
+}*/

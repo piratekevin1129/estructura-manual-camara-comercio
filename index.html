@@ -8,7 +8,7 @@
     <link href="assets/css/main.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/welcomepage.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/menu1.css" type="text/css" rel="stylesheet" />
-    <link href="assets/css/menu1.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/menu2.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/animations.css" type="text/css" rel="stylesheet" />
     <title>Manual</title>
 
@@ -21,7 +21,7 @@
 <body>
     <div id="container">
         <div id="fondo">
-            <div id="fondo-img" style="background-image: url(./assets/images/fondo.jpg);"></div>
+            <div id="fondo-img"></div>
         </div>
         <div id="fondo-aros" class="fondo-aros-offf">
             <div id="aro1">
@@ -52,8 +52,8 @@
                                 <h2>Cámara de comercio<br>Medellín</h2>
                                 <div></div>
                             </div>
-                            <div id="w-boton">
-                                <button class="w-button" type="button" onclick="clickComenzar()">
+                            <div id="w-boton" class="boton-off">
+                                <button id="btn-comenzar" class="w-button" type="button">
                                     <span>Comenzamos</span>
                                     <div><img src="assets/images/icon-mano-instruccion.svg" /></div>
                                 </button>
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="m-unity-icon"></div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)"></div>
+                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)" onclick="clickUnityBtn(1)"></div>
                             </div>
 
                             <div class="m-unity-btn">
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="m-unity-icon"></div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)"></div>
+                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)" onclick="clickUnityBtn(2)"></div>
                             </div>
 
                             <div class="m-unity-btn">
@@ -113,7 +113,7 @@
                                     </div>
                                     <div class="m-unity-icon"></div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)"></div>
+                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)" onclick="clickUnityBtn(3)"></div>
                             </div>
                         </div>
                     </div>
@@ -121,26 +121,61 @@
                 <div id="menu2" class="container-content">
                     <div class="m2-col">
                         <div class="m2-row1">
-                            <div id="m2-titulo" class="titulo-off">
+                            <div id="m2-titulo">
                                 <h1>Manual de proveedores</h1>
                             </div>
-                            <div id="m2-subtitulo" class="titulo-off">
+                            <div id="m2-subtitulo">
                                 <h2>Cámara de comercio Medellín</h2>
                             </div>
-                            <div id="m2-texto" class="titulo-off">
+                            <div id="m2-texto">
                                 <p>Haz clic en las imágenes de abajo para ver el contenido</p>
+                            </div>
+                            <div id="m2-unidad">
+                                <img src="assets/images/icon-categoria.svg" />
+                                <p>CATEGORÍA</p>
                             </div>
                         </div>
                         <div class="m2-row2">
-                            <div class="m-module-btn">
-                                <div class="m-unity m-unity-unlocked m-unity-out">
-                                    <div class="m-unity-onda"></div>
-                                    <div class="m-unity-img">
-                                        <img src="content/unidad1/foto.png" />
+                            <div class="m2-module-btn">
+                                <div class="m2-module m2-module-out">
+                                    <div class="m2-module-img">
+                                        <img src="content/unidad1/modulo1/foto.jpg" />
                                     </div>
-                                    <div class="m-unity-icon"></div>
+                                    <div class="m2-module-info">
+                                        <div><span>1</span></div>
+                                        <p>Contratación suministros</p>
+                                    </div>
+                                    <div class="m2-module-menu">
+                                        <ul class="m2-module-menu-content">
+                                            <li>
+                                                <img src="assets/images/icon-module-video.svg" />
+                                                <span>Inducción / Reinducción</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-interactiva.svg" />
+                                                <span>Seguridad Social</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-video.svg" />
+                                                <span>Estándares mínimos del SG-SST</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-video.svg" />
+                                                <span>Concepto médico ocupacional</span>
+                                                <div></div>
+                                            </li>
+                                            <li>
+                                                <img src="assets/images/icon-module-document.svg" />
+                                                <span>Documentación</span>
+                                                <div></div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)"></div>
+                                <div class="m2-module-zona" onmouseenter="overModuleBtn(this)" onmouseout="outModuleBtn(this)" onclick="clickModuleBtn(1)"></div>
                             </div>
                         </div>
                     </div>
@@ -155,7 +190,9 @@
         init()
         window.onload = function(){
             loadImg({src:'assets/images/fondo-rojo.jpg', callBack: function(){
-                setAnimations()
+                loadImg({src:'assets/images/fondo.jpg', callBack: function(){
+                    setAnimations()
+                }})
             }})
         }
     </script>

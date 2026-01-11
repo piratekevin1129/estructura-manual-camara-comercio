@@ -123,10 +123,13 @@
 
 #w-titulo h1,
 #m-titulo h1,
+#m2-titulo h1,
 #w-subtitulo h2,
 #m-subtitulo h2,
+#m2-subtitulo h2,
 #w-texto p,
-#m-texto p{
+#m-texto p,
+#m2-texto p{
     position: relative;
     display: flex;
     font-weight: normal;
@@ -160,7 +163,17 @@
     font-size: 18px;
     color: #58595B;
 }
-                        
+
+#w-boton{
+    position: relative;
+    width: auto;
+    height: 70px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    overflow: hidden;
+    margin: 0px;
+    margin-top: -15px;
+}
 .w-button{
     cursor: pointer;
     outline: none;
@@ -174,11 +187,13 @@
     height: 55px;
     border-radius: 28px;
     overflow: hidden;
+    top: 15px;
 
     background-color: #D61921;
     border: none;
     box-sizing: border-box;
     padding: 0px 85px 0px 20px;
+    transform-origin: top center;
 }
 .w-button span{
     font-family: 'Montserrat-SemiBold';
@@ -211,13 +226,13 @@
     transform-origin: center bottom;
 }
 
-.w-button:hover{
+.w-button-enabled:hover{
     animation: animacion-w-button 0.5s 1 forwards linear;
 }
-.w-button:hover div{
+.w-button-enabled:hover div{
     background-color: #383838;
 }
-.w-button:hover div img{
+.w-button-enabled:hover div img{
     animation: animacion-w-button-img 0.75s infinite forwards linear;
 }
 @keyframes animacion-w-button{

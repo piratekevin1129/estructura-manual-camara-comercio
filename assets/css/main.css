@@ -59,6 +59,22 @@ html,body{
 #aro2 img{
     animation: animacion-fondo0-aro2 infinite 12s linear;
 }
+@keyframes animacion-fondo0-aro1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animacion-fondo0-aro2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
 
 /*#fondo-cortina{
     position: absolute;
@@ -106,5 +122,11 @@ html,body{
     left: 100%;
     left: calc(100% / 3);
     left: -moz-calc(100% / 3);
+    top: 0px;
+}
+#menu2{
+    left: 100%;
+    left: calc((100% / 3) * 2);
+    left: -moz-calc((100% / 3) * 2);
     top: 0px;
 }
