@@ -41,7 +41,7 @@
 #m2-titulo h1{
     font-family: 'Montserrat-ExtraBold';
     font-size: 25px;
-    color: #58595B;
+    color: #ffffff;
 }
 #m2-subtitulo{
     margin-bottom: 8px;
@@ -49,7 +49,7 @@
 #m2-subtitulo h2{
     font-family: 'Montserrat-ExtraBold';
     font-size: 25px;
-    color: #D61921;
+    color: #FF7E60;
 }
 #m2-texto{
     margin-bottom: 15px;
@@ -57,11 +57,12 @@
 #m2-texto p{
     font-family: 'Montserrat-Medium';
     font-size: 18px;
-    color: #58595B;
+    color: #FFFFFF;
 }
 #m2-unidad{
     position: relative;
     display: flex;
+    align-items: center;
     margin: 0px;
     width: auto;
     height: auto;
@@ -87,11 +88,12 @@
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 /*************/
 .m2-module-btn{
+    cursor: pointer;
     position: relative;
     width: 290px;
     height: 250px;
@@ -101,16 +103,35 @@
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+
+    transition: box-shadow 0.4s;
+}
+.m2-module-onda{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255,126,96,0);
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%,-50%);
 }
 
 .m2-module-img{
     position: relative;
     width: 100%;
-    height: 135px;
     overflow: hidden;
     box-sizing: border-box;
     border: #FF7E60 solid 2px;
+    border-radius: 15px 15px 0px 0px;
     border-bottom: none;
+
+    transition: height 0.25s;
 }
 .m2-module-img img{
     display: block;
@@ -123,14 +144,17 @@
 .m2-module-info{
     position: relative;
     width: 100%;
-    height: 115px;
+    padding: 0px 20px;
     box-sizing: border-box;
     border: #FF7E60 solid 2px;
+    border-radius: 0px 0px 15px 15px;
     border-top: 0px;
     display: flex;
-    flex-direction:column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+
+    transition: height 0.25s;
 }
 .m2-module-info div{
     display: flex;
@@ -147,6 +171,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
     background-color: #ffffff;
     border-radius: 50%;
 
@@ -157,45 +183,140 @@
     line-height: normal;
     text-align: center;
 
-    box-shadow: -5px 15px 15px -5px rgba(0,0,0,0.8);
+    box-shadow: -5px 10px 15px -5px rgba(0,0,0,0.8);
 }
-/*
-                                        <h3><span>1</span></h3>
-                                        <p>Contratación suministros</p>
-                                    </div>
-                                    <div class="m2-module-menu">
-                                        <ul class="m2-module-menu-content">
-                                            <li>
-                                                <img src="assets/images/icon-module-video.svg" />
-                                                <span>Inducción / Reinducción</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-interactiva.svg" />
-                                                <span>Seguridad Social</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-video.svg" />
-                                                <span>Estándares mínimos del SG-SST</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-video.svg" />
-                                                <span>Concepto médico ocupacional</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-document.svg" />
-                                                <span>Documentación</span>
-                                                <div></div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="m2-module-zona" onmouseenter="overModuleBtn(this)" onmouseout="outModuleBtn(this)" onclick="clickModuleBtn(1)"></div>
-                            </div>
 
-                            .m2-module-out{
-    
+.m2-module-info p{
+    display: flex;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'GFSDidot-Regular';
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: normal;
+    line-height: normal;
+    text-align: left;
+}
+#modulo1 .m2-module-info > p{
+    width: 110px;
+}
+
+.m2-module-menu{
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    transform-origin: center bottom;
+}
+.m2-module-menu-content{
+    position: relative;
+    display: block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border: #5E4D43 solid 1px;
+
+    transition: top 0.25s;
+}
+.m2-module-menu-content li{
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 7px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s;
+}
+.m2-module-menu-content li:hover{
+    background-color: #F4E1E5;
+}
+.m2-module-menu-content li img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+    margin-right: 10px;
+}
+.m2-module-menu-content li div{
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.m2-module-menu-content li span{
+    display: block;
+    width: auto;
+    width: calc(100% - (30px * 2));
+    width: -moz-calc(100% - (30px * 2));
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'Montserrat-Medium';
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000;
+    line-height: normal;
+}
+
+/*.m2-module-zona{
+    position: absolute;
 }*/
+
+/***************/
+.m2-module:hover{
+    cursor: pointer;
+    box-shadow: 0px 20px 10px -8px rgba(0,0,0,0.8);
+}
+.m2-module:hover .m2-module-onda{
+    width: 120%;
+    height: 120%;
+    border-color: rgba(255,126,96,1);
+    opacity: 0;
+    transition: border-color 0.25s, width 1.25s, height 1.25s, opacity 1.25s ease-out;
+}
+.m2-module-opened .m2-module-info{
+    height: 60px;
+}
+.m2-module-opened .m2-module-img{
+    height: 190px;
+}
+.m2-module-opened .m2-module-menu{
+    bottom: 60px;
+    opacity: 1;
+    filter: blur(0px);
+
+    transition: bottom 0.25s, opacity 0.1s, filter 0.25s, height 0s;
+}
+.m2-module-opened .m2-module-menu-content{
+    top: 0%;
+}
+
+.m2-module-closed .m2-module-info{
+    height: 115px;
+}
+.m2-module-closed .m2-module-img{
+    height: 135px;
+}
+.m2-module-closed .m2-module-menu{
+    bottom: 115px;
+    opacity: 0;
+    filter: blur(5px);
+
+    transition: bottom 0.25s, opacity 0.1s 0.15s, filter 0.25s, height 0s 0.25s;
+}
+.m2-module-closed .m2-module-menu-content{
+    top: 100%;
+}

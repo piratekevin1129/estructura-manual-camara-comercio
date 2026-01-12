@@ -31,9 +31,10 @@
                 <img src="assets/images/aro.png" />
             </div>
         </div>
-        <div id="fondo-cortina"></div>
+        <div id="fondo-cortina" class="fondo-cortina-off"></div>
         <div id="container-wraper">
             <div id="container-wrap">
+                <!--welcome page-->
                 <div id="welcome" class="container-content">
                     <div class="w-col">
                         <div class="w-row1">
@@ -67,6 +68,7 @@
                         <img src="assets/images/logo.svg" />
                     </div>
                 </div>
+                <!--unidades-->
                 <div id="menu1" class="container-content">
                     <div class="m-col">
                         <div class="m-row1">
@@ -118,6 +120,7 @@
                         </div>
                     </div>
                 </div>
+                <!--modulos-->
                 <div id="menu2" class="container-content">
                     <div class="m2-col">
                         <div class="m2-row1">
@@ -136,16 +139,18 @@
                             </div>
                         </div>
                         <div class="m2-row2">
-                            <div class="m2-module-btn">
-                                <div class="m2-module m2-module-out">
-                                    <div class="m2-module-img">
+                            <div class="m2-module-btn" id="modulo1">
+                                <div class="m2-module m2-module-closed" data-s="closed">
+                                    <div class="m2-module-onda"></div>
+
+                                    <div class="m2-module-img" onclick="clickModuleMenu(1,this)">
                                         <img src="content/unidad1/modulo1/foto.jpg" />
                                     </div>
-                                    <div class="m2-module-info">
+                                    <div class="m2-module-info" onclick="clickModuleMenu(1,this)">
                                         <div><span>1</span></div>
                                         <p>Contratación suministros</p>
                                     </div>
-                                    <div class="m2-module-menu">
+                                    <div class="m2-module-menu" id="modulo1-menu">
                                         <ul class="m2-module-menu-content">
                                             <li>
                                                 <img src="assets/images/icon-module-video.svg" />
@@ -175,7 +180,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="m2-module-zona" onmouseenter="overModuleBtn(this)" onmouseout="outModuleBtn(this)" onclick="clickModuleBtn(1)"></div>
+                                <!--<div class="m2-module-zona"></div>-->
                             </div>
                         </div>
                     </div>

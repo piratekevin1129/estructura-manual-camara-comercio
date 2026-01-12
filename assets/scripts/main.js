@@ -30,7 +30,6 @@ function init(){
 
     getE('fondo').style.width = ancho+'px'
     getE('fondo').style.height = alto+'px'
-    getE('fondo-img').style.backgroundImage = 'url(./assets/images/fondo.jpg)'
 }
 
 var animacion_titulos = null
@@ -38,6 +37,7 @@ var animacion_titulos_count = 0
 var animacion_titulo_btn = null
 
 function setAnimations(){
+    getE('fondo-img').style.backgroundImage = 'url(./assets/images/fondo.jpg)'
     getE('container-wrap').className = 'container-wrap-initial'
     getE('w-fotografia').className = 'w-fotografia-on'
     getE('fondo-aros').className = 'fondo-aros-on fondo0'
@@ -52,7 +52,6 @@ function setAnimations(){
                 clearTimeout(animacion_titulo_btn)
                 animacion_titulo_btn = null
 
-                console.log("animando")
                 getE('w-boton').className = 'boton-onn'
                 getE('btn-comenzar').className = 'w-button w-button-enabled'
                 getE('btn-comenzar').setAttribute('onclick','clickComenzar()')
@@ -121,6 +120,8 @@ function outUnityBtn(zona){
     unity.className = clases.join(" ")
 }
 
+var animacion_fondo_cortina = null;
+
 function clickUnityBtn(uni){
     getE('fondo-aros').className = 'fondo-aros-off fondo1'
     animacion_fondo = setTimeout(function(){
@@ -128,12 +129,37 @@ function clickUnityBtn(uni){
         animacion_fondo = null
 
         getE('container-wrap').className = 'content-wrap-1-1'
+        
         animacion_container_wrap = setTimeout(function(){
             clearTimeout(animacion_container_wrap)
             animacion_container_wrap = null
 
-            getE('fondo-aros').className = 'fondo-aros-on fondo2'
+            getE('fondo-cortina').className = 'fondo-cortina-on'
+            animacion_fondo_cortina = setTimeout(function(){
+                clearTimeout(animacion_fondo_cortina)
+                animacion_fondo_cortina = null
+                
+                getE('fondo-aros').className = 'fondo-aros-on fondo2'
+                getE('fondo-img').style.backgroundImage = 'url(./assets/images/fondo-rojo.jpg)'
+                getE('fondo-cortina').className = 'fondo-cortina-off'
+            },500)
             
         },2000)
     },500)
+}
+
+function clickModuleMenu(m,item){
+    var module_div = item.parentNode
+    var estado = module_div.getAttribute('data-s')
+    var menu_div = getE('modulo'+m+'-menu')
+    var menu_div_content = menu_div.getElementsByClassName('m2-module-menu-content')[0]
+    if(estado=="closed"){
+        module_div.className = 'm2-module m2-module-opened'
+        module_div.setAttribute('data-s','opened')
+        menu_div.style.height = menu_div_content.offsetHeight+'px'
+    }else{
+        module_div.setAttribute('data-s','closed')
+        module_div.className = 'm2-module m2-module-closed'
+        menu_div.style.height = '0px'
+    }
 }

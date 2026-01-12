@@ -106,7 +106,7 @@
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-    transition: box-shadow 0.5s;
+    transition: box-shadow 0.4s;
 }
 .m-unity-img img{
     display: block;
@@ -114,7 +114,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: filter 0.5s;
+    transition: filter 0.4s;
 }
 .m-unity-icon{
     position: absolute;
@@ -124,7 +124,7 @@
     right: 10px;
     bottom: 10px;
     background-color: rgba(255,255,255,0.3);
-    transition: width 0.5s, height 0.5s;
+    transition: width 0.4s, height 0.4s;
 }
 .m-unity-icon::before{
     content: "";
@@ -135,7 +135,7 @@
     top: 5px;
     left: 5px;
 
-    transition: background-color 0.5s, width 0.5s, height 0.5s, left 0.5s, top 0.5s;
+    transition: background-color 0.4s, width 0.4s, height 0.4s, left 0.4s, top 0.4s;
 }
 .m-unity-icon::after{
     content: "";
@@ -147,7 +147,7 @@
     background-repeat: no-repeat;
     top: 12.5px;
     left: 12.5px;
-    transition: left 0.5s, top 0.5s;
+    transition: left 0.4s, top 0.4s;
 }
 
 .m-unity-unlocked .m-unity-img img{
@@ -179,7 +179,7 @@
 /****************/
 
 .m-unity-over{
-    animation: animacion-unity-over 0.5s 1 forwards;
+    animation: animacion-unity-over 0.4s 1 forwards;
 }
 @keyframes animacion-unity-over{
     0%{
@@ -202,10 +202,10 @@
     width: 120%;
     height: 120%;
     opacity: 0;
-    transition: width 1.5s, height 1.5s, opacity 1.5s ease-out;
+    transition: width 1.25s, height 1.25s, opacity 1.25s ease-out;
 }
 .m-unity-over .m-unity-img{
-    box-shadow: 0px 15px 10px -8px rgba(0,0,0,0.8);
+    box-shadow: 0px 20px 10px -8px rgba(0,0,0,0.8);
 }
 .m-unity-over .m-unity-icon{
     width: 60px;
@@ -225,7 +225,7 @@
 }
 
 .m-unity-out{
-    animation: animacion-unity-out 0.2s 1 forwards;
+    animation: animacion-unity-out 0.15s 1 forwards;
 }
 @keyframes animacion-unity-out{
     0%{

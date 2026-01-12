@@ -76,13 +76,28 @@ html,body{
     }
 }
 
-/*#fondo-cortina{
+#fondo-cortina{
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0px;
     left: 0px;
-}*/
+    background-color: #ffffff;
+}
+.fondo-cortina-on{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s, visibility 0s;
+}
+.fondo-cortina-off{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+.fondo-cortina-offf{
+    opacity: 0;
+    visibility: hidden;
+}
 
 #container-wraper{
     position: relative;

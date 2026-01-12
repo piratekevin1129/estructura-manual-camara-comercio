@@ -129,7 +129,8 @@
 #m2-subtitulo h2,
 #w-texto p,
 #m-texto p,
-#m2-texto p{
+#m2-texto p,
+#m2-unidad > p{
     position: relative;
     display: flex;
     font-weight: normal;
