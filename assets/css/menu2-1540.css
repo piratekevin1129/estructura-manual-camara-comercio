@@ -40,7 +40,7 @@
 }
 #m2-titulo h1{
     font-family: 'Montserrat-ExtraBold';
-    font-size: 21px;
+    font-size: 25px;
     color: #ffffff;
 }
 #m2-subtitulo{
@@ -48,7 +48,7 @@
 }
 #m2-subtitulo h2{
     font-family: 'Montserrat-ExtraBold';
-    font-size: 21px;
+    font-size: 25px;
     color: #FF7E60;
 }
 #m2-texto{
@@ -56,7 +56,7 @@
 }
 #m2-texto p{
     font-family: 'Montserrat-Medium';
-    font-size: 16px;
+    font-size: 18px;
     color: #FFFFFF;
 }
 #m2-unidad{
@@ -77,7 +77,7 @@
 }
 #m2-unidad > p{
     font-family: 'Montserrat-ExtraBold';
-    font-size: 21px;
+    font-size: 25px;
     color: #ffffff;
 }
 
@@ -100,15 +100,15 @@
 .m2-module-btn{
     cursor: pointer;
     position: relative;
-    width: 256px;
-    height: 200px;
+    width: 320px;
+    height: 250px;
     margin: 10px 10px;
 }
 .m2-module{
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
 
     transition: box-shadow 0.4s;
@@ -133,7 +133,7 @@
     overflow: hidden;
     box-sizing: border-box;
     border: #FF7E60 solid 2px;
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     border-bottom: none;
 
     transition: height 0.25s;
@@ -149,10 +149,10 @@
 .m2-module-info{
     position: relative;
     width: 100%;
-    padding: 0px 12px;
+    padding: 0px 20px;
     box-sizing: border-box;
     border: #FF7E60 solid 2px;
-    border-radius: 0px 0px 12px 12px;
+    border-radius: 0px 0px 15px 15px;
     border-top: 0px;
     display: flex;
     flex-wrap: nowrap;
@@ -166,8 +166,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: #EF2E3C;
     margin-right: 10px;
@@ -176,13 +176,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background-color: #ffffff;
     border-radius: 50%;
 
     font-family: 'Montserrat-SemiBold';
-    font-size: 27px;
+    font-size: 35px;
     color: #58595B;
     font-weight: normal;
     line-height: normal;
@@ -197,20 +197,20 @@
     margin: 0px;
     padding: 0px;
     font-family: 'GFSDidot-Regular';
-    font-size: 16px;
+    font-size: 18px;
     color: #FFFFFF;
     font-weight: normal;
     line-height: normal;
     text-align: left;
 }
-#modulo1 .m2-module-info > p{width: 175px;}
-#modulo2 .m2-module-info > p{width: 180px;}
-#modulo3 .m2-module-info > p{width: 100px;}
-#modulo4 .m2-module-info > p{width: 160px;}
-#modulo5 .m2-module-info > p{width: 160px;}
-#modulo6 .m2-module-info > p{width: 180px;}
-#modulo7 .m2-module-info > p{width: 140px;}
-#modulo8 .m2-module-info > p{width: 150px;}
+#modulo1 .m2-module-info > p{width: 200px;}
+#modulo2 .m2-module-info > p{width: 210px;}
+#modulo3 .m2-module-info > p{width: 210px;}
+#modulo4 .m2-module-info > p{width: 210px;}
+#modulo5 .m2-module-info > p{width: 180px;}
+#modulo6 .m2-module-info > p{width: 210px;}
+#modulo7 .m2-module-info > p{width: 180px;}
+#modulo8 .m2-module-info > p{width: 170px;}
 
 .m2-module-menu{
     position: absolute;
@@ -279,7 +279,7 @@
     padding: 0px;
 
     font-family: 'Montserrat-Medium';
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     color: #000000;
     line-height: normal;
@@ -302,13 +302,13 @@
     transition: border-color 0.25s, width 1.25s, height 1.25s, opacity 1.25s ease-out;
 }
 .m2-module-opened .m2-module-info{
-    height: 70px;
+    height: 60px;
 }
 .m2-module-opened .m2-module-img{
-    height: 130px;
+    height: 190px;
 }
 .m2-module-opened .m2-module-menu{
-    bottom: 70px;
+    bottom: 60px;
     opacity: 1;
     filter: blur(0px);
 
@@ -319,13 +319,13 @@
 }
 
 .m2-module-closed .m2-module-info{
-    height: 90px;
+    height: 115px;
 }
 .m2-module-closed .m2-module-img{
-    height: 110px;
+    height: 135px;
 }
 .m2-module-closed .m2-module-menu{
-    bottom: 90px;
+    bottom: 115px;
     opacity: 0;
     filter: blur(5px);
 
