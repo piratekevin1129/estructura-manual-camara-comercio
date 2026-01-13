@@ -380,7 +380,7 @@
     border: #e6e6e6 solid 1px;
 }
 
-#documentos-cargados-ninguno{
+.documentos-cargados-ninguno{
     display: block;
     width: 100%;
     margin: 0px;
@@ -408,7 +408,7 @@
 }
 
 .documentos-cargado-item p,
-#documentos-cargados-ninguno{
+.documentos-cargados-ninguno{
     font-family: 'Montserrat-Medium';
     font-size: 14px;
     color: #808083;
@@ -453,7 +453,7 @@
     transition: top 0.25s ease-out, opacity 0.25s;
 }
 
-#input_documentos{
+#input_documentos,#input_documentos_form{
     position: absolute;
     width: 100%;
     height: 100%;

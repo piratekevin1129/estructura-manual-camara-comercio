@@ -198,6 +198,7 @@
                             <div></div>
                         </div>
                         <div id="video-timeline-container" class="video-timeline-container-off">
+                            <div id="video-timeline-back" onclick="clickPlayPause()"></div>
                             <div id="video-timeline">
                                 <div id="video-timeline-bar" onclick="clickTimeline(event,this)">
                                     <div id="video-timeline-tray"></div>
@@ -307,12 +308,14 @@
                             </div>
                             <p>Arrastra tus archivos aquí</p>
                             <p><span>o haz clic para buscar en tu equipo</span></p>
-                            <input type="file" name="documentos[]" multiple id="input_documentos" />
+                            <form method="post" enctype="multipart/form-data" action="guardar.php" id="input_documentos_form">
+                                <input id="input_documentos" type="file" name="documentos[]" multiple accept=".pdf" />
+                            </form>
                         </div>
                         <div class="documentos-cargados">
                             <div id="documentos-cargados-list">
-                                <h6 id="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>
-                                <!--<a class="documentos-cargado-item">
+                                <!--<h6 class="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>
+                                <a class="documentos-cargado-item">
                                     <img src="assets/images/icon-documentos-documento2.svg" />
                                     <p>Copia actualizada</p>
                                 </a>-->
@@ -328,6 +331,14 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="loader" class="loader-on">
+        <div id="loader-img">
+            <img src="assets/images/loader1.svg" />
+            <img src="assets/images/loader2.svg" />
+        </div>
+        <p id="loader-txt">Cargando</p>
     </div>
     
     <script src="estructura.js"></script>
@@ -346,6 +357,8 @@
                 getE('fondo-img2').style.backgroundImage = 'url('+data.src+')'
                 loadImg({src:'assets/images/fondo.jpg', callBack: function(data){
                     getE('fondo-img').style.backgroundImage = 'url('+data.src+')'
+
+                    getE('loader').className = 'loader-off'
                     setAnimations()
                 }})
             }})

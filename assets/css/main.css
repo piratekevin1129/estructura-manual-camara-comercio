@@ -343,3 +343,94 @@ html,body{
     transform: scale(0);
     transition: transform 0.5s 0.5s ease-in;
 }
+
+/********************/
+
+#loader{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0), rgba(255,255,255,1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+}
+
+#loader-img{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    animation: animacion-loader 1s infinite forwards linear;
+}
+@keyframes animacion-loader{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+}
+
+#loader-img img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+#loader-img img:first-child{
+    animation: animacion-loader-img1 1s infinite forwards linear;
+}
+#loader-img img:last-child{
+    animation: animacion-loader-img2 1s infinite forwards linear;
+}
+
+@keyframes animacion-loader-img1{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes animacion-loader-img2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+#loader-txt{
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 18px;
+    color: #636363;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
+}
+
+.loader-on{
+    visibility: visible;
+}
+.loader-off{
+    visibility: hidden;
+}
+.loader-off img,
+.loader-off #loader-img{
+    animation: none !important;
+}
