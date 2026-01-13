@@ -9,6 +9,7 @@
     <link href="assets/css/welcomepage.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/menu1.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/menu2.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/video.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/animations.css" type="text/css" rel="stylesheet" />
     <title>Manual</title>
 
@@ -21,7 +22,8 @@
 <body>
     <div id="container">
         <div id="fondo">
-            <div id="fondo-img"></div>
+            <div id="fondo-img" class="fondo-img-on"></div>
+            <div id="fondo-img2" class="fondo-img-off"></div>
         </div>
         <div id="fondo-aros" class="fondo-aros-offf">
             <div id="aro1">
@@ -31,7 +33,7 @@
                 <img src="assets/images/aro.png" />
             </div>
         </div>
-        <div id="fondo-cortina" class="fondo-cortina-off"></div>
+        <!--<div id="fondo-cortina" class="fondo-cortina-off"></div>-->
         <div id="container-wraper">
             <div id="container-wrap">
                 <!--welcome page-->
@@ -152,7 +154,7 @@
                                     </div>
                                     <div class="m2-module-menu" id="modulo1-menu">
                                         <ul class="m2-module-menu-content">
-                                            <li>
+                                            <li id="item-1-1-1" onclick="clickModule(1,1,1)">
                                                 <img src="assets/images/icon-module-video.svg" />
                                                 <span>Inducción / Reinducción</span>
                                                 <div></div>
@@ -172,7 +174,7 @@
                                                 <span>Concepto médico ocupacional</span>
                                                 <div></div>
                                             </li>
-                                            <li>
+                                            <li id="item-1-1-5" onclick="clickModule(1,1,5)">
                                                 <img src="assets/images/icon-module-document.svg" />
                                                 <span>Documentación</span>
                                                 <div></div>
@@ -183,19 +185,72 @@
                                 <!--<div class="m2-module-zona"></div>-->
                             </div>
                         </div>
+                        <button id="volver-btn1" class="volver-btn volver-btn-off" type="button">
+                            <img src="assets/images/icon-volver.svg" />
+                            <p>Volver al menú principal</p>
+                        </button>
+                    </div>
+                </div>
+                <!--video-->
+                <div id="videos" class="container-content">
+                    <div id="video-container">
+                        <video id="video-vid" class="video-vid-paused"></video>
+
+                        <div id="video-playpause" class="video-playpause-off">
+                            <div></div>
+                        </div>
+                        <div id="video-timeline-container" class="video-timeline-container-off">
+                            <div id="video-timeline">
+                                <div id="video-timeline-bar" onclick="clickTimeline(event,this)">
+                                    <div id="video-timeline-tray"></div>
+                                    <div id="video-timeline-bola"></div>
+                                </div>
+                                <button id="video-timeline-playpause-btn" class="video-timeline-paused" onclick="clickPlayPause()"></button>
+                                <button id="video-timeline-sound-btn" class="video-timeline-sound-on"></button>
+                                <p id="video-timeline-time">
+                                    <span id="video-timeline-currenttime">00:00</span> / <span id="video-timeline-totaltime">00:00</span>
+                                </p>
+                                <button id="video-timeline-fullscreen"></button>
+                            </div>
+                        </div>
+                        <!--<div id="video-leyend-container" class="video-leyend-off">
+                            <div id="video-leyend">
+                                <div class="video-leyend-icon">
+                                    <img src="assets/images/icon-timeline-external.svg" />
+                                </div>
+                                <div class="video-leyend-info">
+                                    <h2>Titulo</h2>
+                                    <p>Descripción</p>
+                                    <a href="#">
+                                        <span>Ver</span>
+                                        <img src="assets/images/icon-timeline-play.svg" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
         </div>
+
+        <div id="documentos-container">
+            
+        </div>
     </div>
     
+    <script src="estructura.js"></script>
+    <script src="assets/scripts/menu.js"></script>
     <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/timeline.js"></script>
     <script>
 
+        setMenu()
         init()
         window.onload = function(){
-            loadImg({src:'assets/images/fondo-rojo.jpg', callBack: function(){
-                loadImg({src:'assets/images/fondo.jpg', callBack: function(){
+            loadImg({src:'assets/images/fondo-rojo.jpg', callBack: function(data){
+                getE('fondo-img2').style.backgroundImage = 'url('+data.src+')'
+                loadImg({src:'assets/images/fondo.jpg', callBack: function(data){
+                    getE('fondo-img').style.backgroundImage = 'url('+data.src+')'
                     setAnimations()
                 }})
             }})

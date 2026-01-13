@@ -1,16 +1,16 @@
 .fondo2 #aro1{
+    width: 300px;
+    height: 300px;
+    top: 0%;
+    left: 0%;
+}
+.fondo2 #aro2{
     width: 200px;
     height: 200px;
-    top: 0%;
+    top: 98%;
     left: 100%;
     left: calc(100% - 120px);
     left: -moz-calc(100% - 120px);
-}
-.fondo2 #aro2{
-    width: 150px;
-    height: 150px;
-    top: 100%;
-    left: 100px;
 }
 
 .m2-col{
@@ -255,6 +255,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.m2-module-menu-content-checked div{
+    background-image: url(../images/icon-module-checked.svg);
+}
 .m2-module-menu-content li span{
     display: block;
     width: auto;
@@ -269,6 +272,76 @@
     font-weight: normal;
     color: #000000;
     line-height: normal;
+}
+
+.volver-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    outline: none;
+    outline-width: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: auto;
+    height: 55px;
+    padding: 0px 20px;
+    border-radius: 30px;
+    background-color: #636363;
+    border: none;
+    box-shadow: 0px 12px 15px -5px rgba(0,0,0,0.6);
+
+    transition: background-color 0.25s;
+}
+.volver-btn img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    margin-right: 10px;
+}
+.volver-btn p{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    width: auto;
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.volver-btn:hover{
+    background-color: #4C4C4C;
+}
+.volver-btn:hover img{
+    animation: animacion-volver-btn-img 0.5s infinite forwards linear;
+}
+@keyframes animacion-volver-btn-img{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+.volver-btn-off{
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.5);
+
+    transition: visibility 0.4s, opacity 0.4s, transform 0.4s, background-color 0.25s;
+}
+.volver-btn-on{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+    transition: visibility 0s, opacity 0.4s, transform 0.4s, background-color 0.25s;
 }
 
 /*.m2-module-zona{

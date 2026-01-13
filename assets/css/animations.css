@@ -198,25 +198,25 @@
         transform: rotate(0deg);
         animation-timing-function: ease-in;
     }
-    40%{
+    35%{
         opacity: 1;
         top: 0px;
         transform: rotate(-5deg);
         animation-timing-function: ease-out;
     }
-    70%{
+    60%{
         opacity: 1;
         top: -50%;
         transform: rotate(3deg);
         animation-timing-function: ease-in;
     }
-    90%{
+    75%{
         opacity: 1;
         top: 0px;
         transform: rotate(-1deg);
         animation-timing-function: ease-out;
     }
-    95%{
+    90%{
         opacity: 1;
         top: -10px;
         transform: rotate(0deg);
@@ -308,6 +308,7 @@
 /**************/
 
 .content-wrap-0-1{
+    top: 0%;
     animation: animacion-wrap-0-1 2s 1 forwards;
 }
 @keyframes animacion-wrap-0-1{
@@ -329,6 +330,7 @@
 }
 
 .content-wrap-1-1{
+    top: 0%;
     animation: animacion-wrap-1-1 2s 1 forwards;
 }
 @keyframes animacion-wrap-1-1{
@@ -346,5 +348,35 @@
     }
     100%{
         left: -200%;
+    }
+}
+
+.content-wrap-1-2{
+    left: -200%;
+    animation: animacion-wrap-1-2 2s 1 forwards;
+}
+@keyframes animacion-wrap-1-2{
+    0%{
+        top: 0%;
+        animation-timing-function: ease-out;
+    }
+    30%{
+        top: -10%;
+        animation-timing-function: ease-in-out;
+    }
+    100%{
+        top: 100%;
+    }
+}
+.content-wrap-2-1{
+    left: -200%;
+    animation: animacion-wrap-2-1 2s 1 forwards ease-out;
+}
+@keyframes animacion-wrap-2-1{
+    0%{
+        top: 100%;
+    }
+    100%{
+        top: 0%;
     }
 }

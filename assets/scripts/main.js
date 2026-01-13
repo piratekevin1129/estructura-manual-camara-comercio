@@ -98,7 +98,7 @@ function clickComenzar(){
                 }
                 animacion_titulos_count++
             },500)
-        },2000)
+        },1000)
     },500)   
 }
 
@@ -129,22 +129,18 @@ function clickUnityBtn(uni){
         animacion_fondo = null
 
         getE('container-wrap').className = 'content-wrap-1-1'
-        
+                
         animacion_container_wrap = setTimeout(function(){
             clearTimeout(animacion_container_wrap)
             animacion_container_wrap = null
 
-            getE('fondo-cortina').className = 'fondo-cortina-on'
-            animacion_fondo_cortina = setTimeout(function(){
-                clearTimeout(animacion_fondo_cortina)
-                animacion_fondo_cortina = null
-                
-                getE('fondo-aros').className = 'fondo-aros-on fondo2'
-                getE('fondo-img').style.backgroundImage = 'url(./assets/images/fondo-rojo.jpg)'
-                getE('fondo-cortina').className = 'fondo-cortina-off'
-            },500)
+            getE('fondo-img2').className = "fondo-img-on"
+            getE('fondo-img').className = "fondo-img-off"
+
+            getE('fondo-aros').className = 'fondo-aros-on fondo2'
+            getE('volver-btn1').className = 'volver-btn volver-btn-on'
             
-        },2000)
+        },1000)
     },500)
 }
 
@@ -162,4 +158,70 @@ function clickModuleMenu(m,item){
         module_div.className = 'm2-module m2-module-closed'
         menu_div.style.height = '0px'
     }
+}
+
+////////////////////////////////////////////////
+
+var global_item = {
+    unidad:1,
+    modulo:1,
+    tema:0
+}
+
+function clickModule(unity,module,topic){
+    global_item.tema = topic
+    getE('fondo-aros').className = 'fondo-aros-off fondo2'
+    getE('volver-btn1').className = 'volver-btn volver-btn-off'
+
+    animacion_fondo = setTimeout(function(){
+        clearTimeout(animacion_fondo)
+        animacion_fondo = null
+
+        getE('container-wrap').className = 'content-wrap-1-2'
+                
+        animacion_container_wrap = setTimeout(function(){
+            clearTimeout(animacion_container_wrap)
+            animacion_container_wrap = null
+
+            getE('fondo-img2').className = "fondo-img-off"
+            getE('fondo-img').className = "fondo-img-on"
+
+            getE('fondo-aros').className = 'fondo-aros-on fondo3'
+            
+            if(global_item.tema==1){
+                //ir a video
+                prepareVideo({src:'./content/unidad1/modulo1/tema1/video.mp4'})
+            }else{
+                //prepareInteractiva({src:'./content/unidad1/modulo1/tema5/index.html'})
+            }
+        },1000)
+    },500)
+}
+
+function finishTema(){
+    getE('fondo-aros').className = 'fondo-aros-off fondo3'
+
+    animacion_fondo = setTimeout(function(){
+        clearTimeout(animacion_fondo)
+        animacion_fondo = null
+
+        getE('container-wrap').className = 'content-wrap-2-1'
+
+        animacion_container_wrap = setTimeout(function(){
+            clearTimeout(animacion_container_wrap)
+            animacion_container_wrap = null
+
+            getE('fondo-img2').className = "fondo-img-on"
+            getE('fondo-img').className = "fondo-img-off"
+
+            getE('volver-btn1').className = 'volver-btn volver-btn-on'
+            getE('fondo-aros').className = 'fondo-aros-on fondo2'
+            
+            if(global_item.tema==1){
+                //poner en visto
+                getE('item-1-1-1').className = 'm2-module-menu-content-checked'
+            }
+            
+        },1000)
+    },500)
 }

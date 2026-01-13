@@ -13,6 +13,20 @@
     left: -moz-calc(100% - 120px);
 }
 
+#w-logo{
+    position: absolute;
+    width: 130px;
+    height: auto;
+    top: 15px;
+    right: 20px;
+}
+#w-logo img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+}
+
 .w-col{
     position: relative;
     width: 100%;
