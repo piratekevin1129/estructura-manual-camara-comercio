@@ -1,14 +1,16 @@
 .fondo3 #aro1{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     top: 0%;
     left: 0%;
 }
 .fondo3 #aro2{
     width: 200px;
     height: 200px;
-    top: 100%;
+    top: 98%;
     left: 100%;
+    left: calc(100% - 20px);
+    left: -moz-calc(100% - 20px);
 }
 .fondo3 #aro1 img{
     animation: none;
@@ -361,11 +363,11 @@ video::-webkit-media-controls-panel { display: none !important; }
     visibility: hidden;
     right: -300px;
 
-    transition: visibility 0.2s right 0.2s;
+    transition: visibility 0.2s, right 0.2s;
 }
 .video-legend-on{
     visibility: visible;   
     right: 20px;
 
-    transition: visibility 0s right 0.2s;
+    transition: visibility 0s, right 0.2s;
 }
