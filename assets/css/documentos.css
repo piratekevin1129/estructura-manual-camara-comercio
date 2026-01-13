@@ -27,7 +27,7 @@
     width: 45%;
     height: auto;
     box-sizing: border-box;
-    border-right: #e6e6e6 solid 1px;
+    border-right: #e6e6e6 solid 2px;
     display: block;
 }
 .documentos-seccion-2{
@@ -49,6 +49,8 @@
 }
 .documentos-col1{
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 50px;
     height: 50px;
     margin: 0px;
@@ -65,8 +67,8 @@
 .documentos-col2{
     display: flex;
     width: auto;
-    width: calc(100% - 60px);
-    width: -moz-calc(100% - 60px);
+    width: calc(100% - 62px);
+    width: -moz-calc(100% - 62px);
     height: 50px;
     flex-direction: column;
     justify-content: center;
@@ -97,6 +99,7 @@
 }
 .documentos-descargar-todo-btn,
 .documentos-subir-paquete-btn{
+    cursor: pointer;
     outline: none;
     outline-width: 0;
     position: relative;
@@ -105,27 +108,27 @@
     justify-content: center;
     height: auto;
     box-sizing: border-box;
+    padding: 10px 20px;
     border: none;
     background-color: #d61921;
     border-radius: 5px;
-    margin-top: 15px;
-    box-shadow: 0px 5px 0px 5px #84131b;
+    box-shadow: 0px 5px 0px 1px #84131b;
     top: 0px;
+    text-decoration: none !important;
     
     transition: top 0.2s, box-shadow 0.2s;
 }
 .documentos-descargar-todo-btn{
-    padding: 5px 10px;
+    margin-top: 15px;
     width: 100%;
 }
 .documentos-subir-paquete-btn{
-    padding: 10px 20px;
     width: auto;
 }
 .documentos-descargar-todo-btn:active,
 .documentos-subir-paquete-btn:active{
     top: 5px;
-    box-shadow: 0px 0px 0px 5px #84131b;
+    box-shadow: 0px 0px 0px 1px #84131b;
 }
 .documentos-descargar-todo-btn img,
 .documentos-subir-paquete-btn img{
@@ -150,6 +153,7 @@
     color: #ffffff;
     font-weight: normal;
     line-height: normal;
+    text-decoration: none !important;
 }
 
 .documentos-contenido{
@@ -175,42 +179,51 @@
     text-align: left;
 }
 
-.documentos-contenidos,
-.documentos-content{
+.documentos-contenidos{
     position: relative;
     width: 100%;
-    height: auto;
-    box-sizing: border-box;
+    height: 400px;
+    overflow-y: auto;
 }
-.documentos-contenidos ul,
-.documentos-cargados ul{
+
+/**********/
+
+#documentos-contenidos-list,
+#documentos-cargados-list{
+    width: 100%;
     display: block;
-    list-style: none;
     margin: 0px;
     padding: 0px;
 }
-.documentos-contenidos li,
-.documentos-cargados li{
+.documentos-contenido-item,
+.documentos-cargado-item{
+    cursor: pointer;
     width: 100%;
     margin: 0px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    text-decoration: none !important;
 }
-.documentos-contenidos li{
+.documentos-contenido-item{
     padding: 0px;
     margin-bottom: 15px;
 }
-.documentos-cargados li{
+.documentos-cargado-item{
     padding: 7px 15px;
     border-bottom: #e6e6e6 solid 1px;
 }
-.documentos-cargados ul > li:last-child{
+
+#documentos-contenidos-list .documentos-contenido-item:last-child{
+    margin-bottom: 0px;
+}
+#documentos-cargados-list .documentos-cargado-item:last-child{
     border-bottom: none;
 }
-.documentos-contenidos li > div:nth-child(1),
-.documentos-contenidos li > div:nth-child(3){
+
+.documentos-contenido-item > div:nth-child(1),
+.documentos-contenido-item > div:nth-child(3){
     display: flex;
     align-items: center;
     justify-content: center;
@@ -219,22 +232,22 @@
     margin: 0px;
     border-radius: 5px;
 }
-.documentos-contenidos li > div:nth-child(1){
+.documentos-contenido-item > div:nth-child(1){
     margin-right: 15px;
     background-color: #ffffff;
 }
-.documentos-contenidos li > div:nth-child(3){
+.documentos-contenido-item > div:nth-child(3){
     margin-left: 15px;
 }
-.documentos-contenidos li > div:nth-child(1) img,
-.documentos-contenidos li > div:nth-child(3) img{
+.documentos-contenido-item > div:nth-child(1) img,
+.documentos-contenido-item > div:nth-child(3) img{
     display: block;
     width: 30px;
     height: 30px;
     margin: 0px;
 }
 
-.documentos-contenidos li > div:nth-child(2){
+.documentos-contenido-item > div:nth-child(2){
     display: block;
     width: auto;
     width: calc(100% - (55px * 2));
@@ -243,7 +256,7 @@
     margin: 0px;
     padding: 0px;
 }
-.documentos-contenidos li > div:nth-child(2) p{
+.documentos-contenido-item > div:nth-child(2) p{
     display: block;
     width: 100%;
     margin: 2px 0px;
@@ -253,8 +266,9 @@
     color: #353535;
     font-weight: normal;
     line-height: normal;
+    text-decoration: none !important;
 }
-.documentos-contenidos li > div:nth-child(2) p span{
+.documentos-contenido-item > div:nth-child(2) p span{
     font-family: 'Montserrat-SemiBold';
     font-size: 14px;
     color: #808083;
@@ -262,17 +276,23 @@
 
 /*******************/
 .documentos-seccion-2 .documentos-row{
-    border-bottom: #e6e6e6 solid 1px;
+    border-bottom: #e6e6e6 solid 2px;
 }
 /*.documentos-seccion-2 .documentos-col2{}*/
 
 .documentos-cerrar-btn{
+    cursor: pointer;
     outline: none;
     outline-width: 0;
     position: absolute;
+    top: 50%;
+    top: calc(50% - 22.5px);
+    top: -moz-calc(50% - 22.5px);
+    right: 20px;
     width: 45px;
     height: 45px;
     border: none;
+    border-radius: 50%;
     background-color: #d61921;
     display: flex;
     align-items: center;
@@ -285,12 +305,16 @@
 }
 .documentos-cerrar-btn img{
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin: 0px;
 }
 
 .documentos-content{
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
     padding: 20px;
 }
 
@@ -321,14 +345,14 @@
 }
 #documentos-carga-content div img{
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     margin: 0px;
 }
 
 #documentos-carga-content p{
-    display: block;
-    width: 100%;
+    display: flex;
+    width: auto;
     margin: 0px;
     padding: 0px;
     font-family: 'Montserrat-SemiBold';
@@ -348,20 +372,32 @@
 .documentos-cargados{
     position: relative;
     width: 100%;
+    height: 208px;
+    overflow-y: auto;
     margin-top: 20px;
     box-sizing: border-box;
     border-radius: 15px;
     border: #e6e6e6 solid 1px;
 }
 
-.documentos-cargados li img{
+#documentos-cargados-ninguno{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.documentos-cargado-item img{
     display: block;
     width: 30px;
     height: 30px;
     margin: 0px;
     margin-right: 15px;
 }
-.documentos-cargados li p{
+.documentos-cargado-item p{
     display: block;
     width: auto;
     width: calc(100% - 45px);
@@ -369,12 +405,16 @@
     height: auto;
     margin: 0px;
     padding: 0px;
+}
 
+.documentos-cargado-item p,
+#documentos-cargados-ninguno{
     font-family: 'Montserrat-Medium';
     font-size: 14px;
     color: #808083;
     font-weight: normal;
     line-height: normal;
+    text-decoration: none !important;
 }
 
 .documentos-subir-paquete{
@@ -382,7 +422,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 15px 20px;
-    border-bottom: #e6e6e6 solid 1px;
+    border-top: #e6e6e6 solid 2px;
     display: flex;
     justify-content: flex-end;
 }
@@ -391,25 +431,32 @@
 
 .documentos-container-on{
     background-color: rgba(0,0,0,0.65);
-    box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.5) inset;
+    box-shadow: 0px 0px 40px 10px rgba(0,0,0,0.25) inset;
+    visibility: visible;
     transition: background-color 0.25s, visibility 0s, box-shadow 0.25s;
 }
 .documentos-container-off{
     background-color: rgba(0,0,0,0);
     box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.0) inset;
+    visibility: hidden;
     transition: background-color 0.25s 0.25s, visibility 0.5s, box-shadow 0.25s 0.25s;
 }
 
 .documentos-container-on #documentos-box{
     top: 0px;
     opacity: 1;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-    transition: box-shadow 0.25s 0.25s, top 0.25s 0.25s ease-in, opacity 0.25s 0.25s;
+    transition: top 0.25s 0.25s ease-in, opacity 0.25s 0.25s;
 }
 .documentos-container-off #documentos-box{
     top: -20px;
     opacity: 0;
-    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
-    transition: box-shadow 0.25s, top 0.25s ease-out, opacity 0.25s;
+    transition: top 0.25s ease-out, opacity 0.25s;
 }
 
+#input_documentos{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+}

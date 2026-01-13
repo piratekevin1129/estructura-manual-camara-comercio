@@ -1,3 +1,7 @@
+var i = 0;
+var j = 0;
+var k = 0;
+
 function loadImg(data){
     var img = new Image()
     if(data.extra!=null&&data.extra!=undefined){
@@ -30,6 +34,10 @@ function init(){
 
     getE('fondo').style.width = ancho+'px'
     getE('fondo').style.height = alto+'px'
+}
+
+function cerrarToolbar(){
+    getE('toolbar').className = 'toolbar-off'
 }
 
 var animacion_titulos = null
@@ -128,7 +136,7 @@ function clickUnityBtn(uni){
         clearTimeout(animacion_fondo)
         animacion_fondo = null
 
-        getE('container-wrap').className = 'content-wrap-1-1'
+        getE('container-wrap').className = 'content-wrap-1-2'
                 
         animacion_container_wrap = setTimeout(function(){
             clearTimeout(animacion_container_wrap)
@@ -160,6 +168,28 @@ function clickModuleMenu(m,item){
     }
 }
 
+function volverMenu(){
+    getE('fondo-aros').className = 'fondo-aros-off fondo2'
+    getE('volver-btn1').className = 'volver-btn volver-btn-off'
+
+    animacion_fondo = setTimeout(function(){
+        clearTimeout(animacion_fondo)
+        animacion_fondo = null
+
+        getE('container-wrap').className = 'content-wrap-2-1'
+        
+        animacion_container_wrap = setTimeout(function(){
+            clearTimeout(animacion_container_wrap)
+            animacion_container_wrap = null
+
+            getE('fondo-img2').className = "fondo-img-off"
+            getE('fondo-img').className = "fondo-img-on"
+
+            getE('fondo-aros').className = 'fondo-aros-on fondo1'
+        },1000)
+    },500)
+}
+
 ////////////////////////////////////////////////
 
 var global_item = {
@@ -177,7 +207,7 @@ function clickModule(unity,module,topic){
         clearTimeout(animacion_fondo)
         animacion_fondo = null
 
-        getE('container-wrap').className = 'content-wrap-1-2'
+        getE('container-wrap').className = 'content-wrap-2-3'
                 
         animacion_container_wrap = setTimeout(function(){
             clearTimeout(animacion_container_wrap)
@@ -186,6 +216,7 @@ function clickModule(unity,module,topic){
             getE('fondo-img2').className = "fondo-img-off"
             getE('fondo-img').className = "fondo-img-on"
 
+            getE('toolbar').className = 'toolbar-on'
             getE('fondo-aros').className = 'fondo-aros-on fondo3'
             
             if(global_item.tema==1){
@@ -200,28 +231,23 @@ function clickModule(unity,module,topic){
 
 function finishTema(){
     getE('fondo-aros').className = 'fondo-aros-off fondo3'
+    getE('container-wrap').className = 'content-wrap-3-2'
+    getE('fondo-img2').className = "fondo-img-on"
+    getE('fondo-img').className = "fondo-img-off"
+    getE('toolbar').className = 'toolbar-off'
 
-    animacion_fondo = setTimeout(function(){
-        clearTimeout(animacion_fondo)
-        animacion_fondo = null
+    animacion_container_wrap = setTimeout(function(){
+        clearTimeout(animacion_container_wrap)
+        animacion_container_wrap = null
 
-        getE('container-wrap').className = 'content-wrap-2-1'
 
-        animacion_container_wrap = setTimeout(function(){
-            clearTimeout(animacion_container_wrap)
-            animacion_container_wrap = null
-
-            getE('fondo-img2').className = "fondo-img-on"
-            getE('fondo-img').className = "fondo-img-off"
-
-            getE('volver-btn1').className = 'volver-btn volver-btn-on'
-            getE('fondo-aros').className = 'fondo-aros-on fondo2'
-            
-            if(global_item.tema==1){
-                //poner en visto
-                getE('item-1-1-1').className = 'm2-module-menu-content-checked'
-            }
-            
-        },1000)
-    },500)
+        getE('volver-btn1').className = 'volver-btn volver-btn-on'
+        getE('fondo-aros').className = 'fondo-aros-on fondo2'
+        
+        if(global_item.tema==1){
+            //poner en visto
+            getE('item-1-1-1').className = 'm2-module-menu-content-checked'
+        }
+        
+    },2000)
 }

@@ -142,54 +142,51 @@
                             </div>
                         </div>
                         <div class="m2-row2">
-                            <div class="m2-module-btn" id="modulo1">
-                                <div class="m2-module m2-module-closed" data-s="closed">
-                                    <div class="m2-module-onda"></div>
-
-                                    <div class="m2-module-img" onclick="clickModuleMenu(1,this)">
-                                        <img src="content/unidad1/modulo1/foto.jpg" />
+                            <div id="m2-modules">
+                                <!--<div class="m2-module-btn" id="modulo1">
+                                    <div class="m2-module m2-module-closed" data-s="closed">
+                                        <div class="m2-module-onda"></div>
+    
+                                        <div class="m2-module-img" onclick="clickModuleMenu(1,this)">
+                                            <img src="content/unidad1/modulo1/foto.jpg" />
+                                        </div>
+                                        <div class="m2-module-info" onclick="clickModuleMenu(1,this)">
+                                            <div><span>1</span></div>
+                                            <p>Contratación suministros</p>
+                                        </div>
+                                        <div class="m2-module-menu" id="modulo1-menu">
+                                            <ul class="m2-module-menu-content">
+                                                <li id="item-1-1-1" onclick="clickModule(1,1,1)">
+                                                    <img src="assets/images/icon-module-video.svg" />
+                                                    <span>Inducción / Reinducción</span>
+                                                    <div></div>
+                                                </li>
+                                                <li>
+                                                    <img src="assets/images/icon-module-interactiva.svg" />
+                                                    <span>Seguridad Social</span>
+                                                    <div></div>
+                                                </li>
+                                                <li>
+                                                    <img src="assets/images/icon-module-video.svg" />
+                                                    <span>Estándares mínimos del SG-SST</span>
+                                                    <div></div>
+                                                </li>
+                                                <li>
+                                                    <img src="assets/images/icon-module-video.svg" />
+                                                    <span>Concepto médico ocupacional</span>
+                                                    <div></div>
+                                                </li>
+                                                <li id="item-1-1-5" onclick="clickModule(1,1,5)">
+                                                    <img src="assets/images/icon-module-document.svg" />
+                                                    <span>Documentación</span>
+                                                    <div></div>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="m2-module-info" onclick="clickModuleMenu(1,this)">
-                                        <div><span>1</span></div>
-                                        <p>Contratación suministros</p>
-                                    </div>
-                                    <div class="m2-module-menu" id="modulo1-menu">
-                                        <ul class="m2-module-menu-content">
-                                            <li id="item-1-1-1" onclick="clickModule(1,1,1)">
-                                                <img src="assets/images/icon-module-video.svg" />
-                                                <span>Inducción / Reinducción</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-interactiva.svg" />
-                                                <span>Seguridad Social</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-video.svg" />
-                                                <span>Estándares mínimos del SG-SST</span>
-                                                <div></div>
-                                            </li>
-                                            <li>
-                                                <img src="assets/images/icon-module-video.svg" />
-                                                <span>Concepto médico ocupacional</span>
-                                                <div></div>
-                                            </li>
-                                            <li id="item-1-1-5" onclick="clickModule(1,1,5)">
-                                                <img src="assets/images/icon-module-document.svg" />
-                                                <span>Documentación</span>
-                                                <div></div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--<div class="m2-module-zona"></div>-->
+                                </div>-->
                             </div>
                         </div>
-                        <button id="volver-btn1" class="volver-btn volver-btn-off" type="button">
-                            <img src="assets/images/icon-volver.svg" />
-                            <p>Volver al menú principal</p>
-                        </button>
                     </div>
                 </div>
                 <!--video-->
@@ -234,6 +231,26 @@
             </div>
         </div>
 
+        <div id="toolbar" class="toolbar-off">
+            <div id="toolbar-menu-wrap">
+                <div id="toolbar-menu">
+                    <button id="toolbar-menu-cerrar-btn" onclick="cerrarToolbar()"></button>
+                    <button id="toolbar-menu-prev-btn"></button>
+                    <button id="toolbar-menu-next-btn"></button>
+                    <button id="toolbar-menu-info-btn"></button>
+                </div>
+            </div>
+            <div id="toolbar-bola">
+                <img id="toolbar-bola1" src="assets/images/icon-toolbar1.svg" />
+                <img id="toolbar-bola2" src="assets/images/icon-toolbar2.svg" />
+            </div>
+        </div>
+
+        <button id="volver-btn1" class="volver-btn volver-btn-off" type="button" onclick="volverMenu()">
+            <img src="assets/images/icon-volver.svg" />
+            <p>Volver al menú principal</p>
+        </button>
+
         <div id="documentos-container" class="documentos-container-off">
             <div id="documentos-box">
                 <div class="documentos-seccion-1">
@@ -245,16 +262,16 @@
                             <h2>Documentos de apoyo</h2>
                             <p>10 Documentos disponibles</p>
                         </div>
-                        <button class="documentos-descargar-todo-btn">
+                        <a href="./assets/docs/documentos-camara-comercio.zip" target="_blank" class="documentos-descargar-todo-btn">
                             <img src="assets/images/icon-documentos-descargar.svg" />
                             <span>Descargar todo</span>
-                        </button>
+                        </a>
                     </div>
                     <div class="documentos-contenido">
                         <p>Contenido:</p>
                         <div class="documentos-contenidos">
-                            <ul>
-                                <li>
+                            <div id="documentos-contenidos-list">
+                                <!--<a class="documentos-contenido-item">
                                     <div>
                                         <img src="assets/images/icon-documentos-documento.svg" />
                                     </div>
@@ -265,8 +282,8 @@
                                     <div>
                                         <img src="assets/images/icon-documentos-descargar2.svg" />
                                     </div>
-                                </li>
-                            </ul>
+                                </a>-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -279,33 +296,34 @@
                             <h2>Adjunta los documentos actualizados</h2>
                             <p>Sube los archivos requeridos para tu proceso</p>
                         </div>
-                        <button class="documentos-cerrar-btn">
-                            <img src="assets/images/icon-documentos-descargar.svg" />
-                            <span>Descargar todo</span>
+                        <button class="documentos-cerrar-btn" onclick="cerrarDocumentos()">
+                            <img src="assets/images/icon-cerrar2.svg" />
                         </button>
                     </div>
                     <div class="documentos-content">
                         <div id="documentos-carga-content">
                             <div>
-                                <img src="assets/images/icon-documentos-cerrar.svg" />
+                                <img src="assets/images/icon-documentos-subir.svg" />
                             </div>
                             <p>Arrastra tus archivos aquí</p>
                             <p><span>o haz clic para buscar en tu equipo</span></p>
+                            <input type="file" name="documentos[]" multiple id="input_documentos" />
                         </div>
                         <div class="documentos-cargados">
-                            <ul>
-                                <li>
+                            <div id="documentos-cargados-list">
+                                <h6 id="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>
+                                <!--<a class="documentos-cargado-item">
                                     <img src="assets/images/icon-documentos-documento2.svg" />
                                     <p>Copia actualizada</p>
-                                </li>
-                            </ul>
+                                </a>-->
+                            </div>
                         </div>
-                        <div class="documentos-subir-paquete">
-                            <button class="documentos-subir-paquete-btn">
-                                <span>Subir paquete</span>
-                                <img src="assets/images/icon-documentos-subir2.svg" />
-                            </button>
-                        </div>
+                    </div>
+                    <div class="documentos-subir-paquete">
+                        <button class="documentos-subir-paquete-btn">
+                            <span>Subir paquete</span>
+                            <img src="assets/images/icon-documentos-subir2.svg" />
+                        </button>
                     </div>
                 </div>
             </div>
@@ -316,10 +334,13 @@
     <script src="assets/scripts/menu.js"></script>
     <script src="assets/scripts/main.js"></script>
     <script src="assets/scripts/timeline.js"></script>
+    <script src="assets/scripts/documentos.js"></script>
     <script>
 
+        setDocumentos()
         setMenu()
         init()
+
         window.onload = function(){
             loadImg({src:'assets/images/fondo-rojo.jpg', callBack: function(data){
                 getE('fondo-img2').style.backgroundImage = 'url('+data.src+')'

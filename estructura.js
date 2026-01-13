@@ -69,12 +69,22 @@ var estructura = [{
     }]
 },{
     nombre:'Alcance',
-    modulos:[
-
-    ]
+    modulos:[]
 },{
     nombre:'Categoría',
-    modulos:[
+    modulos:[]
+}]
 
-    ]
+var documentos = [{
+    nombre:'Acreditación Aliado',
+    src:'acreditacion-aliado.pdf',
+    peso:'27 KB'
+},{
+    nombre:'Formulario de conocimiento del cliente persona jurídica - Sector asegurador',
+    src:'formulario-conocimiento-cliente-pj_sector-asegurador.pdf',
+    peso:'194 KB'
+},{
+    nombre:'Información adicional',
+    src:'informacion-adicional.pdf',
+    peso:'19 KB'
 }]

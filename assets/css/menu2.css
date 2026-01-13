@@ -84,20 +84,25 @@
 .m2-row2{
     position: relative;
     width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+#m2-modules{
+    position: relative;
+    width: 100%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
 /*************/
 .m2-module-btn{
     cursor: pointer;
     position: relative;
-    width: 290px;
+    width: 320px;
     height: 250px;
-    margin: 15px 10px;
+    margin: 10px 10px;
 }
 .m2-module{
     position: relative;
@@ -198,9 +203,14 @@
     line-height: normal;
     text-align: left;
 }
-#modulo1 .m2-module-info > p{
-    width: 110px;
-}
+#modulo1 .m2-module-info > p{width: 200px;}
+#modulo2 .m2-module-info > p{width: 210px;}
+#modulo3 .m2-module-info > p{width: 210px;}
+#modulo4 .m2-module-info > p{width: 210px;}
+#modulo5 .m2-module-info > p{width: 180px;}
+#modulo6 .m2-module-info > p{width: 210px;}
+#modulo7 .m2-module-info > p{width: 180px;}
+#modulo8 .m2-module-info > p{width: 170px;}
 
 .m2-module-menu{
     position: absolute;
@@ -272,76 +282,6 @@
     font-weight: normal;
     color: #000000;
     line-height: normal;
-}
-
-.volver-btn{
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    outline: none;
-    outline-width: 0;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    box-sizing: border-box;
-    width: auto;
-    height: 55px;
-    padding: 0px 20px;
-    border-radius: 30px;
-    background-color: #636363;
-    border: none;
-    box-shadow: 0px 12px 15px -5px rgba(0,0,0,0.6);
-
-    transition: background-color 0.25s;
-}
-.volver-btn img{
-    display: block;
-    width: 30px;
-    height: 30px;
-    margin: 0px;
-    margin-right: 10px;
-}
-.volver-btn p{
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    width: auto;
-    font-family: 'Montserrat-ExtraBold';
-    font-size: 14px;
-    color: #ffffff;
-    font-weight: normal;
-    line-height: normal;
-}
-
-.volver-btn:hover{
-    background-color: #4C4C4C;
-}
-.volver-btn:hover img{
-    animation: animacion-volver-btn-img 0.5s infinite forwards linear;
-}
-@keyframes animacion-volver-btn-img{
-    0%,100%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(1.2);
-    }
-}
-
-.volver-btn-off{
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0.5);
-
-    transition: visibility 0.4s, opacity 0.4s, transform 0.4s, background-color 0.25s;
-}
-.volver-btn-on{
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
-
-    transition: visibility 0s, opacity 0.4s, transform 0.4s, background-color 0.25s;
 }
 
 /*.m2-module-zona{

@@ -153,3 +153,193 @@ html,body{
     left: -moz-calc((100% / 3) * 2);
     top: -100%;
 }
+
+
+/***************/
+
+.volver-btn{
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    outline: none;
+    outline-width: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: auto;
+    height: 55px;
+    padding: 0px 20px;
+    border-radius: 30px;
+    background-color: #636363;
+    border: none;
+    box-shadow: 0px 12px 15px -5px rgba(0,0,0,0.6);
+
+    transition: background-color 0.25s;
+}
+.volver-btn img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    margin-right: 10px;
+}
+.volver-btn p{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    width: auto;
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: normal;
+}
+
+.volver-btn:hover{
+    background-color: #4C4C4C;
+}
+.volver-btn:hover img{
+    animation: animacion-volver-btn-img 0.5s infinite forwards linear;
+}
+@keyframes animacion-volver-btn-img{
+    0%,100%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+}
+
+.volver-btn-off{
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.5);
+
+    transition: visibility 0.4s, opacity 0.4s, transform 0.4s, background-color 0.25s;
+}
+.volver-btn-on{
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+    transition: visibility 0s, opacity 0.4s, transform 0.4s, background-color 0.25s;
+}
+
+/*************/
+
+#toolbar{
+    position: absolute;
+    width: auto;
+    height: 60px;
+    top: 15px;
+    left: 20px;
+}
+
+#toolbar-bola{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    transform-origin: right center;
+    pointer-events: none;
+}
+#toolbar-bola img{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+}
+#toolbar-bola1{
+    left: 0px;
+}
+#toolbar-bola2{
+    left: 100%;
+    transform-origin: left center;
+}
+
+#toolbar-menu-wrap{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0px 30px 30px 0px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+    margin-left: 30px;
+}
+
+#toolbar-menu{
+    position: absolute;
+    width: auto;
+    width: calc(60px * 4);
+    width: -moz-calc(60px * 4);
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff;
+}
+#toolbar-menu button{
+    outline: none;
+    outline-width: 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+
+    transition: background-color 0.2s, background-size 0.2s;
+}
+#toolbar-menu button:hover{
+    cursor: pointer;
+    background-size: 20px;
+    background-color: #ff161f;
+}
+#toolbar-menu-cerrar-btn{background-image: url(../images/icon-cerrar.svg);}
+#toolbar-menu-cerrar-btn:hover{background-image: url(../images/icon-cerrar2.svg);}
+#toolbar-menu-prev-btn{background-image: url(../images/icon-prev.svg);}
+#toolbar-menu-prev-btn:hover{background-image: url(../images/icon-prev2.svg);}
+#toolbar-menu-next-btn{background-image: url(../images/icon-next.svg);}
+#toolbar-menu-next-btn:hover{background-image: url(../images/icon-next2.svg);}
+#toolbar-menu-info-btn{background-image: url(../images/icon-info.svg);}
+#toolbar-menu-info-btn:hover{background-image: url(../images/icon-info2.svg);}
+
+/***************/
+.toolbar-on #toolbar-bola{
+    transform: scale(1);
+    transition: transform 0.5s ease-out;
+}
+.toolbar-on #toolbar-bola2{
+    transform: rotate(180deg);
+    transition: transform 0.5s 0.5s;
+}
+.toolbar-on #toolbar-menu-wrap{
+    width: auto;
+    width: calc(60px * 4);
+    width: -moz-calc(60px * 4);
+    transition: width 0.5s 1s;
+}
+
+.toolbar-off #toolbar-menu-wrap{
+    width: 0px;
+    transition: width 0.5s;
+}
+.toolbar-off #toolbar-bola2{
+    transform: rotate(0deg);
+    transition: transform 0.5s 0.5s;
+}
+.toolbar-off #toolbar-bola{
+    transform: scale(0);
+    transition: transform 0.5s 0.5s ease-in;
+}
