@@ -5,6 +5,19 @@ var estructura = [{
         temas:[{
             nombre:'Inducción / Reinducción',
             tipo:'video',
+            legends:[{
+                time:40,
+                href:'https://vimeo.com/1152536138/0f9b3c3669',
+                text:'Video',
+                btn:'Ver',
+                subtext:'Inducción Reinducción Contratistas CCMA'
+            },{
+                time:45,
+                href:'https://forms.office.com/r/CmLBFsAmvN',
+                text:'Formulario',
+                btn:'Ver',
+                subtext:'Evaluación inducción / reinducción para contratistas'
+            }],
             active:true
         },
         {
@@ -13,11 +26,13 @@ var estructura = [{
         },
         {
             nombre:'Estándares mínimos del SG-SST',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         },
         {
             nombre:'Concepto médico ocupacional',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         },
         {
             nombre:'Documentación',
@@ -28,43 +43,50 @@ var estructura = [{
         nombre:'Contratación de servicios comunicacionales',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     },{
         nombre:'Contratación Outsourcing',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     },{
         nombre:'Contratación servicios de administración general',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     },{
         nombre:'Contratación servicios de eventos',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     },{
         nombre:'Contratación consultorías y formación',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     },{
         nombre:'Contratación cumplimiento legal y financiero',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     },{
         nombre:'Conceptos generales',
         temas:[{
             nombre:'Tema 1',
-            tipo:'video'
+            tipo:'video',
+            legends:[]
         }]
     }]
 },{

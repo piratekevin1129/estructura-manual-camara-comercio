@@ -202,6 +202,7 @@
                             <div id="video-timeline">
                                 <div id="video-timeline-bar" onclick="clickTimeline(event,this)">
                                     <div id="video-timeline-tray"></div>
+                                    <div id="video-timeline-tags"></div>
                                     <div id="video-timeline-bola"></div>
                                 </div>
                                 <button id="video-timeline-playpause-btn" class="video-timeline-paused" onclick="clickPlayPause()"></button>
@@ -212,21 +213,19 @@
                                 <button id="video-timeline-fullscreen"></button>
                             </div>
                         </div>
-                        <!--<div id="video-leyend-container" class="video-leyend-off">
-                            <div id="video-leyend">
-                                <div class="video-leyend-icon">
-                                    <img src="assets/images/icon-timeline-external.svg" />
-                                </div>
-                                <div class="video-leyend-info">
-                                    <h2>Titulo</h2>
-                                    <p>Descripción</p>
-                                    <a href="#">
-                                        <span>Ver</span>
-                                        <img src="assets/images/icon-timeline-play.svg" />
-                                    </a>
-                                </div>
+                        <div id="video-legend" class="video-legend-off">
+                            <div class="video-legend-icon">
+                                <img src="assets/images/icon-timeline-external.svg" />
                             </div>
-                        </div>-->
+                            <div class="video-legend-info">
+                                <h2 id="video-legend-text"></h2>
+                                <p id="video-legend-subtext"></p>
+                                <a id="video-legend-link" href="#" target="_blank">
+                                    <span id="video-legend-btn"></span>
+                                    <img src="assets/images/icon-legend-link.svg" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

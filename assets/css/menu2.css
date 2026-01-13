@@ -9,8 +9,8 @@
     height: 200px;
     top: 98%;
     left: 100%;
-    left: calc(100% - 120px);
-    left: -moz-calc(100% - 120px);
+    left: calc(100% - 20px);
+    left: -moz-calc(100% - 20px);
 }
 
 .m2-col{

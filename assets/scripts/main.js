@@ -193,14 +193,20 @@ function volverMenu(){
 ////////////////////////////////////////////////
 
 var global_item = {
-    unidad:1,
-    modulo:1,
+    unidad:0,
+    modulo:0,
     tema:0
 }
+var actual_item = null
 
-function clickModule(unity,module,topic){
+function clickModule(unity,modul,topic){
     global_item.tema = topic
-    if(global_item.tema==5){
+    global_item.modulo = modul
+    global_item.unity = unity
+
+    actual_item = estructura[unity-1].modulos[modul-1].temas[topic-1]
+
+    if(actual_item.tipo=='documentos'){
         abrirDocumentos()
     }else{
         getE('fondo-aros').className = 'fondo-aros-off fondo2'
@@ -216,19 +222,19 @@ function clickModule(unity,module,topic){
                 clearTimeout(animacion_container_wrap)
                 animacion_container_wrap = null
     
-                getE('fondo-img2').className = "fondo-img-off"
-                getE('fondo-img').className = "fondo-img-on"
+                //getE('fondo-img2').className = "fondo-img-off"
+                //getE('fondo-img').className = "fondo-img-on"
     
                 getE('toolbar').className = 'toolbar-on'
                 getE('fondo-aros').className = 'fondo-aros-on fondo3'
                 
-                if(global_item.tema==1){
+                if(actual_item.tipo=='video'){
                     //ir a video
                     prepareVideo({src:'./content/unidad1/modulo1/tema1/video.mp4'})
                 }else{
                     //prepareInteractiva({src:'./content/unidad1/modulo1/tema5/index.html'})
                 }
-            },1000)
+            },2000)
         },500)
     }
 }
@@ -236,8 +242,8 @@ function clickModule(unity,module,topic){
 function finishTema(){
     getE('fondo-aros').className = 'fondo-aros-off fondo3'
     getE('container-wrap').className = 'content-wrap-3-2'
-    getE('fondo-img2').className = "fondo-img-on"
-    getE('fondo-img').className = "fondo-img-off"
+    //getE('fondo-img2').className = "fondo-img-on"
+    //getE('fondo-img').className = "fondo-img-off"
     getE('toolbar').className = 'toolbar-off'
 
     animacion_container_wrap = setTimeout(function(){
@@ -248,10 +254,10 @@ function finishTema(){
         getE('volver-btn1').className = 'volver-btn volver-btn-on'
         getE('fondo-aros').className = 'fondo-aros-on fondo2'
         
-        if(global_item.tema==1){
+        if(actual_item.tipo=='video'){
             //poner en visto
             getE('item-1-1-1').className = 'm2-module-menu-content-checked'
         }
         
-    },2000)
+    },1000)
 }

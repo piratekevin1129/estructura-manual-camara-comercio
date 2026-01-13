@@ -141,10 +141,7 @@ video::-webkit-media-controls-panel { display: none !important; }
     height: 5px;
     top: 0px;
     left: 12px;
-    background-color: rgba(255,255,255,0.3);
-    box-shadow: 0px 0px 0px 0px rgba(255,255,255,0);
-    
-    transition: box-shadow 0.15s;
+    background-color: rgba(255,255,255,0.5);
 }
 #video-timeline-tray{
     position: relative;
@@ -164,6 +161,25 @@ video::-webkit-media-controls-panel { display: none !important; }
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
     transform: translate(-50%, -50%);
 }
+
+#video-timeline-tags{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+#video-timeline-tags > div{
+    position: absolute;
+    transform: translateX(-50%);
+    top: 0px;
+    width: 5px;
+    height: 100%;
+    background-color: #ffd718;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+}
+
+/***************/
 
 #video-timeline-playpause-btn,
 #video-timeline-sound-btn,
@@ -230,9 +246,6 @@ video::-webkit-media-controls-panel { display: none !important; }
 #video-timeline-container:hover{
     opacity: 1;
 }
-#video-timeline-container:hover #video-timeline-bar{
-    box-shadow: 0px 0px 5px 0px rgba(255,255,255,0.5);
-}
 
 .video-timeline-container-off{
     visibility: hidden;
@@ -241,18 +254,118 @@ video::-webkit-media-controls-panel { display: none !important; }
     visibility: visible;
 }
 
-/*<div id="video-leyend-container" class="video-leyend-off">
-    <div id="video-leyend">
-        <div class="video-leyend-icon">
-            <img src="assets/images/icon-timeline-external.svg" />
-        </div>
-        <div class="video-leyend-info">
-            <h2>Titulo</h2>
-            <p>Descripción</p>
-            <a href="#">
-                <span>Ver</span>
-                <img src="assets/images/icon-timeline-play.svg" />
-            </a>
-        </div>
-    </div>
-</div>*/
+#video-legend{
+    position: absolute;
+    top: 15px;
+    width: 300px;
+    height: auto;
+    box-sizing: border-box;
+    border: #8a8a8a solid 1px;
+    border-radius: 12px;
+    background-color: #07080a;
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.video-legend-icon{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    margin-right: 20px;
+    border-radius: 50%;
+    background-color: #9333ea;
+    align-items: center;
+    justify-content: center;
+}
+.video-legend-icon img{
+    display: block;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+}
+.video-legend-info{
+    position: relative;
+    width: auto;
+    width: calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
+    height: auto;
+    display: block;
+}
+
+.video-legend-info h2,
+.video-legend-info p{
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    font-weight: normal;
+    line-height: normal;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+.video-legend-info h2{
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 16px;
+}
+.video-legend-info p{
+    font-family: 'Montserrat-Medium';
+    font-size: 14px;
+}
+
+#video-legend-link{
+    outline: none;
+    outline-width: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin: 0px;
+    padding: 10px 20px;
+    text-decoration: none !important;
+
+    transition: background-color 0.2s;
+}
+
+#video-legend-link span{
+    font-family: 'Montserrat-SemiBold';
+    font-size: 14px;
+    color: #000000;
+    font-weight: normal;
+    line-height: normal;
+}
+#video-legend-link img{
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+    margin-left: 15px;
+}
+
+#video-legend-link:hover{
+    cursor: pointer;
+    background-color: #e0e0e0;
+}
+
+.video-legend-off{
+    visibility: hidden;
+    right: -300px;
+
+    transition: visibility 0.2s right 0.2s;
+}
+.video-legend-on{
+    visibility: visible;   
+    right: 20px;
+
+    transition: visibility 0s right 0.2s;
+}

@@ -394,7 +394,7 @@
 
 .content-wrap-3-2{
     left: -200%;
-    animation: animacion-wrap-3-2 2s 1 forwards ease-out;
+    animation: animacion-wrap-3-2 1s 1 forwards ease-out;
 }
 @keyframes animacion-wrap-3-2{
     0%{

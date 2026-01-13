@@ -243,8 +243,10 @@ html,body{
     height: 100%;
     left: 0px;
     top: 0px;
+    background-color: #ffffff;
     transform-origin: right center;
     pointer-events: none;
+    border-radius: 50%;
 }
 #toolbar-bola img{
     position: absolute;

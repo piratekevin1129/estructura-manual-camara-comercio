@@ -21,9 +21,21 @@ function prepareVideo(data){
     getE('video-vid').load()
     getE('video-vid').addEventListener('loadedmetadata', loadVideo)
 }
+
 function loadVideo(){
     getE('video-vid').removeEventListener('loadedmetadata', loadVideo)
     getE('video-vid').addEventListener('ended', endedVideo)
+
+    //preparar tagas/legendas
+    getE('video-timeline-tags').innerHTML = ''
+    
+    for(i = 0;i<actual_item.legends.length;i++){
+        var tag = document.createElement('div')
+        var p_tag = (actual_item.legends[i].time * 100)/getE('video-vid').duration
+        tag.style.left = p_tag+'%'
+        getE('video-timeline-tags').appendChild(tag)
+    }
+    
     
     var width_video = getE('video-vid').getBoundingClientRect().width
     getE('video-timeline-container').style.width = width_video+'px'
@@ -42,6 +54,7 @@ function loadVideo(){
 }
 
 var animacion_timeline = null
+var animacion_legends = null
 function animateTimeline(){
     animacion_timeline = setInterval(function(){
         getE('video-timeline-currenttime').innerHTML = formatTime(getE('video-vid').currentTime)
@@ -49,6 +62,37 @@ function animateTimeline(){
         getE('video-timeline-tray').style.width = bar_percent+'%'
         getE('video-timeline-bola').style.left = bar_percent+'%'
     },100)
+
+    animacion_legends = setInterval(function(){
+        //verificar legenda
+        var tiempo_int = parseInt(getE('video-vid').currentTime)
+        for(var l = 0;l<actual_item.legends.length;l++){
+            console.log(actual_item.legends[l].time,tiempo_int)
+            if(actual_item.legends[l].time==tiempo_int){
+                //poner legenda
+                if(!animacion_legend_status){
+                    getE('video-legend-text').innerHTML = actual_item.legends[l].text
+                    getE('video-legend-subtext').innerHTML = actual_item.legends[l].subtext
+                    getE('video-legend-btn').innerHTML = actual_item.legends[l].btn
+                    getE('video-legend-link').href = actual_item.legends[l].href
+                    getE('video-legend').className = 'video-legend-on'
+                    animacion_legend_status = true
+                    animacion_legend_active = setTimeout(animacionLegendActive,4000)
+                }
+
+            }
+        }
+    },1000)
+}
+
+var animacion_legend_status = false
+var animacion_legend_active = null
+
+function animacionLegendActive(){
+    clearTimeout(animacion_legend_active)
+    animacion_legend_active = null
+    animacion_legend_status = false
+    getE('video-legend').className = 'video-legend-off'
 }
 
 function clickTimeline(event,bar){
@@ -63,6 +107,8 @@ function clickTimeline(event,bar){
 function stopAnimateTImeline(){
     clearInterval(animacion_timeline)
     animacion_timeline = null
+    clearInterval(animacion_legends)
+    animacion_legends = null
 }
 
 function endedVideo(){
