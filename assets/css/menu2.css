@@ -261,6 +261,7 @@
     display: block;
     width: 20px;
     height: 20px;
+    margin-left: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -332,4 +333,108 @@
 }
 .m2-module-closed .m2-module-menu-content{
     top: 100%;
+}
+
+@media (min-width: 1540px) {
+    .fondo2 #aro1{
+        width: 350px;
+        height: 350px;
+    }
+    .fondo2 #aro2{
+        width: 250px;
+        height: 250px;
+    }
+
+    #m2-titulo{
+        margin-bottom: 10px;
+    }
+    #m2-titulo h1{
+        font-size: 31px;
+    }
+    #m2-subtitulo{
+        margin-bottom: 10px;
+    }
+    #m2-subtitulo h2{
+        font-size: 31px;
+    }
+    #m2-texto{
+        margin-bottom: 10px;
+    }
+    #m2-texto p{
+        font-size: 24px;
+    }
+    
+
+    .m2-module-btn{
+        width: 400px;
+        height: 313px;
+        margin: 10px 10px;
+    }
+
+    .m2-module-info{
+        padding: 0px 25px;
+    }
+    .m2-module-info div{
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
+    .m2-module-info div span{
+        width: 50px;
+        height: 50px;
+        font-size: 38px;
+    }
+
+    .m2-module-info p{
+        font-size: 21px;
+    }
+
+    #modulo1 .m2-module-info > p{width: 260px;}
+    #modulo2 .m2-module-info > p{width: 260px;}
+    #modulo3 .m2-module-info > p{width: 260px;}
+    #modulo4 .m2-module-info > p{width: 240px;}
+    #modulo5 .m2-module-info > p{width: 240px;}
+    #modulo6 .m2-module-info > p{width: 240px;}
+    #modulo7 .m2-module-info > p{width: 260px;}
+    #modulo8 .m2-module-info > p{width: 200px;}
+
+    .m2-module-menu-content li{
+        padding: 10px;
+    }
+    .m2-module-menu-content li img{
+        width: 27px;
+        height: 27px;
+        margin-right: 13px;
+    }
+    .m2-module-menu-content li div{
+        width: 27px;
+        height: 27px;
+        margin-left: 13px;
+    }
+    .m2-module-menu-content li span{
+        width: auto;
+        width: calc(100% - (40px * 2));
+        width: -moz-calc(100% - (40px * 2));
+        font-size: 19px;
+    }
+
+    .m2-module-opened .m2-module-info{
+        height: 100px;
+    }
+    .m2-module-opened .m2-module-img{
+        height: 213px;
+    }
+    .m2-module-opened .m2-module-menu{
+        bottom: 100px;
+    }
+    
+    .m2-module-closed .m2-module-info{
+        height: 130px;
+    }
+    .m2-module-closed .m2-module-img{
+        height: 183px;
+    }
+    .m2-module-closed .m2-module-menu{
+        bottom: 130px;
+    }
 }

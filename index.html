@@ -143,48 +143,7 @@
                         </div>
                         <div class="m2-row2">
                             <div id="m2-modules">
-                                <!--<div class="m2-module-btn" id="modulo1">
-                                    <div class="m2-module m2-module-closed" data-s="closed">
-                                        <div class="m2-module-onda"></div>
-    
-                                        <div class="m2-module-img" onclick="clickModuleMenu(1,this)">
-                                            <img src="content/unidad1/modulo1/foto.jpg" />
-                                        </div>
-                                        <div class="m2-module-info" onclick="clickModuleMenu(1,this)">
-                                            <div><span>1</span></div>
-                                            <p>Contratación suministros</p>
-                                        </div>
-                                        <div class="m2-module-menu" id="modulo1-menu">
-                                            <ul class="m2-module-menu-content">
-                                                <li id="item-1-1-1" onclick="clickModule(1,1,1)">
-                                                    <img src="assets/images/icon-module-video.svg" />
-                                                    <span>Inducción / Reinducción</span>
-                                                    <div></div>
-                                                </li>
-                                                <li>
-                                                    <img src="assets/images/icon-module-interactiva.svg" />
-                                                    <span>Seguridad Social</span>
-                                                    <div></div>
-                                                </li>
-                                                <li>
-                                                    <img src="assets/images/icon-module-video.svg" />
-                                                    <span>Estándares mínimos del SG-SST</span>
-                                                    <div></div>
-                                                </li>
-                                                <li>
-                                                    <img src="assets/images/icon-module-video.svg" />
-                                                    <span>Concepto médico ocupacional</span>
-                                                    <div></div>
-                                                </li>
-                                                <li id="item-1-1-5" onclick="clickModule(1,1,5)">
-                                                    <img src="assets/images/icon-module-document.svg" />
-                                                    <span>Documentación</span>
-                                                    <div></div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>-->
+                                <!---->
                             </div>
                         </div>
                     </div>
@@ -192,7 +151,7 @@
                 <!--video-->
                 <div id="videos" class="container-content">
                     <div id="video-container">
-                        <video id="video-vid" class="video-vid-paused"></video>
+                        <video id="video-vid" class="video-vid-paused" playsinline></video>
 
                         <div id="video-playpause" class="video-playpause-off">
                             <div></div>
@@ -206,7 +165,7 @@
                                     <div id="video-timeline-bola"></div>
                                 </div>
                                 <button id="video-timeline-playpause-btn" class="video-timeline-paused" onclick="clickPlayPause()"></button>
-                                <button id="video-timeline-sound-btn" class="video-timeline-sound-on"></button>
+                                <button id="video-timeline-sound-btn" class="video-timeline-sound-on" onclick="clickSonidoVideo()"></button>
                                 <p id="video-timeline-time">
                                     <span id="video-timeline-currenttime">00:00</span> / <span id="video-timeline-totaltime">00:00</span>
                                 </p>
@@ -271,18 +230,7 @@
                         <p>Contenido:</p>
                         <div class="documentos-contenidos">
                             <div id="documentos-contenidos-list">
-                                <!--<a class="documentos-contenido-item">
-                                    <div>
-                                        <img src="assets/images/icon-documentos-documento.svg" />
-                                    </div>
-                                    <div>
-                                        <p>Plan de emergencia propio y consultado</p>
-                                        <p><span>2.4 MB</span></p>
-                                    </div>
-                                    <div>
-                                        <img src="assets/images/icon-documentos-descargar2.svg" />
-                                    </div>
-                                </a>-->
+                                <!---->
                             </div>
                         </div>
                     </div>
@@ -313,16 +261,12 @@
                         </div>
                         <div class="documentos-cargados">
                             <div id="documentos-cargados-list">
-                                <!--<h6 class="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>
-                                <a class="documentos-cargado-item">
-                                    <img src="assets/images/icon-documentos-documento2.svg" />
-                                    <p>Copia actualizada</p>
-                                </a>-->
+                                <!---->
                             </div>
                         </div>
                     </div>
                     <div class="documentos-subir-paquete">
-                        <button class="documentos-subir-paquete-btn">
+                        <button class="documentos-subir-paquete-btn" onclick="cerrarDocumentos()">
                             <span>Subir paquete</span>
                             <img src="assets/images/icon-documentos-subir2.svg" />
                         </button>

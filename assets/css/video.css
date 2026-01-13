@@ -155,8 +155,8 @@ video::-webkit-media-controls-panel { display: none !important; }
 
 #video-timeline-bola{
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     top: 50%;
     background-color: #ffffff;
@@ -173,7 +173,6 @@ video::-webkit-media-controls-panel { display: none !important; }
 }
 #video-timeline-tags > div{
     position: absolute;
-    transform: translateX(-50%);
     top: 0px;
     width: 5px;
     height: 100%;
@@ -366,8 +365,114 @@ video::-webkit-media-controls-panel { display: none !important; }
     transition: visibility 0.2s, right 0.2s;
 }
 .video-legend-on{
-    visibility: visible;   
+    visibility: visible;
     right: 20px;
 
     transition: visibility 0s, right 0.2s;
+}
+
+@media (min-width: 1540px) {
+    #video-playpause div{
+        width: 120px;
+        height: 120px;
+        background-size: 60px;
+    }
+
+    #video-timeline-back{
+        height: 100%;
+        height: calc(100% - 96px);
+        height: -moz-calc(100% - 96px);
+    }
+
+    #video-timeline{
+        height: 90px;
+        padding: 0px 15px;
+        padding-top: 8px;
+    }
+
+    #video-timeline-bar{
+        width: 100%;
+        width: calc(100% - 30px);
+        width: -moz-calc(100% - 30px);
+        height: 8px;
+        left: 15px;
+    }
+    #video-timeline-tray{
+        border-radius: 8px;
+    }
+    #video-timeline-bola{
+        width: 20px;
+        height: 20px;
+    }
+    #video-timeline-tags > div{
+        width: 8px;
+    }
+
+    #video-timeline-playpause-btn,
+    #video-timeline-sound-btn,
+    #video-timeline-fullscreen{
+        width: 50px;
+        height: 50px;
+        background-size: 30px;
+    }
+    #video-timeline-playpause-btn,
+    #video-timeline-sound-btn{
+        margin-right: 20px;
+    }
+    #video-timeline-time{
+        font-size: 18px;
+    }
+
+    #video-legend{
+        top: 25px;
+        width: 420px;
+        border: #8a8a8a solid 2x;
+        padding: 30px;
+    }
+
+    .video-legend-icon{
+        width: 90px;
+        height: 90px;
+        margin-right: 20px;
+    }
+    .video-legend-icon img{
+        width: 40px;
+        height: 40px;
+    }
+    .video-legend-info{
+        width: auto;
+        width: calc(100% - 110px);
+        width: -moz-calc(100% - 110px);
+    }
+
+    .video-legend-info h2,
+    .video-legend-info p{
+        margin-bottom: 20px;
+    }
+    .video-legend-info h2{
+        font-size: 21px;
+    }
+    .video-legend-info p{
+        font-size: 18px;
+    }
+
+    #video-legend-link{
+        padding: 12px 25px;
+    }
+
+    #video-legend-link span{
+        font-size: 18px;
+    }
+    #video-legend-link img{
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+    }
+
+    .video-legend-off{
+        right: -420px;
+    }
+    .video-legend-on{
+        right: 30px;
+    }
 }

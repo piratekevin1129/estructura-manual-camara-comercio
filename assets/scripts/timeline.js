@@ -16,6 +16,19 @@ function clickPlayPause(){
     }
 }
 
+var video_sonido_status = 'unmuted'
+function clickSonidoVideo(){
+    if(video_sonido_status=='unmuted'){
+        getE('video-timeline-sound-btn').className = 'video-timeline-sound-off'
+        getE('video-vid').muted = true
+        video_sonido_status = 'muted'
+    }else{
+        getE('video-timeline-sound-btn').className = 'video-timeline-sound-on'
+        getE('video-vid').muted = false
+        video_sonido_status = 'unmuted'
+    }
+}
+
 function prepareVideo(data){
     getE('video-vid').src = data.src
     getE('video-vid').load()
@@ -50,6 +63,12 @@ function loadVideo(){
     getE('video-timeline-container').className = 'video-timeline-container-on'
     getE('video-timeline-playpause-btn').className = 'video-timeline-playing'
     getE('video-vid').className = 'video-vid-playing'
+
+    //desmutear
+    getE('video-timeline-sound-btn').className = 'video-timeline-sound-on'
+    getE('video-vid').muted = false
+    video_sonido_status = 'unmuted'
+    
     animateTimeline()
 }
 

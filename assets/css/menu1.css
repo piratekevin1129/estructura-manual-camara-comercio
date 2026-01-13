@@ -124,7 +124,7 @@
     right: 10px;
     bottom: 10px;
     background-color: rgba(255,255,255,0.3);
-    transition: width 0.4s, height 0.4s;
+    transition: width 0.4s, height 0.4s, right 0.4s, bottom 0.4s;
 }
 .m-unity-icon::before{
     content: "";
@@ -238,5 +238,69 @@
     }
     100%{
         transform: scale(1);
+    }
+}
+
+@media (min-width: 1540px) {
+    .fondo1 #aro1{
+        width: 350px;
+        height: 350px;
+    }
+    .fondo1 #aro2{
+        width: 180px;
+        height: 180px;
+        left: 110px;
+    }
+
+    #m-titulo h1{
+        font-size: 37px;
+    }
+    #m-subtitulo h2{
+        font-size: 38px;
+    }
+    #m-texto p{
+        font-size: 24px;
+    }
+    
+    .m-unity-btn{
+        width: 450px;
+        height: 294px;
+        margin: 0px 50px;
+    }
+
+    .m-unity-icon{
+        width: 70px;
+        height: 70px;
+        right: 20px;
+        bottom: 20px;
+    }
+    .m-unity-icon::before{
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        left: 10px;
+    }
+    .m-unity-icon::after{
+        width: 35px;
+        height: 35px;
+        top: 17.5px;
+        left: 17.5px;
+    }
+
+    .m-unity-over .m-unity-icon{
+        width: 90px;
+        height: 90px;
+        right: 10px;
+        bottom: 10px;
+    }
+    .m-unity-over .m-unity-icon::before{
+        width: 70px;
+        height: 70px;
+        top: 10px;
+        left: 10px;
+    }
+    .m-unity-over .m-unity-icon::after{
+        top: 27.5px;
+        left: 27.5px;
     }
 }

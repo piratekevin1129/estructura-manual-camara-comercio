@@ -428,7 +428,7 @@ html,body{
 
     margin: 0px;
     padding: 0px;
-    font-family: 'Montserrat-ExtraBold';
+    font-family: 'Montserrat-Medium';
     font-size: 18px;
     color: #636363;
     font-weight: normal;
@@ -445,4 +445,26 @@ html,body{
 .loader-off img,
 .loader-off #loader-img{
     animation: none !important;
+}
+
+@media (min-width: 1540px) {
+    #loader-txt{
+        font-size: 24px;    
+    }
+
+    .volver-btn{
+        top: 25px;
+        right: 30px;
+        height: 70px;
+        padding: 0px 30px;
+        border-radius: 35px;
+    }
+    .volver-btn img{
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+    .volver-btn p{
+        font-size: 18px;
+    }
 }
