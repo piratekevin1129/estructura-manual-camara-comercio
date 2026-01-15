@@ -1,19 +1,28 @@
 var estructura = [{
     nombre:'Objetivo',
+    modulos:[]
+},{
+    nombre:'Alcance',
+    modulos:[]
+},{
+    nombre:'Categoría',
     modulos:[{
         nombre:'Contratación suministro',
+        bloquedo:false,
         temas:[{
             nombre:'Inducción / Reinducción',
             tipo:'video',
             legends:[{
-                time:40,
-                href:'https://vimeo.com/1152536138/0f9b3c3669',
+                time:{start:40,end:45},
+                href:'https://www.youtube.com/embed/lmkidEcWkdc?rel=0',
+                display:'in',
                 text:'Video',
                 btn:'Ver',
                 subtext:'Inducción Reinducción Contratistas CCMA'
             },{
-                time:45,
+                time:{start:46,end:52},
                 href:'https://forms.office.com/r/CmLBFsAmvN',
+                display:'in',
                 text:'Formulario',
                 btn:'Ver',
                 subtext:'Evaluación inducción / reinducción para contratistas'
@@ -41,6 +50,7 @@ var estructura = [{
         }]
     },{
         nombre:'Contratación de servicios comunicacionales',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
@@ -48,6 +58,7 @@ var estructura = [{
         }]
     },{
         nombre:'Contratación Outsourcing',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
@@ -55,6 +66,7 @@ var estructura = [{
         }]
     },{
         nombre:'Contratación servicios de administración general',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
@@ -62,6 +74,7 @@ var estructura = [{
         }]
     },{
         nombre:'Contratación servicios de eventos',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
@@ -69,6 +82,7 @@ var estructura = [{
         }]
     },{
         nombre:'Contratación consultorías y formación',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
@@ -76,6 +90,7 @@ var estructura = [{
         }]
     },{
         nombre:'Contratación cumplimiento legal y financiero',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
@@ -83,18 +98,13 @@ var estructura = [{
         }]
     },{
         nombre:'Conceptos generales',
+        bloquedo:true,
         temas:[{
             nombre:'Tema 1',
             tipo:'video',
             legends:[]
         }]
     }]
-},{
-    nombre:'Alcance',
-    modulos:[]
-},{
-    nombre:'Categoría',
-    modulos:[]
 }]
 
 var documentos = [{

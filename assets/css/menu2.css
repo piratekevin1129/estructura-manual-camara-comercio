@@ -144,6 +144,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center bottom;
+    transition: filter 0.4s;
 }
 
 .m2-module-info{
@@ -173,7 +174,6 @@
     margin-right: 10px;
 }
 .m2-module-info div span{
-    display: flex;
     align-items: center;
     justify-content: center;
     width: 30px;
@@ -190,6 +190,11 @@
 
     box-shadow: -5px 10px 15px -5px rgba(0,0,0,0.8);
 }
+.m2-module-info div img{
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+}
 
 .m2-module-info p{
     display: flex;
@@ -204,7 +209,7 @@
     text-align: left;
 }
 #modulo1 .m2-module-info > p{width: 175px;}
-#modulo2 .m2-module-info > p{width: 180px;}
+#modulo2 .m2-module-info > p{width: 130px;}
 #modulo3 .m2-module-info > p{width: 100px;}
 #modulo4 .m2-module-info > p{width: 160px;}
 #modulo5 .m2-module-info > p{width: 160px;}
@@ -290,17 +295,46 @@
 }*/
 
 /***************/
-.m2-module:hover{
+.m2-module-unlocked:hover{
     cursor: pointer;
     box-shadow: 0px 20px 10px -8px rgba(0,0,0,0.8);
 }
-.m2-module:hover .m2-module-onda{
+.m2-module-unlocked:hover .m2-module-onda{
     width: 120%;
     height: 120%;
     border-color: rgba(255,126,96,1);
     opacity: 0;
     transition: border-color 0.25s, width 1.25s, height 1.25s, opacity 1.25s ease-out;
 }
+
+
+.m2-module-unlocked .m2-module-img img{
+    filter: grayscale(0%);
+}
+.m2-module-locked .m2-module-img img{
+    filter: grayscale(100%);
+}
+.m2-module-unlocked .m2-module-info div img{
+    display: none;
+}
+.m2-module-locked .m2-module-info div img{
+    display: block;
+}
+.m2-module-unlocked .m2-module-info div span{
+    display: flex;
+}
+.m2-module-locked .m2-module-info div span{
+    display: none;
+}
+.m2-module-unlocked{
+    cursor: pointer;
+    opacity: 1;
+}
+.m2-module-locked{
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
 .m2-module-opened .m2-module-info{
     height: 70px;
 }
@@ -383,6 +417,10 @@
         width: 50px;
         height: 50px;
         font-size: 38px;
+    }
+    .m2-module-info div img{
+        width: 40px;
+        height: 40px;
     }
 
     .m2-module-info p{

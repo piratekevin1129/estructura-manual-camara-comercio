@@ -1,18 +1,27 @@
 var video_status = 'paused'
 
+function pauseVideo(){
+    getE('video-vid').pause()
+    getE('video-playpause').className = 'video-playpause-on'
+    getE('video-timeline-playpause-btn').className = 'video-timeline-paused'
+    getE('video-vid').className = 'video-vid-paused'
+    video_status = 'paused'
+    stopAnimateTimeline()
+}
+function playVideo(){
+    getE('video-vid').play()
+    getE('video-playpause').className = 'video-playpause-off'
+    getE('video-timeline-playpause-btn').className = 'video-timeline-playing'
+    getE('video-vid').className = 'video-vid-playing'
+    video_status = 'playing'
+    animateTimeline()
+}
+
 function clickPlayPause(){
     if(video_status=='paused'){
-        getE('video-vid').play()
-        getE('video-playpause').className = 'video-playpause-off'
-        getE('video-timeline-playpause-btn').className = 'video-timeline-playing'
-        getE('video-vid').className = 'video-vid-playing'
-        video_status = 'playing'
+        playVideo()
     }else{
-        getE('video-vid').pause()
-        getE('video-playpause').className = 'video-playpause-on'
-        getE('video-timeline-playpause-btn').className = 'video-timeline-paused'
-        getE('video-vid').className = 'video-vid-paused'
-        video_status = 'paused'
+        pauseVideo()
     }
 }
 
@@ -44,32 +53,25 @@ function loadVideo(){
     
     for(i = 0;i<actual_item.legends.length;i++){
         var tag = document.createElement('div')
-        var p_tag = (actual_item.legends[i].time * 100)/getE('video-vid').duration
+        var p_tag = (actual_item.legends[i].time.start * 100)/getE('video-vid').duration
         tag.style.left = p_tag+'%'
         getE('video-timeline-tags').appendChild(tag)
     }
-    
     
     var width_video = getE('video-vid').getBoundingClientRect().width
     getE('video-timeline-container').style.width = width_video+'px'
     getE('video-playpause').style.width = width_video+'px'
 
     getE('video-timeline-totaltime').innerHTML = formatTime(getE('video-vid').duration)
+    getE('video-timeline-container').className = 'video-timeline-container-on'
 
     getE('video-vid').currentTime = 0
-    video_status = 'playing'
-    getE('video-vid').play()
-    getE('video-playpause').className = 'video-playpause-off' //por si acaso
-    getE('video-timeline-container').className = 'video-timeline-container-on'
-    getE('video-timeline-playpause-btn').className = 'video-timeline-playing'
-    getE('video-vid').className = 'video-vid-playing'
+    playVideo()
 
     //desmutear
     getE('video-timeline-sound-btn').className = 'video-timeline-sound-on'
     getE('video-vid').muted = false
     video_sonido_status = 'unmuted'
-    
-    animateTimeline()
 }
 
 var animacion_timeline = null
@@ -85,34 +87,44 @@ function animateTimeline(){
     animacion_legends = setInterval(function(){
         //verificar legenda
         var tiempo_int = parseInt(getE('video-vid').currentTime)
+        console.log("leyenda :"+tiempo_int)
+        var is_legend = false;
+        var current_legend = null;
         for(var l = 0;l<actual_item.legends.length;l++){
-            console.log(actual_item.legends[l].time,tiempo_int)
-            if(actual_item.legends[l].time==tiempo_int){
-                //poner legenda
-                if(!animacion_legend_status){
-                    getE('video-legend-text').innerHTML = actual_item.legends[l].text
-                    getE('video-legend-subtext').innerHTML = actual_item.legends[l].subtext
-                    getE('video-legend-btn').innerHTML = actual_item.legends[l].btn
-                    getE('video-legend-link').href = actual_item.legends[l].href
-                    getE('video-legend').className = 'video-legend-on'
-                    animacion_legend_status = true
-                    animacion_legend_active = setTimeout(animacionLegendActive,4000)
-                }
-
+            if(
+                tiempo_int>=actual_item.legends[l].time.start&&
+                tiempo_int<=actual_item.legends[l].time.end
+            ){
+                is_legend = true;
+                current_legend = l
             }
+        }
+
+        if(is_legend){
+            //if(!animacion_legend_status){
+                getE('video-legend-text').innerHTML = actual_item.legends[current_legend].text
+                getE('video-legend-subtext').innerHTML = actual_item.legends[current_legend].subtext
+                getE('video-legend-btn').innerHTML = actual_item.legends[current_legend].btn
+                if(actual_item.legends[current_legend].display=='in'){
+                    getE('video-legend-link').removeAttribute('href')
+                    getE('video-legend-link').setAttribute('onclick',"openLegendLink('"+actual_item.legends[current_legend].href+"')")
+                }else{
+                    getE('video-legend-link').setAttribute('href',actual_item.legends[current_legend].href)
+                    getE('video-legend-link').removeAttribute('onclick')
+                }
+                getE('video-legend').className = 'video-legend-on'
+                //animacion_legend_status = true
+                //animacion_legend_active = setTimeout(animacionLegendActive,4000)
+            //}
+        }else{
+            getE('video-legend').className = 'video-legend-off'
         }
     },1000)
 }
 
-var animacion_legend_status = false
-var animacion_legend_active = null
+//var animacion_legend_status = false
+//var animacion_legend_active = null
 
-function animacionLegendActive(){
-    clearTimeout(animacion_legend_active)
-    animacion_legend_active = null
-    animacion_legend_status = false
-    getE('video-legend').className = 'video-legend-off'
-}
 
 function clickTimeline(event,bar){
     var posx = event.pageX
@@ -123,7 +135,7 @@ function clickTimeline(event,bar){
     getE('video-vid').currentTime = duracion
 }
 
-function stopAnimateTImeline(){
+function stopAnimateTimeline(){
     clearInterval(animacion_timeline)
     animacion_timeline = null
     clearInterval(animacion_legends)
@@ -131,16 +143,45 @@ function stopAnimateTImeline(){
 }
 
 function endedVideo(){
-    stopAnimateTImeline()
+    stopAnimateTimeline()
+    
+    getE('video-vid').pause()
+    getE('video-vid').src = ''
+    getE('video-vid').removeEventListener('loadedmetadata', loadVideo)
+    getE('video-vid').removeEventListener('ended', endedVideo)
 
+    getE('video-legend').className = 'video-legend-off'
     getE('video-vid').className = 'video-vid-paused'
     getE('video-playpause').className = 'video-playpause-off'
     getE('video-timeline-container').className = 'video-timeline-container-off'
+    getE('video-iframe-container').className = 'video-iframe-container-off'
+    getE('video-iframe').removeAttribute('src')
 
     finishTema()
 }
 
+function openLegendLink(url){
+    //parar video
+    pauseVideo()
 
+    var width = getE('video-vid').getBoundingClientRect().width
+    var height = getE('video-vid').getBoundingClientRect().height
+
+    getE('video-iframe').setAttribute('width', width);
+    getE('video-iframe').setAttribute('height', height);
+    getE('video-iframe').setAttribute('src', url);
+    getE('video-iframe').setAttribute('frameborder', '0');
+    getE('video-iframe').setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    getE('video-iframe').setAttribute('allowfullscreen', '');
+    
+    getE('video-iframe-container').className = 'video-iframe-container-on'
+}
+function cerrarLegendLink(){
+    getE('video-iframe-container').className = 'video-iframe-container-off'
+    getE('video-iframe').removeAttribute('src')
+
+    playVideo()
+}
 
 function formatTime(duration){
     var duracion = parseInt(duration)

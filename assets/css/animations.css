@@ -307,6 +307,11 @@
 
 /**************/
 
+.content-wrap-initial{
+    left: 0px;
+    top: 0px;
+}
+
 .content-wrap-0-1{
     top: 0%;
     animation: animacion-wrap-0-1 2s 1 forwards;
@@ -368,7 +373,6 @@
         top: 100%;
     }
 }
-
 
 .content-wrap-2-1{
     top: 0%;

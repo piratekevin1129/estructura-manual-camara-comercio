@@ -53,7 +53,7 @@ function seleccionarDocumentos (event) {
         for(k = 0;k<files.length;k++){
             var item = document.createElement('a')
             item.className = 'documentos-cargado-item'
-            item.innerHTML = '<img src="assets/images/icon-documentos-documento2.svg" /><p>'+files[k].name+'</p>'
+            item.innerHTML = '<img src="./assets/images/icon-documentos-documento2.svg" /><p>'+files[k].name+'</p>'
             getE('documentos-cargados-list').appendChild(item)    
         }
     }else{
@@ -66,4 +66,13 @@ function seleccionarDocumentos (event) {
         console.log('File Type:', file.type);
         // You can use the FileReader API to read the file contents
     }*/
+}
+
+function guardarDocumentos(){
+    cerrarDocumentos()
+    getE('alerta').className = 'alerta-on'
+}
+
+function cerrarAlerta(){
+    getE('alerta').className = 'alerta-off'
 }

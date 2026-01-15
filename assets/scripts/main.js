@@ -2,6 +2,23 @@ var i = 0;
 var j = 0;
 var k = 0;
 
+function loadTrack(data){
+    var url = data.src
+
+    var audio_fx = null
+    audio_fx = document.createElement('audio')
+    audio_fx.setAttribute('src',url)
+    audio_fx.load()
+    audio_fx.addEventListener('loadeddata',function(){
+        //alert("cargo")
+        data.callBack(audio_fx)
+    })
+    audio_fx.addEventListener('error',function(){
+        console.log("error cargando")
+        data.callBack(null)
+    })
+}
+
 function loadImg(data){
     var img = new Image()
     if(data.extra!=null&&data.extra!=undefined){
@@ -37,7 +54,8 @@ function init(){
 }
 
 function cerrarToolbar(){
-    getE('toolbar').className = 'toolbar-off'
+    //getE('toolbar').className = 'toolbar-off'
+    endedVideo()
 }
 
 var animacion_titulos = null
@@ -46,7 +64,7 @@ var animacion_titulo_btn = null
 
 function setAnimations(){
     getE('fondo-img').style.backgroundImage = 'url(./assets/images/fondo.jpg)'
-    getE('container-wrap').className = 'container-wrap-initial'
+    getE('container-wrap').className = 'content-wrap-initial'
     getE('w-fotografia').className = 'w-fotografia-on'
     getE('fondo-aros').className = 'fondo-aros-on fondo0'
 
@@ -79,6 +97,11 @@ function setAnimations(){
 var animacion_fondo = null;
 var animacion_container_wrap = null;
 
+function overComenzar(){
+    over_mp3.currentTime = 0
+    over_mp3.play()
+}
+
 function clickComenzar(){
     getE('fondo-aros').className = 'fondo-aros-off fondo0'
     animacion_fondo = setTimeout(function(){
@@ -107,7 +130,10 @@ function clickComenzar(){
                 animacion_titulos_count++
             },500)
         },1000)
-    },500)   
+        transicion_mp3.currentTime = 0
+        transicion_mp3.play()
+    },500) 
+    click_mp3.play()
 }
 
 function overUnityBtn(zona){
@@ -117,6 +143,8 @@ function overUnityBtn(zona){
     var clases = String(unity.className).split(" ")
     clases[clases.length-1] = 'm-unity-over'
     unity.className = clases.join(" ")
+    over_mp3.currentTime = 0
+    over_mp3.play()
 }
 
 function outUnityBtn(zona){
@@ -126,6 +154,11 @@ function outUnityBtn(zona){
     var clases = String(unity.className).split(" ")
     clases[clases.length-1] = 'm-unity-out'
     unity.className = clases.join(" ")
+}
+
+function overModuleBtn(zona){
+    over_mp3.currentTime = 0
+    over_mp3.play()
 }
 
 var animacion_fondo_cortina = null;
@@ -149,7 +182,10 @@ function clickUnityBtn(uni){
             getE('volver-btn1').className = 'volver-btn volver-btn-on'
             
         },1000)
+        transicion_mp3.currentTime = 0
+        transicion_mp3.play()
     },500)
+    click_mp3.play()
 }
 
 function clickModuleMenu(m,item){
@@ -158,14 +194,16 @@ function clickModuleMenu(m,item){
     var menu_div = getE('modulo'+m+'-menu')
     var menu_div_content = menu_div.getElementsByClassName('m2-module-menu-content')[0]
     if(estado=="closed"){
-        module_div.className = 'm2-module m2-module-opened'
+        module_div.className = 'm2-module m2-module-unlocked m2-module-opened'
         module_div.setAttribute('data-s','opened')
         menu_div.style.height = menu_div_content.offsetHeight+'px'
     }else{
         module_div.setAttribute('data-s','closed')
-        module_div.className = 'm2-module m2-module-closed'
+        module_div.className = 'm2-module m2-module-unlocked m2-module-closed'
         menu_div.style.height = '0px'
     }
+    submenu_mp3.currentTime = 0
+    submenu_mp3.play()
 }
 
 function volverMenu(){
@@ -188,6 +226,8 @@ function volverMenu(){
             getE('fondo-aros').className = 'fondo-aros-on fondo1'
         },1000)
     },500)
+
+    click_mp3.play()
 }
 
 ////////////////////////////////////////////////
@@ -230,11 +270,14 @@ function clickModule(unity,modul,topic){
                 
                 if(actual_item.tipo=='video'){
                     //ir a video
-                    prepareVideo({src:'./content/unidad1/modulo1/tema1/video.mp4'})
+                    prepareVideo({src:'./content/unidad3/modulo1/tema1/video.mp4'})
                 }else{
-                    //prepareInteractiva({src:'./content/unidad1/modulo1/tema5/index.html'})
+                    //prepareInteractiva({src:'./content/unidad3/modulo1/tema5/index.html'})
                 }
             },2000)
+
+            transicion_mp3.currentTime = 0
+            transicion_mp3.play()
         },500)
     }
 }
@@ -249,7 +292,6 @@ function finishTema(){
     animacion_container_wrap = setTimeout(function(){
         clearTimeout(animacion_container_wrap)
         animacion_container_wrap = null
-
 
         getE('volver-btn1').className = 'volver-btn volver-btn-on'
         getE('fondo-aros').className = 'fondo-aros-on fondo2'

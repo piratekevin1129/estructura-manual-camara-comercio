@@ -163,6 +163,9 @@
     background-image: url(../images/icon-unity-unlocked.svg);
 }
 
+.m-unity-locked{
+    cursor: not-allowed;
+}
 .m-unity-locked .m-unity-img img{
     filter: grayscale(100%);
 }

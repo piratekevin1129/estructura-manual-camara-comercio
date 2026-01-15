@@ -118,10 +118,6 @@ html,body{
     height: 100%;
     margin: 0px;
 }
-.container-wrap-initial{
-    left: 0px;
-    top: 0px;
-}
 
 .container-content{
     position: absolute;

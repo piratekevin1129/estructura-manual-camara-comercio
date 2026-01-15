@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/png" href="favicon.png">
     <link href="assets/css/fonts.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/main.css" type="text/css" rel="stylesheet" />
     <link href="assets/css/welcomepage.css" type="text/css" rel="stylesheet" />
@@ -57,7 +58,7 @@
                                 <div></div>
                             </div>
                             <div id="w-boton" class="boton-off">
-                                <button id="btn-comenzar" class="w-button" type="button">
+                                <button id="btn-comenzar" class="w-button" type="button" onmouseenter="overComenzar()">
                                     <span>Comenzamos</span>
                                     <div><img src="assets/images/icon-mano-instruccion.svg" /></div>
                                 </button>
@@ -89,14 +90,14 @@
                         </div>
                         <div class="m-row2">
                             <div class="m-unity-btn">
-                                <div class="m-unity m-unity-unlocked m-unity-out">
+                                <div class="m-unity m-unity-locked m-unity-out">
                                     <div class="m-unity-onda"></div>
                                     <div class="m-unity-img">
                                         <img src="content/unidad1/foto.png" />
                                     </div>
                                     <div class="m-unity-icon"></div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)" onclick="clickUnityBtn(1)"></div>
+                                <!--<div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseleave="outUnityBtn(this)" onclick="clickUnityBtn(1)"></div>-->
                             </div>
 
                             <div class="m-unity-btn">
@@ -107,18 +108,18 @@
                                     </div>
                                     <div class="m-unity-icon"></div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)" onclick="clickUnityBtn(2)"></div>
+                                <!--<div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseleave="outUnityBtn(this)" onclick="clickUnityBtn(2)"></div>-->
                             </div>
 
                             <div class="m-unity-btn">
-                                <div class="m-unity m-unity-locked m-unity-out">
+                                <div class="m-unity m-unity-unlocked m-unity-out">
                                     <div class="m-unity-onda"></div>
                                     <div class="m-unity-img">
                                         <img src="content/unidad3/foto.png" />
                                     </div>
                                     <div class="m-unity-icon"></div>
                                 </div>
-                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseout="outUnityBtn(this)" onclick="clickUnityBtn(3)"></div>
+                                <div class="m-unity-zona" onmouseenter="overUnityBtn(this)" onmouseleave="outUnityBtn(this)" onclick="clickUnityBtn(3)"></div>
                             </div>
                         </div>
                     </div>
@@ -185,6 +186,14 @@
                                 </a>
                             </div>
                         </div>
+
+                        <div id="video-iframe-container" class="video-iframe-container-off">
+                            <iframe id="video-iframe" class="video-iframe-off" src="" scrolling="no" border="0" allowfullscreen></iframe>
+                            <button id="video-iframe-cerrar" onclick="cerrarLegendLink()">
+                                <span>Cerrar</span>
+                                <img src="assets/images/icon-cerrar2.svg" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,8 +209,8 @@
                 </div>
             </div>
             <div id="toolbar-bola">
-                <img id="toolbar-bola1" src="assets/images/icon-toolbar1.svg" />
-                <img id="toolbar-bola2" src="assets/images/icon-toolbar2.svg" />
+                <img src="assets/images/icon-toolbar1.svg" id="toolbar-bola1" />
+                <img src="assets/images/icon-toolbar2.svg" id="toolbar-bola2" />
             </div>
         </div>
 
@@ -266,12 +275,23 @@
                         </div>
                     </div>
                     <div class="documentos-subir-paquete">
-                        <button class="documentos-subir-paquete-btn" onclick="cerrarDocumentos()">
+                        <button class="documentos-subir-paquete-btn" onclick="guardarDocumentos()">
                             <span>Subir paquete</span>
                             <img src="assets/images/icon-documentos-subir2.svg" />
                         </button>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="alerta" class="alerta-off">
+            <div id="alerta-box">
+                <div id="alerta-icono" class="alerta-icono-ok"></div>
+                <h1 id="alerta-titulo">¡Envío Exitoso!</h1>
+                <p id="alerta-text">Los documentos se han cargado correctamente en el sistema</p>
+                <button id="alerta-btn" type="button" onclick="cerrarAlerta()">
+                    <span>Entendido</span>
+                </button>
             </div>
         </div>
     </div>
@@ -291,18 +311,37 @@
     <script src="assets/scripts/documentos.js"></script>
     <script>
 
+        var click_mp3 = null;
+        var submenu_mp3 = null;
+        var over_mp3 = null;
+        var transicion_mp3 = null;
+
         setDocumentos()
         setMenu()
         init()
 
         window.onload = function(){
-            loadImg({src:'assets/images/fondo-rojo.jpg', callBack: function(data){
+            loadImg({src:'./assets/images/fondo-rojo.jpg', callBack: function(data){
                 getE('fondo-img2').style.backgroundImage = 'url('+data.src+')'
-                loadImg({src:'assets/images/fondo.jpg', callBack: function(data){
+                loadImg({src:'./assets/images/fondo.jpg', callBack: function(data){
                     getE('fondo-img').style.backgroundImage = 'url('+data.src+')'
 
-                    getE('loader').className = 'loader-off'
-                    setAnimations()
+                    loadTrack({src:'./assets/sounds/click.mp3', callBack: function(data){
+                        click_mp3 = data
+                        loadTrack({src:'./assets/sounds/over.mp3', callBack: function(data){
+                            over_mp3 = data
+                            loadTrack({src:'./assets/sounds/submenu.mp3', callBack: function(data){
+                                submenu_mp3 = data
+                                loadTrack({src:'./assets/sounds/transicion.mp3', callBack: function(data){
+                                    transicion_mp3 = data
+                                    
+                                    getE('loader').className = 'loader-off'
+                                    setAnimations()
+                                }})
+                            }})
+                        }})
+                    }})
+                    
                 }})
             }})
         }
