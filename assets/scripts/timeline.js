@@ -93,7 +93,7 @@ function animateTimeline(){
         for(var l = 0;l<actual_item.legends.length;l++){
             if(
                 tiempo_int>=actual_item.legends[l].time.start&&
-                tiempo_int<=actual_item.legends[l].time.end
+                tiempo_int<actual_item.legends[l].time.end
             ){
                 is_legend = true;
                 current_legend = l
@@ -105,6 +105,7 @@ function animateTimeline(){
                 getE('video-legend-text').innerHTML = actual_item.legends[current_legend].text
                 getE('video-legend-subtext').innerHTML = actual_item.legends[current_legend].subtext
                 getE('video-legend-btn').innerHTML = actual_item.legends[current_legend].btn
+                getE('video-legend-icon').className = 'video-legend-icon-'+actual_item.legends[current_legend].tipo
                 if(actual_item.legends[current_legend].display=='in'){
                     getE('video-legend-link').removeAttribute('href')
                     getE('video-legend-link').setAttribute('onclick',"openLegendLink('"+actual_item.legends[current_legend].href+"')")

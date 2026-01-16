@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon.png">
+
     <title>Portal de Gestión Corporativo</title>
     <!-- Fuente Inter y Poppins para títulos -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
@@ -736,7 +738,14 @@
 
     <!-- VISTA 2: DASHBOARD -->
     <section id="dashboard-view">
+
         <nav class="top-nav fade-in">
+            <div class="header">
+                <img src="../assets/images/logo.svg" style="width: 200px;" />
+                <button onclick="logout()" class="logout-btn">
+                    <span>Salir</span> <i class="ph ph-sign-out"></i>
+                </button>
+            </div>
             <div class="nav-brand">
                 <div class="avatar-circle" id="user-avatar">JP</div>
                 <div class="user-text">
@@ -744,9 +753,6 @@
                     <span id="welcome-company">Empresa Global S.A.S</span>
                 </div>
             </div>
-            <button onclick="logout()" class="logout-btn">
-                <span>Salir</span> <i class="ph ph-sign-out"></i>
-            </button>
         </nav>
 
         <main class="content-container slide-up" style="animation-delay: 0.1s;">
@@ -761,10 +767,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="padding-left: 32px;">Colaborador</th>
+                            <th style="padding-left: 32px;">Proveedores</th>
                             <th>Identificación</th>
                             <th>Estado</th>
-                            <th style="text-align: center;">Acciones</th>
+                            <th style="text-align: center;">Detalles</th>
                             <th>Documentos</th>
                         </tr>
                     </thead>

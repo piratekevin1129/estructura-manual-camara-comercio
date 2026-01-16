@@ -273,23 +273,21 @@ video::-webkit-media-controls-panel { display: none !important; }
     justify-content: flex-start;
 }
 
-.video-legend-icon{
+#video-legend-icon{
     position: relative;
     width: 60px;
     height: 60px;
-    display: flex;
+    
     margin-right: 20px;
     border-radius: 50%;
-    background-color: #9333ea;
-    align-items: center;
-    justify-content: center;
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.video-legend-icon img{
-    display: block;
-    margin: 0px;
-    width: 30px;
-    height: 30px;
-}
+.video-legend-icon-video{background-image: url(../images/icon-legend-video.svg); background-color: #d61921;}
+.video-legend-icon-formulario{background-image: url(../images/icon-legend-form.svg); background-color: #009ea8;}
+.video-legend-icon-link{background-image: url(../images/icon-legend-link.svg); background-color: #9333ea;}
+
 .video-legend-info{
     position: relative;
     width: auto;
@@ -496,15 +494,13 @@ video::-webkit-media-controls-panel { display: none !important; }
         padding: 30px;
     }
 
-    .video-legend-icon{
+    #video-legend-icon{
         width: 90px;
         height: 90px;
         margin-right: 20px;
+        background-size: 40px 40px;
     }
-    .video-legend-icon img{
-        width: 40px;
-        height: 40px;
-    }
+    
     .video-legend-info{
         width: auto;
         width: calc(100% - 110px);

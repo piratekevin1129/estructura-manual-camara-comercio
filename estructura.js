@@ -13,18 +13,20 @@ var estructura = [{
             nombre:'Inducción / Reinducción',
             tipo:'video',
             legends:[{
-                time:{start:40,end:45},
+                time:{start:39,end:44},
                 href:'https://www.youtube.com/embed/lmkidEcWkdc?rel=0',
                 display:'in',
-                text:'Video',
+                tipo:'video',
                 btn:'Ver',
+                text:'Video',
                 subtext:'Inducción Reinducción Contratistas CCMA'
             },{
-                time:{start:46,end:52},
+                time:{start:45,end:51},
                 href:'https://forms.office.com/r/CmLBFsAmvN',
                 display:'in',
-                text:'Formulario',
+                tipo:'formulario',
                 btn:'Ver',
+                text:'Formulario',
                 subtext:'Evaluación inducción / reinducción para contratistas'
             }],
             active:true

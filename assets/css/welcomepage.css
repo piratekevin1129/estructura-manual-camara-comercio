@@ -13,14 +13,14 @@
     left: -moz-calc(100% - 120px);
 }
 
-#w-logo{
+.w-logo{
     position: absolute;
-    width: 130px;
+    width: 200px;
     height: auto;
-    top: 15px;
-    right: 20px;
+    top: 0px;
+    right: 0px;
 }
-#w-logo img{
+.w-logo img{
     display: block;
     width: 100%;
     height: auto;
@@ -288,10 +288,8 @@
         left: -moz-calc(100% - 145px);
     }
 
-    #w-logo{
-        width: 220px;
-        top: 25px;
-        right: 30px;
+    .w-logo{
+        width: 250px;
     }
 
     .w-row1{
