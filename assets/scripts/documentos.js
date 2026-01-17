@@ -31,7 +31,6 @@ function abrirDocumentos(){
 }
 
 function cerrarDocumentos(){
-    getE('documentos-container').className = 'documentos-container-off'
     //limpiar
     getE('documentos-cargados-list').innerHTML = html_ninguno
     getE('input_documentos_form').reset()
@@ -68,11 +67,61 @@ function seleccionarDocumentos (event) {
     }*/
 }
 
-function guardarDocumentos(){
-    cerrarDocumentos()
-    getE('alerta').className = 'alerta-on'
-}
-
 function cerrarAlerta(){
     getE('alerta').className = 'alerta-off'
+}
+
+var loading_documentos = false;
+getE('input_documentos_form').onsubmit = function(event){
+    event.preventDefault()
+
+    if(!loading_documentos){
+        loading_documentos = true;
+        //volver en cargador
+        getE('documentos-subir-paquete-btn').getElementsByTagName('div')[0].className = 'documentos-subir-paquete-btn-loading'
+        const formData = new FormData(getE('input_documentos_form')); // Create a FormData object from the form
+    
+        fetch('./api/upload.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text()) // Get the response as text
+        .then(result => {
+            console.log(result);
+            var json_result = JSON.parse(result)
+            if(json_result.errors.length==0){
+                //todo bien
+                setAlertaOk()
+                getE('documentos-container').className = 'documentos-container-off'
+                cerrarDocumentos()
+            }else{
+                //algo malo ocurrió
+                setAlertaError()
+                cerrarDocumentos()
+            }
+            getE('documentos-subir-paquete-btn').getElementsByTagName('div')[0].className = 'documentos-subir-paquete-btn-normal'
+            loading_documentos = false;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            setAlertaError()
+            cerrarDocumentos()
+
+            getE('documentos-subir-paquete-btn').getElementsByTagName('div')[0].className = 'documentos-subir-paquete-btn-normal'
+            loading_documentos = false;
+        });
+    }
+}
+
+function setAlertaError(){
+    getE('alerta-titulo').innerHTML = '¡Ocurrió un error!'
+    getE('alerta-text').innerHTML = 'Los documentos no se pudieron guardar, por favor vuelva a intentarlo.'
+    getE('alerta-icono').className = 'alerta-icono-error'
+    getE('alerta').className = 'alerta-on'
+}
+function setAlertaOk(){
+    getE('alerta-titulo').innerHTML = '¡Envío Exitoso!'
+    getE('alerta-text').innerHTML = 'Los documentos se han cargado correctamente en el sistema'
+    getE('alerta-icono').className = 'alerta-icono-ok'
+    getE('alerta').className = 'alerta-on'
 }

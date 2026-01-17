@@ -1,2 +1,4 @@
 fuentes
 content/unidad3/modulo1/tema1/video.mp4
+api/documentos/*
+!api/documentos/gitignore

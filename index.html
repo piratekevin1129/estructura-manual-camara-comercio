@@ -223,7 +223,7 @@
             <p>Volver al menú principal</p>
         </button>
 
-        <div id="documentos-container" class="documentos-container-off">
+        <div id="documentos-container" class="documentos-container-on">
             <div id="documentos-box">
                 <div class="documentos-seccion-1">
                     <div class="documentos-row">
@@ -249,41 +249,41 @@
                     </div>
                 </div>
                 <div class="documentos-seccion-2">
-                    <div class="documentos-row">
-                        <div class="documentos-col1">
-                            <img src="assets/images/icon-documentos-documento.svg" />
-                        </div>
-                        <div class="documentos-col2">
-                            <h2>Adjunta los documentos actualizados</h2>
-                            <p>Sube los archivos requeridos para tu proceso</p>
-                        </div>
-                        <button class="documentos-cerrar-btn" onclick="cerrarDocumentos()">
-                            <img src="assets/images/icon-cerrar2.svg" />
-                        </button>
-                    </div>
-                    <div class="documentos-content">
-                        <div id="documentos-carga-content">
-                            <div>
-                                <img src="assets/images/icon-documentos-subir.svg" />
+                    <form method="post" enctype="multipart/form-data" id="input_documentos_form">
+                        <div class="documentos-row">
+                            <div class="documentos-col1">
+                                <img src="assets/images/icon-documentos-documento.svg" />
                             </div>
-                            <p>Arrastra tus archivos aquí</p>
-                            <p><span>o haz clic para buscar en tu equipo</span></p>
-                            <form method="post" enctype="multipart/form-data" action="guardar.php" id="input_documentos_form">
+                            <div class="documentos-col2">
+                                <h2>Adjunta los documentos actualizados</h2>
+                                <p>Sube los archivos requeridos para tu proceso</p>
+                            </div>
+                            <button class="documentos-cerrar-btn" onclick="cerrarDocumentos()">
+                                <img src="assets/images/icon-cerrar2.svg" />
+                            </button>
+                        </div>
+                        <div class="documentos-content">
+                            <div id="documentos-carga-content">
+                                <div>
+                                    <img src="assets/images/icon-documentos-subir.svg" />
+                                </div>
+                                <p>Arrastra tus archivos aquí</p>
+                                <p><span>o haz clic para buscar en tu equipo</span></p>
                                 <input id="input_documentos" type="file" name="documentos[]" multiple accept=".pdf" />
-                            </form>
-                        </div>
-                        <div class="documentos-cargados">
-                            <div id="documentos-cargados-list">
-                                <!---->
+                            </div>
+                            <div class="documentos-cargados">
+                                <div id="documentos-cargados-list">
+                                    <!---->
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="documentos-subir-paquete">
-                        <button class="documentos-subir-paquete-btn" onclick="guardarDocumentos()">
-                            <span>Subir paquete</span>
-                            <img src="assets/images/icon-documentos-subir2.svg" />
-                        </button>
-                    </div>
+                        <div class="documentos-subir-paquete">
+                            <button id="documentos-subir-paquete-btn" type="submit">
+                                <span>Subir paquete</span>
+                                <div class="documentos-subir-paquete-btn-normal"></div>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -291,8 +291,8 @@
         <div id="alerta" class="alerta-off">
             <div id="alerta-box">
                 <div id="alerta-icono" class="alerta-icono-ok"></div>
-                <h1 id="alerta-titulo">¡Envío Exitoso!</h1>
-                <p id="alerta-text">Los documentos se han cargado correctamente en el sistema</p>
+                <h1 id="alerta-titulo">...</h1>
+                <p id="alerta-text">...</p>
                 <button id="alerta-btn" type="button" onclick="cerrarAlerta()">
                     <span>Entendido</span>
                 </button>
