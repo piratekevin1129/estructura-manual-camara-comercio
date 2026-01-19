@@ -367,7 +367,7 @@
     top: 100%;
 }
 
-@media (min-width: 1540px) {
+@media (min-width: 1537px) {
     .fondo2 #aro1{
         width: 350px;
         height: 350px;
@@ -472,5 +472,81 @@
     }
     .m2-module-closed .m2-module-menu{
         bottom: 130px;
+    }
+}
+
+@media (min-width: 1366px) and (max-width: 1536px){
+    #m2-titulo h1{
+        font-size: 25px;
+    }
+    #m2-subtitulo h2{
+        font-size: 25px;
+    }
+    #m2-texto p{
+        font-size: 18px;
+    }
+
+    #m2-unidad > p{
+        font-size: 25px;
+    }
+
+    /*************/
+    .m2-module-btn{
+        width: 320px;
+        height: 250px;
+        margin: 10px 10px;
+    }
+    .m2-module{
+        border-radius: 15px;
+    }
+
+    .m2-module-info{
+        padding: 0px 20px;
+        border-radius: 0px 0px 15px 15px;
+    }
+    .m2-module-info div{
+        width: 50px;
+        height: 50px;
+    }
+    .m2-module-info div span{
+        width: 40px;
+        height: 40px;
+        font-size: 35px;
+    }
+    .m2-module-info div img{
+        width: 32px;
+        height: 32px;
+    }
+
+    .m2-module-info p{
+        font-size: 18px;
+    }
+    #modulo1 .m2-module-info > p{width: 200px;}
+    #modulo2 .m2-module-info > p{width: 210px;}
+    #modulo3 .m2-module-info > p{width: 210px;}
+    #modulo4 .m2-module-info > p{width: 210px;}
+    #modulo5 .m2-module-info > p{width: 180px;}
+    #modulo6 .m2-module-info > p{width: 210px;}
+    #modulo7 .m2-module-info > p{width: 180px;}
+    #modulo8 .m2-module-info > p{width: 170px;}
+
+    .m2-module-opened .m2-module-info{
+        height: 60px;
+    }
+    .m2-module-opened .m2-module-img{
+        height: 190px;
+    }
+    .m2-module-opened .m2-module-menu{
+        bottom: 60px;
+    }
+
+    .m2-module-closed .m2-module-info{
+        height: 115px;
+    }
+    .m2-module-closed .m2-module-img{
+        height: 135px;
+    }
+    .m2-module-closed .m2-module-menu{
+        bottom: 115px;
     }
 }

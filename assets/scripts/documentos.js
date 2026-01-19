@@ -31,6 +31,7 @@ function abrirDocumentos(){
 function cerrarDocumentos(){
     //limpiar
     //getE('input_documentos_form').reset()
+    getE('documentos-container').className = 'documentos-container-off'
 }
 
 var input_data = new DataTransfer();
