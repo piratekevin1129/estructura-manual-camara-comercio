@@ -443,7 +443,7 @@ html,body{
     animation: none !important;
 }
 
-@media (min-width: 1540px) {
+@media (min-width: 1537px) {
     #loader-txt{
         font-size: 24px;    
     }
@@ -504,5 +504,22 @@ html,body{
         width: auto;
         width: calc(60px * 4);
         width: -moz-calc(60px * 4);
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1280px){
+    .volver-btn{
+        top: 10px;
+        left: 15px;
+        height: 40px;
+        padding: 0px 15px;
+        border-radius: 20px;
+    }
+    .volver-btn img{
+        width: 25px;
+        height: 25px;
+    }
+    .volver-btn p{
+        font-size: 14px;
     }
 }

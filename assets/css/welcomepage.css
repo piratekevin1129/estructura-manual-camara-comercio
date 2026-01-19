@@ -207,7 +207,7 @@
     background-color: #D61921;
     border: none;
     box-sizing: border-box;
-    padding: 0px 85px 0px 20px;
+    padding: 0px 75px 0px 20px;
     transform-origin: top center;
 }
 .w-button span{
@@ -275,7 +275,7 @@
 
 /**********************************/
 
-@media (min-width: 1540px) {
+@media (min-width: 1537px) {
     .fondo0 #aro1{
         width: 350px;
         height: 350px;
@@ -332,5 +332,65 @@
     .w-button div img{
         width: 45px;
         height: 45px;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1280px) {
+    .fondo0 #aro1{
+        width: 250px;
+        height: 250px;
+    }
+    .fondo0 #aro2{
+        width: 200px;
+        height: 200px;
+        left: 100%;
+        left: calc(100% - 115px);
+        left: -moz-calc(100% - 115px);
+    }
+
+    .w-logo{
+        width: 190px;
+    }
+
+    .w-row1{
+        width: 500px;
+        height: 500px;       
+    }
+    .w-fotografia-centro{
+        width: 55%;
+        height: 55%;
+    }
+
+    #w-titulo h1{
+        font-size: 30px;
+    }
+    #w-subtitulo h2{
+        font-size: 45px;
+    }
+    #w-texto p{
+        font-size: 14px;
+    }
+
+    #w-boton{
+        height: 60px;
+        margin-top: -15px;
+    }
+    .w-button{
+        height: 45px;
+        border-radius: 23px;
+        top: 15px;
+
+        padding: 0px 65px 0px 20px;
+    }
+    .w-button span{
+        font-size: 21px;
+    }
+    .w-button div{
+        width: 45px;
+        height: 45px;
+    }
+    .w-button div img{
+        width: 30px;
+        height: 30px;
     }
 }

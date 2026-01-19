@@ -244,7 +244,7 @@
     }
 }
 
-@media (min-width: 1540px) {
+@media (min-width: 1537px) {
     .fondo1 #aro1{
         width: 350px;
         height: 350px;
@@ -305,5 +305,69 @@
     .m-unity-over .m-unity-icon::after{
         top: 27.5px;
         left: 27.5px;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1280px){
+    .fondo1 #aro1{
+        width: 250px;
+        height: 250px;
+    }
+    .fondo1 #aro2{
+        width: 80px;
+        height: 80px;
+        left: 50px;
+    }
+
+    #m-titulo h1{
+        font-size: 26px;
+    }
+    #m-subtitulo h2{
+        font-size: 26px;
+    }
+    #m-texto p{
+        font-size: 14px;
+    }
+    
+    .m-unity-btn{
+        width: 340px;
+        height: 222px;
+        margin: 0px 20px;
+    }
+
+    .m-unity-icon{
+        width: 40px;
+        height: 40px;
+        right: 20px;
+        bottom: 20px;
+    }
+    .m-unity-icon::before{
+        width: 30px;
+        height: 30px;
+        top: 5px;
+        left: 5px;
+    }
+    .m-unity-icon::after{
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .m-unity-over .m-unity-icon{
+        width: 50px;
+        height: 50px;
+        right: 5px;
+        bottom: 5px;
+    }
+    .m-unity-over .m-unity-icon::before{
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        left: 5px;
+    }
+    .m-unity-over .m-unity-icon::after{
+        top: 15px;
+        left: 15px;
     }
 }

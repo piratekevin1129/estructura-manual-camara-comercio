@@ -232,7 +232,7 @@
                         </div>
                         <div class="documentos-col2">
                             <h2>Documentos de apoyo</h2>
-                            <p>10 Documentos disponibles</p>
+                            <p>3 Documentos disponibles</p>
                         </div>
                         <a href="./assets/docs/documentos-camara-comercio.zip" target="_blank" class="documentos-descargar-todo-btn">
                             <img src="assets/images/icon-documentos-descargar.svg" />
@@ -257,6 +257,7 @@
                             <div class="documentos-col2">
                                 <h2>Adjunta los documentos actualizados</h2>
                                 <p>Sube los archivos requeridos para tu proceso</p>
+                                <p>Los archivos no deben superar el tamaño de 8MB</p>
                             </div>
                             <button type="button" class="documentos-cerrar-btn" onclick="cerrarDocumentos()">
                                 <img src="assets/images/icon-cerrar2.svg" />
@@ -329,7 +330,7 @@
         init()
 
         window.onload = function(){
-            //alert(window.innerWidth)
+            //alert(window.innerWidth+" x "+window.innerHeight)
             loadImg({src:'./assets/images/fondo-rojo.jpg', callBack: function(data){
                 getE('fondo-img2').style.backgroundImage = 'url('+data.src+')'
                 loadImg({src:'./assets/images/fondo.jpg', callBack: function(data){
@@ -353,6 +354,9 @@
                     
                 }})
             }})
+        }
+        window.onresize = function(){
+            init()
         }
     </script>
 </body>

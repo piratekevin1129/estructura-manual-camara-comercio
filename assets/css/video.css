@@ -435,7 +435,7 @@ video::-webkit-media-controls-panel { display: none !important; }
     margin-left: 15px;
 }
 
-@media (min-width: 1540px) {
+@media (min-width: 1537px) {
     #video-playpause div{
         width: 120px;
         height: 120px;
