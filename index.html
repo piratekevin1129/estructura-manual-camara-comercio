@@ -223,7 +223,7 @@
             <p>Volver al menú principal</p>
         </button>
 
-        <div id="documentos-container" class="documentos-container-on">
+        <div id="documentos-container" class="documentos-container-off">
             <div id="documentos-box">
                 <div class="documentos-seccion-1">
                     <div class="documentos-row">
@@ -269,7 +269,7 @@
                                 </div>
                                 <p>Arrastra tus archivos aquí</p>
                                 <p><span>o haz clic para buscar en tu equipo</span></p>
-                                <input id="input_documentos" type="file" name="documentos[]" multiple accept=".pdf, .docx, .xlsx, .pptx, .doc, .xls, .ppt, .zip" />
+                                <input id="input_documentos" type="file" name="documentos[]" multiple accept=".pdf, .docx, .xlsx, .pptx, .doc, .xls, .ppt, .zip, .csv" />
                             </div>
                             <div class="documentos-cargados">
                                 <h6 id="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>
@@ -279,6 +279,7 @@
                             </div>
 
                             <input id="input_documentos2" type="file" name="documentos2[]" multiple />
+                            <input type="hidden" name="removidos" id="removidos_documentos2" />
                         </div>
                         <div class="documentos-subir-paquete">
                             <button id="documentos-subir-paquete-btn" type="submit">

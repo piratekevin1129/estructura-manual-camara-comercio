@@ -313,6 +313,8 @@
 
 /*******************/
 .documentos-seccion-2 .documentos-row{
+    background-color: #ffffff;
+    z-index: 1;
     border-bottom: #e6e6e6 solid 2px;
 }
 
@@ -441,6 +443,8 @@
     height: auto;
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .documentos-cargado-item button{
     position: relative;
@@ -519,7 +523,7 @@
     background-image: url(../images/icon-alerta-ok.svg);
 }
 .alerta-icono-error{
-    background-color: #ff7e60;
+    background-color: #ffc8bd;
     background-image: url(../images/icon-alerta-error.svg);
 }
 
@@ -619,13 +623,13 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-    opacity: 1;
+    opacity: 0;
 }
 #input_documentos2{
     position: absolute;
     width: 100%;
     height: auto;
-    top: 0%;
+    top: -30px;
     left: 0px;
-    opacity: 1;
+    opacity: 0;
 }

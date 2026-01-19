@@ -36,23 +36,35 @@ function cerrarDocumentos(){
 var input_data = new DataTransfer();
 var input_documentos = getE('input_documentos')
 input_documentos.addEventListener('change', seleccionarDocumentos)
+var documentos_agregados = []
+var documentos_removidos = []
 
 function seleccionarDocumentos () {
     var files = input_documentos.files;
     //input_data = new DataTransfer();
 
     for(i=0;i<files.length;i++){
-        input_data.items.add(files[i]);
+        //evitar repetidos
+        var repetido = false;
+        for(j = 0;j<documentos_agregados.length;j++){
+            if(documentos_agregados[j].name==files[i].name){
+                repetido = true;
+            }
+        }
+        if(!repetido){
+            documentos_agregados.push({name:files[i].name})
+            input_data.items.add(files[i]);
+        }
     }
 
     getE('input_documentos2').files = input_data.files
-
+    documentos_removidos = []
     actualizarDocumentos()
 }
 
 function actualizarDocumentos(){
     //console.log(files);
-    var files = getE('input_documentos2').files
+    var files = input_data.files
     getE('documentos-cargados-list').innerHTML = ''
 
     if(files.length>0){
@@ -61,7 +73,6 @@ function actualizarDocumentos(){
         for(k = 0;k<files.length;k++){
             var item = document.createElement('a')
             item.className = 'documentos-cargado-item'
-            item.setAttribute('active','si')
             item.innerHTML = '<img src="./assets/images/icon-documentos-documento2.svg" /><p>'+files[k].name+'</p><button type="button" onclick="removerDocumento(this)"></button>'
             getE('documentos-cargados-list').appendChild(item)
         }
@@ -71,7 +82,29 @@ function actualizarDocumentos(){
 }
 
 function removerDocumento(btn){
+    var item_parent = btn.parentNode
+    item_parent.setAttribute('active','false')
+    var item_name = item_parent.getElementsByTagName('p')[0].innerHTML
 
+    //quitar de agregados
+    var documentos_agregados_new = []
+    var input_data_new = new DataTransfer();
+    var current_files = getE('input_documentos2').files
+
+    for(i=0;i<current_files.length;i++){
+        //evitar repetidos
+        if(item_name!=current_files[i].name){
+            //incluir
+            input_data_new.items.add(current_files[i])
+            documentos_agregados_new.push({name:current_files[i].name})
+        }
+    }
+
+    input_data = input_data_new
+    documentos_agregados = documentos_agregados_new
+
+    documentos_removidos.push(item_name)
+    actualizarDocumentos()
 }
 
 function cerrarAlerta(){
@@ -83,8 +116,10 @@ getE('input_documentos_form').onsubmit = function(event){
     event.preventDefault()
 
     if(!loading_documentos){
+        //agregar lista de documentos removidos
+        getE('removidos_documentos2').value = String(documentos_removidos.toString())
+
         loading_documentos = true;
-        //volver en cargador
         getE('documentos-subir-paquete-btn').getElementsByTagName('div')[0].className = 'documentos-subir-paquete-btn-loading'
         const formData = new FormData(getE('input_documentos_form')); // Create a FormData object from the form
     
