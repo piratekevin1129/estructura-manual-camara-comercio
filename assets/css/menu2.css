@@ -531,13 +531,13 @@
     #modulo8 .m2-module-info > p{width: 170px;}
 
     .m2-module-opened .m2-module-info{
-        height: 60px;
+        height: 80px;
     }
     .m2-module-opened .m2-module-img{
-        height: 190px;
+        height: 170px;
     }
     .m2-module-opened .m2-module-menu{
-        bottom: 60px;
+        bottom: 80px;
     }
 
     .m2-module-closed .m2-module-info{
