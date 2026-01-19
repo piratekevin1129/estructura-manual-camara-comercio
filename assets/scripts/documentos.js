@@ -1,4 +1,4 @@
-var html_ninguno = '<h6 class="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>'
+var html_ninguno = ''
 
 function setDocumentos(){
     for(i = 0;i<documentos.length;i++){
@@ -22,8 +22,6 @@ function setDocumentos(){
 
         getE('documentos-contenidos-list').appendChild(item)
     }
-
-    getE('documentos-cargados-list').innerHTML = html_ninguno
 }
 
 function abrirDocumentos(){
@@ -32,39 +30,48 @@ function abrirDocumentos(){
 
 function cerrarDocumentos(){
     //limpiar
-    getE('documentos-cargados-list').innerHTML = html_ninguno
-    getE('input_documentos_form').reset()
+    //getE('input_documentos_form').reset()
 }
 
+var input_data = new DataTransfer();
 var input_documentos = getE('input_documentos')
 input_documentos.addEventListener('change', seleccionarDocumentos)
 
-function seleccionarDocumentos (event) {
-    var files = event.target.files; // or fileInput.files
+function seleccionarDocumentos () {
+    var files = input_documentos.files;
+    //input_data = new DataTransfer();
 
-    // Log the FileList (an array-like object)
-    console.log(files);
+    for(i=0;i<files.length;i++){
+        input_data.items.add(files[i]);
+    }
 
-    
+    getE('input_documentos2').files = input_data.files
+
+    actualizarDocumentos()
+}
+
+function actualizarDocumentos(){
+    //console.log(files);
+    var files = getE('input_documentos2').files
+    getE('documentos-cargados-list').innerHTML = ''
+
     if(files.length>0){
-        getE('documentos-cargados-list').innerHTML = ''
-        // You can iterate over the files
+        getE('documentos-cargados-ninguno').style.display = 'none'
+        
         for(k = 0;k<files.length;k++){
             var item = document.createElement('a')
             item.className = 'documentos-cargado-item'
-            item.innerHTML = '<img src="./assets/images/icon-documentos-documento2.svg" /><p>'+files[k].name+'</p>'
-            getE('documentos-cargados-list').appendChild(item)    
+            item.setAttribute('active','si')
+            item.innerHTML = '<img src="./assets/images/icon-documentos-documento2.svg" /><p>'+files[k].name+'</p><button type="button" onclick="removerDocumento(this)"></button>'
+            getE('documentos-cargados-list').appendChild(item)
         }
     }else{
-        getE('documentos-cargados-list').innerHTML = html_ninguno
+        getE('documentos-cargados-ninguno').style.display = 'block'
     }
+}
 
-    /*for (const file of files) {
-        console.log('File Name:', file.name);
-        console.log('File Size:', file.size, 'bytes');
-        console.log('File Type:', file.type);
-        // You can use the FileReader API to read the file contents
-    }*/
+function removerDocumento(btn){
+
 }
 
 function cerrarAlerta(){
@@ -93,11 +100,9 @@ getE('input_documentos_form').onsubmit = function(event){
                 //todo bien
                 setAlertaOk()
                 getE('documentos-container').className = 'documentos-container-off'
-                cerrarDocumentos()
             }else{
                 //algo malo ocurrió
                 setAlertaError()
-                cerrarDocumentos()
             }
             getE('documentos-subir-paquete-btn').getElementsByTagName('div')[0].className = 'documentos-subir-paquete-btn-normal'
             loading_documentos = false;
@@ -105,8 +110,7 @@ getE('input_documentos_form').onsubmit = function(event){
         .catch(error => {
             console.error('Error:', error);
             setAlertaError()
-            cerrarDocumentos()
-
+            
             getE('documentos-subir-paquete-btn').getElementsByTagName('div')[0].className = 'documentos-subir-paquete-btn-normal'
             loading_documentos = false;
         });

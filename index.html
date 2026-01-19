@@ -258,7 +258,7 @@
                                 <h2>Adjunta los documentos actualizados</h2>
                                 <p>Sube los archivos requeridos para tu proceso</p>
                             </div>
-                            <button class="documentos-cerrar-btn" onclick="cerrarDocumentos()">
+                            <button type="button" class="documentos-cerrar-btn" onclick="cerrarDocumentos()">
                                 <img src="assets/images/icon-cerrar2.svg" />
                             </button>
                         </div>
@@ -269,13 +269,16 @@
                                 </div>
                                 <p>Arrastra tus archivos aquí</p>
                                 <p><span>o haz clic para buscar en tu equipo</span></p>
-                                <input id="input_documentos" type="file" name="documentos[]" multiple accept=".pdf" />
+                                <input id="input_documentos" type="file" name="documentos[]" multiple accept=".pdf, .docx, .xlsx, .pptx, .doc, .xls, .ppt, .zip" />
                             </div>
                             <div class="documentos-cargados">
+                                <h6 id="documentos-cargados-ninguno">Aún no se ha cargado ningún documento</h6>
                                 <div id="documentos-cargados-list">
                                     <!---->
                                 </div>
                             </div>
+
+                            <input id="input_documentos2" type="file" name="documentos2[]" multiple />
                         </div>
                         <div class="documentos-subir-paquete">
                             <button id="documentos-subir-paquete-btn" type="submit">
