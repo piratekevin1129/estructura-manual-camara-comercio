@@ -115,6 +115,10 @@
     font-size: 14px;
     color: #808083;
 }
+.documentos-col2 p span{
+    font-family: 'Montserrat-Medium';
+    font-size: 13px;
+}
 .documentos-descargar-todo-btn,
 #documentos-subir-paquete-btn{
     cursor: pointer;
@@ -567,10 +571,10 @@
     padding: 10px 5px;
     box-sizing: border-box;
     border: none;
-    background-color: #0f172a;
+    background-color: #e31f26;
     border-radius: 5px;
 
-    box-shadow: 0px 5px 0px 1px #000000;
+    box-shadow: 0px 5px 0px 1px #84131b;
     top: 0px;
     text-decoration: none !important;
     

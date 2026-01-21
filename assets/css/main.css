@@ -281,8 +281,8 @@ html,body{
 #toolbar-menu{
     position: absolute;
     width: auto;
-    width: calc(40px * 4);
-    width: -moz-calc(40px * 4);
+    width: calc(40px * 3);
+    width: -moz-calc(40px * 3);
     right: 0px;
     top: 0px;
     height: 100%;
@@ -334,8 +334,8 @@ html,body{
 }
 .toolbar-on #toolbar-menu-wrap{
     width: auto;
-    width: calc(40px * 4);
-    width: -moz-calc(40px * 4);
+    width: calc(40px * 3);
+    width: -moz-calc(40px * 3);
     transition: width 0.5s 1s;
 }
 
@@ -485,8 +485,8 @@ html,body{
 
     #toolbar-menu{
         width: auto;
-        width: calc(60px * 4);
-        width: -moz-calc(60px * 4);
+        width: calc(60px * 3);
+        width: -moz-calc(60px * 3);
         padding: 5px 0px;
     }
     #toolbar-menu button{
@@ -502,8 +502,8 @@ html,body{
     /***************/
     .toolbar-on #toolbar-menu-wrap{
         width: auto;
-        width: calc(60px * 4);
-        width: -moz-calc(60px * 4);
+        width: calc(60px * 3);
+        width: -moz-calc(60px * 3);
     }
 }
 

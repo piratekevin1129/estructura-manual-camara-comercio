@@ -1,4 +1,5 @@
-var video_status = 'paused'
+var video_status = 'paused';
+var l = 0;
 
 function pauseVideo(){
     getE('video-vid').pause()
@@ -42,6 +43,8 @@ function prepareVideo(data){
     getE('video-vid').src = data.src
     getE('video-vid').load()
     getE('video-vid').addEventListener('loadedmetadata', loadVideo)
+    legends_active = []
+    getE('video-legend').innerHTML = ''
 }
 
 function loadVideo(){
@@ -76,6 +79,9 @@ function loadVideo(){
 
 var animacion_timeline = null
 var animacion_legends = null
+var legends_active = []
+var current_legends = []
+
 function animateTimeline(){
     animacion_timeline = setInterval(function(){
         getE('video-timeline-currenttime').innerHTML = formatTime(getE('video-vid').currentTime)
@@ -88,44 +94,56 @@ function animateTimeline(){
         //verificar legenda
         var tiempo_int = parseInt(getE('video-vid').currentTime)
         console.log("leyenda :"+tiempo_int)
-        var is_legend = false;
-        var current_legend = null;
-        for(var l = 0;l<actual_item.legends.length;l++){
+        
+        current_legends = []
+        for(l = 0;l<actual_item.legends.length;l++){
             if(
                 tiempo_int>=actual_item.legends[l].time.start&&
                 tiempo_int<actual_item.legends[l].time.end
             ){
-                is_legend = true;
-                current_legend = l
+                current_legends.push(l)
             }
         }
 
-        if(is_legend){
-            //if(!animacion_legend_status){
-                getE('video-legend-text').innerHTML = actual_item.legends[current_legend].text
-                getE('video-legend-subtext').innerHTML = actual_item.legends[current_legend].subtext
-                getE('video-legend-btn').innerHTML = actual_item.legends[current_legend].btn
-                getE('video-legend-icon').className = 'video-legend-icon-'+actual_item.legends[current_legend].tipo
-                if(actual_item.legends[current_legend].display=='in'){
-                    getE('video-legend-link').removeAttribute('href')
-                    getE('video-legend-link').setAttribute('onclick',"openLegendLink('"+actual_item.legends[current_legend].href+"')")
-                }else{
-                    getE('video-legend-link').setAttribute('href',actual_item.legends[current_legend].href)
-                    getE('video-legend-link').removeAttribute('onclick')
+        if(current_legends.length>0){
+            for(l = 0;l<current_legends.length;l++){
+                var current_legend = current_legends[l]
+                if(legends_active.indexOf(actual_item.legends[current_legend].id)==-1){
+                    var legend_row = document.createElement('div')
+                    legend_row.className = 'video-legend-row'
+                    legend_row.id = actual_item.legends[current_legend].id
+                    
+                    var html_l = ""
+                    
+                    html_l+='<div class="video-legend-icon video-legend-icon-'+actual_item.legends[current_legend].tipo+'"></div>'
+                    html_l+='<div class="video-legend-info">'
+                        html_l+='<h2>'+actual_item.legends[current_legend].text+'</h2>'
+                        html_l+='<p>'+actual_item.legends[current_legend].subtext+'</p>'
+    
+                        if(actual_item.legends[current_legend].display=='in'){
+                            html_l+='<a class="video-legend-link" onclick="openLegendLink('+"'"+actual_item.legends[current_legend].href+"'"+')">'
+                        }else{
+                            html_l+='<a class="video-legend-link" href="'+actual_item.legends[current_legend].href+'" target="_blank">'
+                        }
+                            html_l+='<span>'+actual_item.legends[current_legend].btn+'</span>'
+                            html_l+='<img src="assets/images/icon-legend-link.svg" />'
+                        html_l+='</a>'
+                    html_l+='</div>'
+                    
+                    legend_row.innerHTML = html_l
+                    legends_active.push(actual_item.legends[current_legend].id)
+                    getE('video-legend').appendChild(legend_row)
                 }
-                getE('video-legend').className = 'video-legend-on'
-                //animacion_legend_status = true
-                //animacion_legend_active = setTimeout(animacionLegendActive,4000)
-            //}
+            }
+
+            getE('video-legend').className = 'video-legend-on'
         }else{
             getE('video-legend').className = 'video-legend-off'
+            legends_active = []
+            getE('video-legend').innerHTML = ''
         }
     },1000)
 }
-
-//var animacion_legend_status = false
-//var animacion_legend_active = null
-
 
 function clickTimeline(event,bar){
     var posx = event.pageX

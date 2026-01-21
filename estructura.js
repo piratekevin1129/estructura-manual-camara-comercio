@@ -13,7 +13,8 @@ var estructura = [{
             nombre:'Inducción / Reinducción',
             tipo:'video',
             legends:[{
-                time:{start:39,end:44},
+                id:'leg-induccion-reinduccion',
+                time:{start:40,end:56},
                 href:'https://www.youtube.com/embed/lmkidEcWkdc?rel=0',
                 display:'in',
                 tipo:'video',
@@ -21,7 +22,8 @@ var estructura = [{
                 text:'Video',
                 subtext:'Inducción Reinducción Contratistas CCMA'
             },{
-                time:{start:45,end:51},
+                id:'leg-formulario',
+                time:{start:46,end:56},
                 href:'https://forms.office.com/r/CmLBFsAmvN',
                 display:'in',
                 tipo:'formulario',

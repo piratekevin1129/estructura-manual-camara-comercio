@@ -1,8 +1,10 @@
 .fondo2 #aro1{
     width: 300px;
     height: 300px;
-    top: 105%;
+    top: 50%;
     left: 100%;
+    left: calc(100% + 75px);
+    left: -moz-calc(100% + 75px);
 }
 .fondo2 #aro2{
     width: 200px;
@@ -371,6 +373,9 @@
     .fondo2 #aro1{
         width: 350px;
         height: 350px;
+        left: 100%;
+        left: calc(100% + 100px);
+        left: -moz-calc(100% + 100px);
     }
     .fondo2 #aro2{
         width: 250px;
@@ -475,8 +480,7 @@
     }
 }
 
-@media (min-width: 1366px) and (max-width: 1536px){
-
+@media (min-width: 1367px) and (max-width: 1536px){
     /*************/
     .m2-module-btn{
         width: 320px;
@@ -542,14 +546,13 @@
     .fondo2 #aro1{
         width: 200px;
         height: 200px;
-        top: 50%;
         left: 100%;
+        left: calc(100% + 50px);
+        left: -moz-calc(100% + 50px);
     }
     .fondo2 #aro2{
         width: 100px;
         height: 100px;
-        top: 98%;
-        left: 20px;
     }
 
     #m2-titulo{

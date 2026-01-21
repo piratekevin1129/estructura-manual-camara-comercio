@@ -64,8 +64,8 @@ function seleccionarDocumentos () {
 }
 
 function actualizarDocumentos(){
-    //console.log(files);
     var files = input_data.files
+    //console.log(files);
     getE('documentos-cargados-list').innerHTML = ''
 
     if(files.length>0){
@@ -80,6 +80,8 @@ function actualizarDocumentos(){
     }else{
         getE('documentos-cargados-ninguno').style.display = 'block'
     }
+
+    getE('input_documentos2').files = input_data.files
 }
 
 function removerDocumento(btn){
@@ -102,6 +104,7 @@ function removerDocumento(btn){
     }
 
     input_data = input_data_new
+    
     documentos_agregados = documentos_agregados_new
 
     documentos_removidos.push(item_name)
