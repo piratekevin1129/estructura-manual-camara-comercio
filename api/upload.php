@@ -1,6 +1,5 @@
 <?php
-$uploadDir = 'uploads/';
-// Ensure the uploads directory exists and has correct permissions
+
 $errors = array();
 $log = array();
 if (isset($_FILES['documentos2'])) {

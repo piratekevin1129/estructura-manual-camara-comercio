@@ -859,6 +859,7 @@
 
                 // Botón Docs
                 const btnLink = user.hasDocs ? '../assets/docs/documentos-camara-comercio.zip' : '#';
+                const btnZip = './../api/download.php';
                 const btnClass = user.hasDocs ? 'btn-primary' : 'btn-disabled';
                 const btnAttr = user.hasDocs ? `onclick="downloadDocs('${user.name}')"` : 'disabled';
                 const icon = user.hasDocs ? '<i class="ph-bold ph-download-simple"></i>' : '<i class="ph-bold ph-lock-key"></i>';
@@ -884,7 +885,7 @@
                         </button>
                     </td>
                     <td data-label="Documentación">
-                        <a href="${btnLink}" class="btn ${btnClass}" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; max-width: 140px;" ${btnAttr}>
+                        <a target="_blank" href="${btnZip}" class="btn ${btnClass}" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; max-width: 140px;" ${btnAttr}>
                             ${icon} ${text}
                         </a>
                     </td>
