@@ -38,7 +38,11 @@ function setPasos(){
                     h+='</div>'
                     h+='<div class="row-foot">'
                         h+='<div class="foot-tooltip">'
-                            h+='<div style="background-image:url(./assets/images/icon-'+data_cards[i].id+'.svg)"></div>'
+                            if(data_cards[i].icon!=null&&data_cards[i].icon!=undefined){
+                                h+='<div style="background-image:url(./assets/images/icon-'+data_cards[i].id+'.'+data_cards[i].icon+')"></div>'
+                            }else{
+                                h+='<div style="background-image:url(./assets/images/icon-'+data_cards[i].id+'.svg)"></div>'
+                            }
                             h+='<p>'+data_cards[i].tooltip+'</p>'
                         h+='</div>'
 

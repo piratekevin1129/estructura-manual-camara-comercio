@@ -40,6 +40,7 @@ var data_cards = [{
     tooltip:'Para autorizar el ingreso y ejecución de actividades por parte de contratistas en las instalaciones de la Cámara de Comercio de Medellín para Antioquia (CCMA), el supervisor del contrato deberá enviar por correo electrónico el certificado de afiliación y cobertura de la seguridad social al correo: <a>crestrepov@camaramedellin.com.co</a> o al Auxiliar de Gestión de Infraestructura correspondiente.'
 },{
     id:8,
+    icon:'png',
     title:title_2,
     subtitle:subtitle_2,
     tooltip:'Para las actividades en las sedes regionales, se debe informar antes de la ejecución de la actividad al gerente regional correspondiente.'
