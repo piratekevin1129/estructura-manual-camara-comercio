@@ -55,7 +55,11 @@ function init(){
 
 function cerrarToolbar(){
     //getE('toolbar').className = 'toolbar-off'
-    endedVideo()
+    if(actual_item.tipo=='video'){
+        endedVideo()
+    }else if(actual_item.tipo=='interactiva'){
+        endedInteractiva()
+    }
 }
 
 var animacion_titulos = null
@@ -248,7 +252,7 @@ function clickModule(unity,modul,topic){
 
     if(actual_item.tipo=='documentos'){
         abrirDocumentos()
-    }else{
+    }else if(actual_item.tipo=='video'){
         getE('fondo-aros').className = 'fondo-aros-off fondo2'
         getE('volver-btn1').className = 'volver-btn volver-btn-off'
     
@@ -268,12 +272,33 @@ function clickModule(unity,modul,topic){
                 getE('toolbar').className = 'toolbar-on'
                 getE('fondo-aros').className = 'fondo-aros-on fondo3'
                 
-                if(actual_item.tipo=='video'){
-                    //ir a video
-                    prepareVideo({src:'./content/unidad3/modulo1/tema1/video.mp4'})
-                }else{
-                    //prepareInteractiva({src:'./content/unidad3/modulo1/tema5/index.html'})
-                }
+                prepareVideo({src:'./content/unidad3/modulo1/tema1/video.mp4'})
+            },2000)
+
+            transicion_mp3.currentTime = 0
+            transicion_mp3.play()
+        },500)
+    }else if(actual_item.tipo=='interactiva'){
+        getE('fondo-aros').className = 'fondo-aros-off fondo2'
+        getE('volver-btn1').className = 'volver-btn volver-btn-off'
+    
+        animacion_fondo = setTimeout(function(){
+            clearTimeout(animacion_fondo)
+            animacion_fondo = null
+    
+            getE('container-wrap').className = 'content-wrap-2-4'
+                    
+            animacion_container_wrap = setTimeout(function(){
+                clearTimeout(animacion_container_wrap)
+                animacion_container_wrap = null
+    
+                //getE('fondo-img2').className = "fondo-img-off"
+                //getE('fondo-img').className = "fondo-img-on"
+    
+                getE('toolbar').className = 'toolbar-on'
+                getE('fondo-aros').className = 'fondo-aros-on fondo4'
+                
+                prepareInteractiva({src:'./content/unidad3/modulo1/tema2/index.html'})
             },2000)
 
             transicion_mp3.currentTime = 0
@@ -283,11 +308,19 @@ function clickModule(unity,modul,topic){
 }
 
 function finishTema(){
-    getE('fondo-aros').className = 'fondo-aros-off fondo3'
-    getE('container-wrap').className = 'content-wrap-3-2'
-    //getE('fondo-img2').className = "fondo-img-on"
-    //getE('fondo-img').className = "fondo-img-off"
-    getE('toolbar').className = 'toolbar-off'
+    if(actual_item.tipo=='video'){
+        getE('fondo-aros').className = 'fondo-aros-off fondo3'
+        getE('container-wrap').className = 'content-wrap-3-2'
+        //getE('fondo-img2').className = "fondo-img-on"
+        //getE('fondo-img').className = "fondo-img-off"
+        getE('toolbar').className = 'toolbar-off'
+    }else if(actual_item.tipo=='interactiva'){
+        getE('fondo-aros').className = 'fondo-aros-off fondo4'
+        getE('container-wrap').className = 'content-wrap-4-2'
+        //getE('fondo-img2').className = "fondo-img-on"
+        //getE('fondo-img').className = "fondo-img-off"
+        getE('toolbar').className = 'toolbar-off'
+    }
 
     animacion_container_wrap = setTimeout(function(){
         clearTimeout(animacion_container_wrap)
@@ -299,6 +332,9 @@ function finishTema(){
         if(actual_item.tipo=='video'){
             //poner en visto
             getE('item-1-1-1').className = 'm2-module-menu-content-checked'
+        }else if(actual_item.tipo=='interactiva'){
+            //poner en visto
+            getE('item-1-1-2').className = 'm2-module-menu-content-checked'
         }
         
     },1000)

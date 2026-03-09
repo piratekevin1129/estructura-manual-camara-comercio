@@ -1,0 +1,75 @@
+@media (min-width: 1537px) {
+    #titulo > h1{
+        font-size: 2.2rem;
+        color: #ffffff;
+        padding-bottom: 10px;
+        border-bottom: #96cc36 solid 3px;
+    }
+    #pasos-container{
+        margin: 40px auto;
+    }
+    .paso{
+        width: 60px;
+        height: 60px;
+        margin: 0px 50px;
+    }
+    .paso p{
+        font-size: 1.6rem;
+    }
+    #paso-tray{
+        height: 8px;
+    }
+
+    #cartas-container{
+        width: 1300px;
+        height: 600px;
+    }
+    .row-dibujo{
+        width: 100%;
+        width: calc(100% - 60px);
+        width: -moz-calc(100% - 60px);
+        height: 100%;
+        height: calc(100% - 120px);
+        height: -moz-calc(100% - 120px);
+        border-width: 5px;
+    }
+    .dibujo-tag{
+        padding: 12px 20px;
+        font-size: 1.3rem;
+    }
+    .row-head h3{
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+    .row-head h2{
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+    }
+    .row-head p{
+        font-size: 1.3rem;
+    }
+
+    .foot-tooltip{
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+    .foot-tooltip > div{
+        width: 40px;
+        height: 40px;
+    }
+    .foot-tooltip > p{
+        width: auto;
+        width: calc(100% - 55px);
+        width: -moz-calc(100% - 55px);
+
+        font-size: 1.2rem;
+    }
+
+    .foot-botones > button{
+        padding: 10px 20px;
+        font-size: 1.4rem;
+    }
+    .foot-botones > button span:last-child{
+        margin-left: 10px;
+    }
+}

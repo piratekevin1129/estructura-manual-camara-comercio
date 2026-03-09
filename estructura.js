@@ -33,7 +33,8 @@ var estructura = [{
         },
         {
             nombre:'Seguridad Social',
-            tipo:'interactiva'
+            tipo:'interactiva',
+            active:true
         },
         {
             nombre:'Estándares mínimos del SG-SST',

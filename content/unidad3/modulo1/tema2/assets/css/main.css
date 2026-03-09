@@ -1,0 +1,432 @@
+#contenedor{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background: #1e293b;
+    background: radial-gradient(#1e293b 0%, #1e293b 80%, #121b28 100%);
+}
+
+#titulo{
+    width: auto;
+    height: auto;
+    display: flex;
+    margin: 0px auto;
+}
+#titulo > h1{
+    font-family: 'Montserrat-SemiBold';
+    font-size: 1.5rem;
+    color: #cccccc;
+    padding-bottom: 5px;
+    border-bottom: #d61921 solid 2px;
+}
+#titulo > h1 span{
+    color: #ffffff;
+    font-family: 'Montserrat-ExtraBold';
+}
+ 
+#pasos-container{
+    width: auto;
+    height: auto;
+    margin: 20px auto;
+}
+#pasos{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.paso{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #334155;
+    margin: 0px 40px;
+
+    transition: background-color 0.5s;
+}
+#pasos .paso:first-child{
+    margin-left: 0px;
+}
+#pasos .paso:last-child{
+    margin-right: 0px;
+}
+.paso p{
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+#pasos .active{
+    background-color: #ff161f;
+}
+#pasos .visited{
+    background-color: #ff161f;
+}
+
+#paso-tray{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #334155;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+}
+#paso-line{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 0px;
+    background-color: #818181;
+
+    transition: width 0.5s;
+}
+
+
+#cartas-container{
+    width: 1100px;
+    height: 500px;
+    margin: 0px auto;
+}
+
+.carta-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+}
+
+.carta{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border: none;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0px 0px 20px -2px rgba(0,0,0,0.5);
+}
+
+.carta-row{
+    width: 50%;
+    height: 100%;
+}
+.carta .carta-row:first-child{
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row-dibujo{
+    width: 100%;
+    width: calc(100% - 40px);
+    width: -moz-calc(100% - 40px);
+    height: 100%;
+    height: calc(100% - 100px);
+    height: -moz-calc(100% - 100px);
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.row-dibujo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    object-fit: cover;
+    object-position: center;
+}
+.dibujo-tag{
+    position: absolute;
+    padding: 10px 15px;
+    border-radius: 20px;
+    top: 15px;
+    left: 15px;
+    font-family: 'Montserrat-Medium';
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.carta .carta-row:last-child{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+}
+.row-head,
+.row-foot{
+    width: 100%;
+    height: auto;
+}
+.row-head h3{
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.row-head h2{
+    font-family: 'Montserrat-ExtraBold';
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+.row-head p{
+    font-family: 'Montserrat-Medium';
+    font-size: 1rem;
+    color: #000000;
+}
+
+.foot-tooltip{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-left-width: 5px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-right-width: 1px;
+}
+.foot-tooltip > div{
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.foot-tooltip > p{
+    width: auto;
+    width: calc(100% - 75px);
+    width: -moz-calc(100% - 75px);
+
+    font-family: 'Montserrat-Medium';
+    font-size: 0.9rem;
+    color: #000000;
+}
+.foot-tooltip p span,
+.foot-tooltip p a{
+    font-family: 'Montserrat-SemiBold';
+}
+.foot-tooltip p a{
+    color: #ff161f;
+}
+
+.foot-botones{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.foot-botones > button:first-child{
+    background-color: #6b7280;
+}
+.foot-botones > button:first-child:hover{
+    background-color: #4d545e;
+}
+.foot-botones > button:last-child{
+    background-color: #e31f26;
+}
+.foot-botones > button:last-child:hover{
+    background-color: #e31f26;
+}
+
+.foot-botones > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: background-color 0.25s;
+}
+.foot-botones > button:first-child span:last-child,
+.foot-botones > button:last-child span:first-child{
+    font-family: 'Montserrat-SemiBold';
+}
+.foot-botones > button:first-child span:first-child{
+    margin-right: 5px;
+}
+.foot-botones > button:last-child span:last-child{
+    margin-left: 5px;
+}
+
+.boton-normal:hover{
+    cursor: pointer;
+    animation: animacion-boton-over 0.25s infinite forwards linear;
+}
+@keyframes animacion-boton-over {
+    0%,50%,100%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(-2px);
+    }
+    75%{
+        transform: translateX(2px);
+    }
+}
+
+.boton-hidden,
+.boton-hidden:hover{
+    opacity: 0.5;
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+/**********/
+
+.carta-low .dibujo-tag{
+    background-color: #808083;
+}
+.carta-low .row-dibujo{
+    border-color: #808083;
+}
+.carta-low .row-head h2{
+    color: #000000;
+}
+/*.carta-low .foot-tooltip > div{
+    background-image: url(../images/tooltip-low-icon.svg);
+}*/
+.carta-low .foot-tooltip{
+    background-color: #f0f0f1;
+    border-color: #e31f26;
+}
+
+/**********/
+
+.carta-mid .dibujo-tag{
+    background-color: #f59e0b;
+}
+.carta-mid .row-dibujo{
+    border-color: #f59e0b;
+}
+.carta-mid .row-head h2{
+    color: #f59e0b;
+}
+.carta-mid .foot-tooltip > div{
+    background-image: url(../images/tooltip-mid-icon.svg);
+}
+.carta-mid .foot-tooltip{
+    background-color: #fff7ed;
+    border-color: #f59e0b;
+}
+
+/**********/
+
+.carta-high .dibujo-tag{
+    background-color: #f97316;
+}
+.carta-high .row-dibujo{
+    border-color: #f97316;
+}
+.carta-high .row-head h2{
+    color: #f97316;
+}
+.carta-high .foot-tooltip > div{
+    background-image: url(../images/tooltip-high-icon.svg);
+}
+.carta-high .foot-tooltip{
+    background-color: #fff7ed;
+    border-color: #f97316;
+}
+
+/**********/
+
+.carta-critic .dibujo-tag{
+    background-color: #ef4444;
+}
+.carta-critic .row-dibujo{
+    border-color: #ef4444;
+}
+.carta-critic .row-head h2{
+    color: #ef4444;
+}
+.carta-critic .foot-tooltip > div{
+    background-image: url(../images/tooltip-critic-icon.svg);
+}
+.carta-critic .foot-tooltip{
+    background-color: #fff7ed;
+    border-color: #ef4444;
+}
+
+/*************animacion**************/
+
+.cartas-out{
+    transform: scale(0.7) rotate(-5deg);
+    transition: transform 0.3s ease-out;
+}
+.cartas-in{
+    transform: scale(1) rotate(0deg);
+    transition: transform 0.3s ease-in;
+}
+
+.carta1-off{
+    animation: animacion-carta1-off 0.3s 1 forwards ease-in;
+}
+@keyframes animacion-carta1-off {
+    0%{
+        transform: rotate(0deg) translate(0%,0%);
+    }
+    100%{
+        transform: rotate(-45deg) translate(-20%,-20%);
+    }
+}
+.carta1-on{
+    animation: animacion-carta1-on 0.3s 1 forwards ease-out;
+}
+@keyframes animacion-carta1-on {
+    0%{
+        transform: rotate(-45deg) translate(-20%,-20%);
+    }
+    100%{
+        transform: rotate(0deg) translate(0%,0%);
+    }
+}
+
+.carta2-off{
+    animation: animacion-carta2-off 0.3s 1 forwards ease-in;
+}
+@keyframes animacion-carta2-off {
+    0%{
+        transform: rotate(0deg) translate(0%,0%);
+    }
+    100%{
+        transform: rotate(20deg) translate(15%,15%);
+    }
+}
+.carta2-on{
+    animation: animacion-carta2-on 0.3s 1 forwards ease-out;
+}
+@keyframes animacion-carta2-on {
+    0%{
+        transform: rotate(20deg) translate(15%,15%);
+    }
+    100%{
+        transform: rotate(0deg) translate(0%,0%);
+    }
+}
+.carta-hidden{
+    visibility: hidden;
+}

@@ -374,6 +374,24 @@
     }
 }
 
+.content-wrap-2-4{
+    left: -200%;
+    animation: animacion-wrap-2-4 2s 1 forwards;
+}
+@keyframes animacion-wrap-2-4{
+    0%{
+        top: 0%;
+        animation-timing-function: ease-out;
+    }
+    30%{
+        top: 10%;
+        animation-timing-function: ease-in-out;
+    }
+    100%{
+        top: -100%;
+    }
+}
+
 .content-wrap-2-1{
     top: 0%;
     animation: animacion-wrap-2-1 2s 1 forwards;
@@ -403,6 +421,19 @@
 @keyframes animacion-wrap-3-2{
     0%{
         top: 100%;
+    }
+    100%{
+        top: 0%;
+    }
+}
+
+.content-wrap-4-2{
+    left: -200%;
+    animation: animacion-wrap-4-2 1s 1 forwards ease-out;
+}
+@keyframes animacion-wrap-4-2{
+    0%{
+        top: -100%;
     }
     100%{
         top: 0%;

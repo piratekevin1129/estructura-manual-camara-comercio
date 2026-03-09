@@ -1,0 +1,20 @@
+.fondo4 #aro1{
+    width: 300px;
+    height: 300px;
+    top: 0%;
+    left: 0%;
+}
+.fondo4 #aro2{
+    width: 200px;
+    height: 200px;
+    top: 98%;
+    left: 100%;
+    left: calc(100% - 20px);
+    left: -moz-calc(100% - 20px);
+}
+.fondo4 #aro1 img{
+    animation: none;
+}
+.fondo4 #aro2 img{
+    animation: none;
+}

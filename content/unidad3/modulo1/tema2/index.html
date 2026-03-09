@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad social - Observación</title>
+
+    <link href="../../../../assets/css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="contenedor">
+        <div id="titulo">
+            <h1>Seguridad social • <span>Observación</span></h1>
+        </div>
+        <div id="pasos-container">
+            <div id="paso-tray">
+                <div id="paso-line"></div>
+            </div>
+            <div id="pasos">
+                <!---->
+            </div>
+        </div>
+
+        <div id="cartas-container" class="cartas-in">
+            <!---->
+        </div>
+    </div>
+
+    <div id="loader" class="loader-on">
+        <div id="loader-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path fill="#999999" d="M286.7 96.1C291.7 113 282.1 130.9 265.2 135.9C185.9 159.5 128.1 233 128.1 320C128.1 426 214.1 512 320.1 512C426.1 512 512.1 426 512.1 320C512.1 233.1 454.3 159.6 375 135.9C358.1 130.9 348.4 113 353.5 96.1C358.6 79.2 376.4 69.5 393.3 74.6C498.9 106.1 576 204 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320C64 204 141.1 106.1 246.9 74.6C263.8 69.6 281.7 79.2 286.7 96.1z" />
+            </svg>
+        </div>
+        <div id="loader-bar">
+            <div id="loader-bar2"></div>
+        </div>
+    </div>
+
+    <script src="assets/scripts/data.js"></script>
+    <script src="assets/scripts/loader.js"></script>
+    <script src="assets/scripts/main.js"></script>
+
+    <script>
+        var over_mp3 = null;
+        var carta_mp3 = null;
+        var underground_mp3 = null;
+
+        var intro_mp3 = null;
+        var audio1_mp3 = null;
+        var audio2_mp3 = null;
+        var audio3_mp3 = null;
+        var audio4_mp3 = null;
+        var audio5_mp3 = null;
+        var audio6_mp3 = null;
+        var audio7_mp3 = null;
+        var audio8_mp3 = null;
+        var audios_data = [];
+
+        window.onload = function(){
+            loadTrack({src: 'assets/sounds/click.mp3', callBack: function(data){
+                over_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/sounds/carta.mp3', callBack: function(data){
+                carta_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/sounds/underground.mp3', callBack: function(data){
+                underground_mp3 = data
+                underground_mp3.loop = true
+                checkAudios(true)
+            }})
+            ////
+            loadTrack({src: 'assets/audios/intro.mp3', callBack: function(data){
+                intro_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/1.mp3', callBack: function(data){
+                audio1_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/2.mp3', callBack: function(data){
+                audio2_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/3.mp3', callBack: function(data){
+                audio3_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/4.mp3', callBack: function(data){
+                audio4_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/5.mp3', callBack: function(data){
+                audio5_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/6.mp3', callBack: function(data){
+                audio6_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/7.mp3', callBack: function(data){
+                audio7_mp3 = data
+                checkAudios(true)
+            }})
+            loadTrack({src: 'assets/audios/8.mp3', callBack: function(data){
+                audio8_mp3 = data
+                checkAudios(true)
+            }})
+        }
+
+        function comenzarJuego(){
+            audios_data = [audio1_mp3,audio2_mp3,audio3_mp3,audio4_mp3,audio5_mp3,audio6_mp3,audio7_mp3,audio8_mp3]                
+
+            setPasos()
+            unsetLoader()
+            intro_mp3.onended = function(){
+                global_audio = audios_data[0]
+                global_audio.currentTime = 0
+                global_audio.play()
+                //console.log(global_audio)
+            }
+            intro_mp3.play()
+            underground_mp3.play()
+        }
+    </script>
+</body>
+</html>

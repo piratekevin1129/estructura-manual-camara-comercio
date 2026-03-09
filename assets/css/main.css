@@ -149,6 +149,12 @@ html,body{
     left: -moz-calc((100% / 3) * 2);
     top: -100%;
 }
+#interactivas{
+    left: 100%;
+    left: calc((100% / 3) * 2);
+    left: -moz-calc((100% / 3) * 2);
+    top: 100%;
+}
 
 
 /***************/
